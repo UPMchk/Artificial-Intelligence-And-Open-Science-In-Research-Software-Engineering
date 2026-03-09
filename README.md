@@ -34,8 +34,8 @@ Install the required Python packages with:
 1. Place the input PDF files in `data/pdfs/`
 2. Extract TEI/XML files with Grobid into `data/tei/`
 3. Run:
-   - Run the parser:`py src/parse_tei.py`
-   - Generate the figure-count plot:`py src/make_figures_plot.py`
+   - Run the parser:`py src/make_parse_tei.py`
+   - Generate the figure-count plot:`py src/figures_plot.py`
    - Generate the keyword cloud:`py src/make_wordcloud.py`
 
 ## Docker
