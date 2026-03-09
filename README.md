@@ -40,9 +40,11 @@ Grobid was executed locally using Docker, following the setup shown in class:
 
 Once the service was available, we convert PDF fileinto TEI/XML with:
 
-   ·ONE BY ONE IN: curl.exe -X POST "http://localhost:8070/api/processFulltextDocument" -F "input=@C:\Users\chenh\Downloads\paper1.pdf" -o    "C:\Users\chenh\Desktop\paper1.tei.xml"
+#### ONE BY ONE WITH: 
+curl.exe -X POST "http://localhost:8070/api/processFulltextDocument" -F "input=@C:\Users\chenh\Downloads\paper1.pdf" -o    "C:\Users\chenh\Desktop\paper1.tei.xml"
    
-   ·ALL TOGETHER: for ($i=1; $i -le 10; $i++) { curl.exe -X POST "http://localhost:8070/api/processFulltextDocument" ` -F "input=@C:\Users\chenh\Downloads\paper$i.pdf" `-o "C:\Users\chenh\Desktop\paper$i.tei.xml"
+#### ALL TOGETHER: 
+   for ($i=1; $i -le 10; $i++) { curl.exe -X POST "http://localhost:8070/api/processFulltextDocument" ` -F "input=@C:\Users\chenh\Downloads\paper$i.pdf" `-o "C:\Users\chenh\Desktop\paper$i.tei.xml"
 
 The paths used in the example command (such as `C:\Users\chenh\Downloads\paper1.pdf` and `C:\Users\chenh\Desktop\paper1.tei.xml`) were local paths from the machine used to run Grobid.
 
