@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Open Science in Software Engineering</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Daniel</forename><surname>Mendez</surname></persName>
+							<email>mendezfe@acm.org</email>
+							<idno type="ORCID">0000-0003-0619-6027</idno>
+						</author>
+						<author>
+							<persName><forename type="first">Daniel</forename><surname>Graziotin</surname></persName>
+							<email>daniel.graziotin@iste.uni-stuttgart.de</email>
+							<idno type="ORCID">0000-0002-9107-7681</idno>
+						</author>
+						<author>
+							<persName><forename type="first">Stefan</forename><surname>Wagner</surname></persName>
+							<email>stefan.wagner@iste.uni-stuttgart.de</email>
+						</author>
+						<author>
+							<persName><forename type="first">Heidi</forename><surname>Seibold</surname></persName>
+							<email>hseibold@ibe.med.uni-muenchen.de</email>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">Technical University of Munich</orgName>
+								<address>
+									<settlement>Munich</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">Blekinge Institute of Technology fortiss GmbH</orgName>
+								<address>
+									<settlement>Karlskrona, Munich</settlement>
+									<country>Sweden, Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="institution">University of Stuttgart</orgName>
+								<address>
+									<settlement>Stuttgart</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="institution">Ludwig-Maximilians-University Munich</orgName>
+								<address>
+									<settlement>Munich</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Open Science in Software Engineering</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">D06ED33F847D940846D1AF9207C90A09</idno>
+					<idno type="DOI">10.1007/978-3-030-32489-6_17</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Open science describes the movement of making any research artifact available to the public and includes, but is not limited to, open access, open data, and open source. While open science is becoming generally accepted as a norm in other scientific disciplines, in software engineering, we are still struggling in adapting open science to the particularities of our discipline, rendering progress in our scientific community cumbersome. In this chapter, we reflect upon the essentials in open science for software engineering including what open science is, why we should engage in it, and how we should do it. We particularly draw from our experiences made as conference chairs implementing open science initiatives and as researchers actively engaging in open science to critically discuss challenges and pitfalls and to address more advanced topics such as how and under which conditions to share preprints, what infrastructure and licence model to cover, or how do it within the limitations of different reviewing models, such as double-blind reviewing. Our hope is to help establishing a common ground and to contribute to make open science a norm also in software engineering.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>In a nutshell, open science refers to the movement of making any research artifact available to the public. This ranges from the disclosure of software source code ("open source") over the actual data itself ("open data") and the material used to analyse the data (such as analysis scripts, "open material") to the manuscripts reporting on the study results ("open access"). 1 Disclosing research artifacts increases transparency and, thus, reproducibility and replicability of our scientific process and our results. Open science is often seen as an important means to move forward as a scientific research community. Open data and open source-both being major principles under the common banner of open science-constitute a major hallmark in making empirical studies transparent and understandable to researchers not involved in carrying out those studies. This can be done, for example, by sharing replication packages that capture the raw data and anything necessary for their analysis and interpretation. That way, we increase the reproducibility of our research. This, in turn, strengthens the credibility of the conclusions we draw from the analysed data and it allows others to build their own work upon ours; hence, it strengthens more generally our overall body of knowledge in the research community.</p><p>Besides these more ideological views on open science and reasonable arguments in favour of engaging into it as a research community, on which any reader will probably agree, there is much more to it which we need to understand when considering open science in the context of software engineering research. There are, for example, various challenges in data disclosure-technical ones, ethical and legal ones, but also social ones-which are different to the standards and views given in other disciplines and which make open science difficult to become the norm in our own field. Consider, for example, the notion of repeatability, replicability, and reproducibility by considering the terminology as introduced by the ACM 2 (verbatim):</p><p>• Repeatability (Same team, same experimental setup): The measurement can be obtained with stated precision by the same team using the same measurement procedure, the same measuring system, under the same operating conditions, in the same location on multiple trials. For computational experiments, this means that a researcher can reliably repeat her own computation. • Replicability (Different team, same experimental setup): The measurement can be obtained with stated precision by a different team using the same measurement procedure, the same measuring system, under the same operating 1 Open science and open scholarship encompass a wide range of topics and activities, many of which are described by <ref type="bibr" target="#b27">Tennant et al. (2019)</ref>. In this chapter, we concentrate on topics we believe to be in scope of <ref type="bibr">(empirical)</ref>  conditions, in the same or a different location on multiple trials. For computational experiments, this means that an independent group can obtain the same result using the author's own artifacts. • Reproducibility (Different team, different experimental setup): The measurement can be obtained with stated precision by a different team, a different measuring system, in a different location on multiple trials. For computational experiments, this means that an independent group can obtain the same result using artifacts which they develop completely independently.</p><p>As an engineering discipline heavily inspired by the natural sciences, we often make implicit assumptions that our focus is on quantitative and even purely computational studies (e.g., simulations). For these, existing definitions and norms hold as they are and we are able to yield replicability and reproducibility. This situation is, however, not the norm. Most studies in software engineering involvein one form or another-humans. In the end, software is made by human beings for human beings. Human subjects, however, act purely rational in exceptional cases only, if at all (see <ref type="bibr" target="#b18">Lambert 2006)</ref>. This means that every change in an experimental context, even if strictly following the same experimental setup and procedure, will eventually yield different (context-dependent) results. Such studies would then not fit the available definition of reproducibility as used in computational studies, but it is still reasonable to argue that they would be reproducible. Further challenges in software engineering research are that much of our data emerges from sensitive (e.g., industrial) settings and finally the reliance upon qualitative data where the data analysis is less procedural when compared to quantitative data (also imposing significant integrity challenges). All this renders full disclosure often difficult and we often need to anonymise the data to act within legal and ethical constraints that most computational studies do otherwise not have. In this chapter, we cover the essentials in open science for software engineering. In particular, we establish a common ground in our discipline by elaborating on established key terms, principles, and approaches in Sect. 2-all tailored to the particularities of our discipline. We further discuss why we should engage in open science (Sect. 3) before discussing practical guidelines to implementing open science in Sect. 4. In Sect. 5, we then end with a discussion of chosen challenges and pitfalls. The latter is based on our shared experiences emerging from open science activities and lessons we learnt so far as authors and as organizers where we implemented first open science initiatives in the empirical software engineering community.</p><p>The main target audience consists of software engineering scholars interested in the general notion of open science and those interested in implementing open science in their own research practices. One hope we associate with this chapter is not only to oppose those critical voices still sceptical towards open science, but also to strengthen the voices of those supporting it out of the firm conviction that open science should soon become the norm in software engineering research, too.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">What Is Open Science?</head><p>Open science is a movement whose aim is to render all artifacts born out of scientific research activities accessible, without any barriers, to any individual on Earth <ref type="bibr" target="#b32">(Woelfle et al. 2011)</ref>. Following <ref type="bibr" target="#b27">Tennant et al. (2019)</ref>, open science refers also to the scientific part of the broader terms of open scholarship, i.e., "the process, communication, and reuse of research as practised in any scholarly research discipline, and its inclusion and role within wider society". Open science itself is an umbrella term that encompasses several facets of openness  . In the following, we discuss those concepts particularly relevant to the (empirical) software engineering research community.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.1">Open Access</head><p>Open access is associated with publications, i.e., research articles, technical reports and papers in general. Open access occurs whenever a publication is freely available on the public Internet without any access barrier-financial, legal, or technical ones (including even not to force users to register to systems). It allows individuals to read, download, copy, distribute, print, search, or link to the full texts of publications for any lawful purpose <ref type="bibr" target="#b3">(BOAI 2002)</ref>. Minor constraints over redistribution and reuse of the publication may still apply and usually take the form of attribution. It is typical with open access publications that the authors retain the copyright of their work, and the act to render the work as open access is enabled through proper licences. The Creative Commons licence model is the most widely employed licence for open access (see also Sect. 2.2).</p><p>Open access can take several forms. The form depends on which version of the article is made public and at which point of the academic writing process. If authors make an own produced copy of their work openly available, they perform an act of self-archiving. The work is called preprint if it reflects a version of their manuscript that has not yet been accepted for publication at a scientific venue. If the content of the own produced work is identical to the content of the accepted publication, it is called postprint. The only differences between the postprint and the manuscript formally published by a traditional publisher like ACM, IEEE, or Springer are in typesetting differences and the location of the document. The location of pre-and postprints is typically an open repository for pre-and postprints, in contrast to the digital libraries of the publishers. One such example is given in the following while we will go more into detail in Sect. 4.</p><p>Self-archiving via arXiv arXiv, pronounced as archive and available at https://arXiv.org, is a repository, born in 1991, of freely accessible preprints and postprints, as well as whitepapers, covering several scientific fields including physics, mathematics, and computer science (see also <ref type="bibr" target="#b8">Ginsparg 2011)</ref>. arXiv is free to access, to register to, and to submit to, but it presents two safeguards for publishing. First, authors have to be endorsed by existing members before they are allowed to register in the system. Second, every submission is moderated by volunteers who check for issues such as scope or copyright. arXiv is the de facto standard repository for mathematics and physics, and with some authors only publishing their work in there, it receives more than 10,000 submissions per month and is, at the time of writing this chapter, hosting approximately 1.5M manuscripts in a distributed archived system of multiple digital libraries all over the world.</p><p>The act of self-archiving is also known as green open access and it is allowed by the majority of academic publishers with some regulations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Self-archiving options and publishers' regulations</head><p>Different publishers define different regulations with effect to the needs and possibilities of self-archiving, and it is imperative to strictly adhere to these rules. The SHERPA partnership, a partnership of several universities with the original goal of setting up an institutional open access repository, offers with RoMEO-http://www.sherpa.ac.uk/romeo-a tool summarising publishers' copyright and archiving policies. RoMEO distinguishes different categories via the following colour codes commonly adopted also in the wider sense:</p><p>• White: Self-archiving not formally allowed • Yellow: Authors can archive preprints (i.e., pre-refereeing) (continued)</p><p>• Blue: Authors can archive postprints (i.e., final draft post-refereeing) or publisher's version/PDF • Green: Authors can archive preprint and postprint or publisher's version Whenever a publisher renders an accepted publication as openly licensed and available without any restriction whatsoever, the artifact becomes open access under the gold open access model. This model often follows an author-pays strategy, but there exist also publishers asking for no article processing charges at all. We refer the reader to the work of <ref type="bibr" target="#b11">Graziotin et al. (2014)</ref> for more information on open access and its publishing models.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.2">Open Data</head><p>Open data is very similar to open access, but it is applied to any data that was produced in the course of research activities, such as the raw data obtained via a controlled experiment. Openness of data can come in various forms and at different degrees; for instance, while an abstract description of a data set (metadata) could be found and accessed online, it could still be the case that access to the full data set would only be granted upon request and only for specific research purposes carefully selected and laid out by the owners of that data set. Here, we point to the FAIR principles 3 which describe how data should ideally be made open: When data sets are Findable, Accessible, Interoperable, and Reusable, we refer to it as "FAIR data".</p><p>As pointed out by <ref type="bibr" target="#b2">Auer et al. (2007)</ref>, open (FAIR) data follows the idea that research data should be freely available to everyone to use and redistribute as they wish, without any restriction whatsoever born out of copyright and licences. As with open access, the Creative Commons deeds are commonly employed licences for open data. true public domain, effectively acting as a renounce of any copyright on the artifacts. The latter is an open licence that allows reuse and redistribution of the artifact with the only condition of attributing the original work to the authors.</p><p>Besides the frequently used CC licence models introduced above, further ones are possible, too. One example is the Attribution-NonCommercial 4.0 (CC BY NC 4.0), which adds the clause that the original artifact and any derivation of it cannot be used for commercial purposes. While the Public Domain and the CC BY NC licences might seem more suitable for academic work, opting for them can be problematic as we explain in Sect. 5.3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.3">Open Source</head><p>Open source in open science is nothing different to open source software as it is commonly known by the computer science community. In fact, many argue that the open source software movement served as an inspiration for more openness in various fields going beyond software-related ones (see also the work by <ref type="bibr" target="#b3">Boisseau et al. (2018)</ref> providing an elaborate discussion). In any case, several research endeavours in computer science and empirical software engineering, but also other disciplines as well, produce software. One such example is what is often referred to as research software (or scientific software), i.e., software products developed with the purpose of analyzing (empirical) data, such as Python code. In principle, the software developed can be released as open source software using known licences such as the MIT licence or the GPLv3.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.4">Preregistration of Studies</head><p>Preregistration is a useful tool to ensure a certain level of quality of a study design, e.g., by making sure that hypotheses of a confirmatory study were actually predefined rather than being defined after having analysed the data to fit the results.</p><p>Researchers define what their research questions are, why they want to pursue the research, and how exactly they will try to answer their questions. The Open Science Framework is currently one of the most common places to preregister research projects (see https://osf.io/prereg/). Some journals have reported already how preregistration avoids • publication bias <ref type="bibr" target="#b5">(Dickersin 1990</ref>), • p-hacking <ref type="bibr" target="#b12">(Head et al. 2015)</ref>, and • HARKing, i.e., hypothesising after the results are known <ref type="bibr" target="#b14">(Kerr 1998)</ref>.</p><p>These journals offer the possibility of submitting a registered report to their journal.<ref type="foot" target="#foot_0">4</ref> Such a report goes through peer review and, provided acceptance, the report is in principle accepted (IPA). If the researchers conduct the study as indicated in the registered report, their paper will be published in the journal regardless of the results.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.5">Open Science Badges</head><p>For every form of open science, publishers can award open science Badges. Badging is a form of promoting open science activities of researchers via a specific badge that publicly recognises their open science engagement. To this end, publishers associate a specific symbol (i.e., a badge) to chosen artifacts to certify that the content is available and accessible in a persistent location.</p><p>There exist various forms of badges obeying the particularities of the various available badge systems. Some of them are publisher-specific (such as the ACM badge system<ref type="foot" target="#foot_1">5</ref> ) and some of them are independent, such as the OSF Open Science Badges.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>OSF Open Science Badges</head><p>A wide-spread open science badge system is the one of the Open Science Framework (OSF, https://osf.io/) and further promoted by the Center for Open Science (https://cos.io). This model distinguishes between badges in the following categories:</p><p>• Open Data: This badge is awarded when shareable data necessary to reproduce a study are made publicly (digitally) available. • Open Materials: This badge is awarded when making available the materials of the followed research methodology necessary to reproduce or replicate that followed methodology (e.g., analysis scripts). • Preregistered: That badge is awarded when preregistering a study design including the description of the research design and study materials.</p><p>How to award which badges depends on many (often non-trivial) criteria defined by editors and following a specific reviewing model to check the eligibility to obtain the badges. Although badges are, at the time of writing this chapter, rather rare in software engineering research (such as badges for preregistered studies) and although some systems may still be perceived as difficult to implement (such as the ACM system due to the wide spectrum of often overlapping badges), badges are generally recognised to be a valuable incentive that increases the participation in open science initiatives <ref type="bibr" target="#b23">(Rowhani-Farid et al. 2017)</ref>. Hence, they are being adopted more and more by journals and conferences.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.6">Open Peer Review</head><p>As discussed by <ref type="bibr" target="#b26">Tennant et al. (2017)</ref>, different models of peer review exist and have been experimented with lately. One of these is open peer review, for which there is, however, yet no commonly accepted and clear definition nor an agreed schema as elaborated in a secondary study by <ref type="bibr" target="#b26">Ross-Hellauer (2017)</ref>. Open peer review implementations intend to make the review process as transparent as possible and can feature factors ranging from removing the anonymity of authors and reviewers alike, over making the actual reviews public and allowing for interaction between authors and reviewers, to crowdsourcing reviews and even making manuscripts public before the review phase.</p><p>One least common denominator of open peer review focuses on the names of authors and reviewers so that both can see each other's identities. This allows for authors and reviewers to have a direct conversation rather than having to go through third parties for communication purposes (e.g., via handling editors or chairs). In the programming community, this type of review process has long been known in code reviews, but-despite the advantages recognised in the research community as shown in a recent study by <ref type="bibr" target="#b21">Prechelt et al. (2018)</ref> on the future of peer review in software engineering-it is not yet adopted by our journals and conferences (see also Sect. 5). One exception is the Journal of Open Source Software. <ref type="foot" target="#foot_2">6</ref> Another definition focuses on disclosing the reviews-sometimes with the names of the reviewers. That way, reviewers can be held more accountable, but they can also serve to make the decision for acceptance more transparent to others and the reviewers can also claim the recognition they deserve. There are many fears and hopes around open peer review models, many of which are discussed in an editorial by <ref type="bibr" target="#b3">Bolam and Foxe (2017)</ref> for the European Journal of Neuroscience after having implementing such a model. One fear (for which, however, there is no evidence yet) is the risk that early career researchers might be more reluctant to provide profound critique if their names are revealed (see also our discussion in Sect. 5.2). A partial implementation of this model where reviewer names and their reviews are made public is followed by the PeerJ Computer Science Journal, which asks the reviewers whether they wish to disclose their name and subsequently to the authors if whether they wish to disclose the peer review history in the published paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Why Do We Need Open Science?</head><p>Open science is becoming more and more accepted in scientific communities to be having many positive effects. These effects range from increased access and citation counts <ref type="bibr" target="#b7">(Eysenbach 2006)</ref> to facilitating technology transfer with the industry and fostering collaborations through open repositories. Academic publishing and knowledge sharing is meant to become more cost-effective-German university libraries alone are estimated to be spending well beyond 200 million EUR on publication subscriptions fees per year <ref type="bibr" target="#b25">(Schimmer et al. 2015)</ref>-and researchers and practitioners with no publisher subscriptions can freely access and build on the work of others. There are many discussions and controversies centred around publisher subscription models and how institutions (and institutional alliances) should deal with them. In this chapter, we will not even try to address these discussions to the extent they deserve, but provide a broader view on why we do need open science in general.</p><p>Imagine the following situation: A conference author submits a manuscript promising to have provided scientific and empirically informed arguments for considering Go To statements harmful; a statement previously relying on rationalist arguments of software engineering pioneers like <ref type="bibr" target="#b6">Dijkstra (1968)</ref> only. As laid out by that author, those arguments emerge from the exploration of industrial source code-which the author does not share, maybe because of non-disclosure agreements with collaborating companies from which the data emerges, or maybe for other reasons; this statement is not made explicit in the manuscript. They have further analysed the impact of those statements based on in-depth interviewswhich the author does also not share, maybe because of ethical and legal constraints. Imagine further that the reviewers find no obvious methodological flaws in the design which the author describes in great detail for both the content analysis and the interviews. The author is an experienced and recognised authority in the research community and the manuscript is written in an easy-to-follow manner. The reviewers further find the manuscript "compelling", "interesting", and the results are also "surprising" to them given the availability of contrary evidence provided by other authors who previously analysed publicly available software repositories coming to very contrary conclusions <ref type="bibr" target="#b20">(Nagappan et al. 2015)</ref>. Even if the submitting author did not discuss that other publication in detail, a presentation of that work would certainly lead to controversial and interesting discussions; something the reviewers believe to merit presentation at the prestigious conference they review for. So they recommend acceptance and the PC chairs select that publication for inclusion in the program. It is reasonable to believe that many readers of this chapter having served as co-chairs and reviewers for conferences can identify with such a situation. Now imagine you were a young scholar analyzing the effects of software defects and you find this publication. You would certainly find this publication interesting as it could provide a useful ground for follow-up work. Ask yourself-honestly-the following questions: This very example certainly describes a fictitious situation and yet it describes in many ways the de-facto situation of software engineering research. Scientific practices need to rely on certain safeguards, such as peer review, but they are nevertheless also dictated by social and political mechanisms and many non-trivial, subjective factors in the research communities. These factors very often dictate in one form or the other which submissions eventually make it into the publication landscape and which do not, and which publications are cited and which are not. As a consequence, publication and citation regimes-although inherently rooted in scepticism-have also much to do with trust and convictions <ref type="bibr" target="#b19">(Mendez and Passoth 2018)</ref>; something which holds for most, if not all, scientific disciplines. Transparency is therefore key to break with scientific theories being grounded in common sense, taken-for-granted knowledge, hopes, convictions, and provisional beliefs.</p><p>Software Engineering still faces many challenges not found in other disciplines. Our data comprehends qualitative and quantitative data types and the theories we work on often have various disciplinary backgrounds (from mathematics over psychology to sociology). Further, our data very often emerges from highly sensitive environments making a disclosure difficult and in many cases impossible. Even if we can disclose the data, in many cases it has to be anonymised to an extent it becomes difficult to fully comprehend. All this renders building and evaluating empirically grounded theories in our field difficult. Hence, scientific practices often remain rooted in trust rather than being rooted in transparent scientific processes. Yet and as laid out by <ref type="bibr" target="#b19">Mendez and Passoth (2018)</ref>, it is theory building which constitutes a crucial foundation to our avenue towards turning our engineering discipline into a more scientific, evidence-based one, same as it was the case for many other disciplines before. Transparency, credibility, and reproducibility are cornerstones in building and evaluating robust and reliable theories for our still emerging field and open science provides a solid foundation to achieve that goal.</p><p>In essence, open science practices in general and data sharing in particular eventually allow us as a community of software engineering researchers and practitioners to effectively make contributions to our body of knowledge based upon shared data sets-making our empirical studies transparent, comprehensible, and credible-thus, we move forward as a community. As we argue, not only scientific publishing is essential in knowledge sharing and dissemination <ref type="bibr" target="#b13">(Houghton and Oppenheim 2010)</ref>, but it is an essential facet in accumulating knowledge via a variation of studies tackling the same or similar questions and building upon the same or similar settings and data sets-e.g., as part of replication studies <ref type="bibr" target="#b9">(Gómez et al. 2012)</ref>   <ref type="bibr" target="#b29">Van den Eynden et al. 2011)</ref>. Also the research community is in tune with this movement, as we can observe: editors and conference organizers are already planning for a smooth transition to open data, and reviewers are becoming more and more sceptical towards manuscript submissions which do not disclose their data and, consequently, ask the reviewers for too much credit. It remains, however, often still a question of how the community should adopt open science practices and how individual researchers should open their research. We discuss this question in more detail in the next section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">How Do We Do Open Science?</head><p>In the following, we address the question of how to engage in open science. There are many aspects to consider when engaging as a researcher in open science. We believe that these aspects are best introduced along a simple (again, fictitious) scenario introduced next. The goal is to demonstrate opportunities along an exemplary set of practices and techniques available to engage in open science in a hands-on manner.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Exemplary Scenario</head><p>As an exemplary scenario, we consider a research project where we are researchers at European universities collaborating with project partners from other universities in the USA. Those partners are researchers in psychology. Our project aims at conducting a psychometric software engineering study and our overall goal is to collect data involving a large-scale study with human subjects. The research design is done in a joint effort. While our partners are largely responsible for the study execution and the data collection, we are largely responsible for analyzing the data and reporting on it.</p><p>To keep the example simple, we focus on the statistical analysis of quantitative data in our study, but also refer the reader to the challenges emerging from the disclosure of qualitative data in Sect. 5.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Overall Data Analysis Process</head><p>Figure <ref type="figure" target="#fig_0">1</ref> depicts, on the left side, the steps followed in our data analysis with a particular focus on those aspects relevant from an open science perspective. Overall, we first prepare our data and check for any errors, inconsistencies, and missing values, and we discuss these with our partners. At the same time, we start thinking about how to best answer our questions at hand. While we design our analysis procedure, we update the data structure to best fit the analysis plan. Once the analysis plan is finalised, we make it openly available. Ideally, we submit it as a preregistered study. This submission includes our study protocol and the material (analysis scripts) as well as a detailed sample description allowing reviewers to judge upon the potential of the study with respect to its theoretical and practical impact. After registering our study and considering the feedback received, only then, we decide to begin with the data analysis.</p><p>After discovering no clear patterns in the data, we decide to participate at a workshop where we present our ongoing work based on a previously published short paper describing the overall goal of the study and preliminary results. This work in progress presentation serves the purpose of receiving further feedback from the research community and of getting useful ideas on how to improve our data visualisation techniques. After successfully finishing our data analysis, we finally write up our main publication on the project and disclose our manuscript preprint prior to submitting our manuscript for review to a journal.</p><p>In the following, we walk through that process while focusing on the infrastructure and tools. Our hope is that by presenting the process in such a pragmatic hands-on manner allows to fully reproduce the process as it should typically appear in a research setting.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Exemplary Walk-Through</head><p>There are various tools to be used to make our project open and reproducible. While we do not claim to be able to present an exhaustive list here, our aim is to give some examples which we use ourselves to make recommendations based on our own experiences. One basic issue to consider first is the folder structure and the naming convention. A good folder structure, in our view, could be like the one in Listing 1 as it captures the very essence of our process: Regardless of the actual size of the project, the basic rule should be to apply that structure and naming convention concisely and consistently. We experienced it to also be important to keep the original data in a separate folder (data_raw/ in Listing 1) and to not manipulate the raw data files but to create new data files in a separate folder for the data cleaning and analysis ( data_clean / in Listing 1). In combination with a script which cleans the data ( clean_data .Rmd in Listing 1), this makes the data cleaning process reproducible to others.</p><p>To keep the working environment stable in terms of software versions, we decide to use a virtual machine for this project. An alternative option could also be a container (Docker, Singularity, etc.). For the data cleaning and the analysis, we decide to use R (see also <ref type="bibr" target="#b22">R Core Team 2018)</ref>. R is an open source software environment for statistical computing. An alternative to that could be to use Python. R scripts (e.g., analysis.R in Listing 1) are text files that can be executed in the R console. In contrast to click-and-point programs (e.g., SPSS when used without syntax) or programs producing binary files (e.g., Excel), R, same as Python, allows for a reproducible workflow which can be easily version controlled.</p><p>For version control, in our project, we decide to use Git <ref type="bibr" target="#b4">(Chacon and Straub 2014)</ref>. We further use it in combination with the Git-repository hosting service GitLab (https://gitlab.com). That version control system allows us and our collaborating partners to trace the versions of all produced text documents in an organised fashion. In combination with the hosting service GitLab, these versions remain available online to all involved in our project. For automating our workflow, we use Make <ref type="bibr" target="#b26">(Stallman et al. 2001)</ref>. To this end, and we keep referring to Listing 1, we store a Makefile in our main project folder which contains the information on how different files depend on each other, for example, that data / clean_data .Rmd depends on data /data_raw/messy_data1.xlsx and data /data_raw/messy_data2.csv and produces data / data_clean /mydata.csv, data / data_clean /mymetadata.json, and data / clean_data .docx. Our Makefile also documents how the outputs can be produced (via bash commands).</p><p>Next to using R for our project, we use R Markdown (see <ref type="bibr" target="#b34">Xie et al. 2018</ref>) and knitr (see <ref type="bibr" target="#b33">Xie 2015)</ref>. Both allow users to combine R code chunks with explanatory text snippets and, thus, allowing for literate programming <ref type="bibr" target="#b15">(Knuth 1984)</ref>. Our text is formatted with Markdown (R Markdown) and LaTeX (knitr). As our partners rely on MS Word, we regularly convert our R Markdown documents to Word documents for constant feedback by commenting directly in those documents. This simplifies the communication about the constant data checking and cleaning process. For an intermediate project report and later for the manuscript writing, we use knitr as it gives us more formatting options.</p><p>Our analysis plan is written with knitr and we upload the PDF to the open science framework (OSF, https://osf.io). This allows us to use the analysis plan for preregistration of the work we aim to do. Preregistration allows to reduce biases in the process of the data analysis (see also https://osf.io/prereg). We create the slides for the conference again using R Markdown which can produce high quality HTML slides. The manuscript is written using knitr and we make it available as open access on the preprint server arXiv (https://arXiv.org). To check whether preprint sharing is within the legal constraints of the publisher of the conference, we check for it using the search engine SHERPA RoMEO (http://sherpa.mimas.ac.uk/romeo).</p><p>As we see that the publisher follows a yellow open access model allowing to disclose the preprints but not the postprints, we choose to upload our preprint only. After that submission, we directly submit our manuscript to a peer-reviewed journal. Upon acceptance of the manuscript by that journal, we update our preprint with the DOI provided by the publisher, but do not submit the postprint, i.e., the postproduction version of the manuscript to comply with the copyright agreement. This preprint version is also the one we distribute among the community, e.g., via social media.</p><p>Since all root documents are text files (except for data /data_raw/messy_data1. xlsx) we can further put them under version control with Git. Through GitLab, we can make them easily accessible to others. This way, our project folder myproject/ can be seen as a replication package. Prior to disclosure, however, we check for parts in our data that need anonymisation to comply with the European General Data Protection Regulation (GDPR) as well as with the approval notification of the Institutional Review Board of our partners in the USA. We remove any data that might allow to trace observations back to individuals participating in the study.</p><p>For our work to be reproducible in a long-term manner, we need to further document the versions of the software used. The virtual machine does that for us, but is not very portable. The option we follow is to use the version management system packrat in R (see <ref type="bibr" target="#b28">Ushey et al. 2018)</ref>.</p><p>We notice that our partners are very reluctant to share the data because of its sensitivity and because they fear misuse (e.g., when taken out of its context), thus, we would not be able to follow the FAIR principles (Sect. 2.2) as anticipated. It is, however, possible for us to convince our project partners to disclose the data when implementing some safeguards. To this end, we decide to disclose our data using the service platform Zenodo (https://zenodo.org) while choosing Restricted Access. Other researchers interested in accessing the data can first read the extensive metadata describing the content of the data and how it was produced. If they believe that the data would fit their scope of interest, they can apply for access and our previously established Data Use and Access Committee (DUAC), formed by us data owners and a member of the responsible ethics committee, so that we can decide whether to grant access to the data or not.</p><p>That very example, we hope, illustrates an open science-conform study analysis and reporting producing all artifacts relevant to an open science format adoptable to software engineering and including the disclosure of:</p><p>1. A study protocol submission and review prior to publication (preregistered study) 2. The replication package including all analysed data (open data) and all files, scripts, and codebooks necessary to comprehend the study (open materials)</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">A preprint (yellow open access)</head><p>Needless to say, the example is a simplified one neglecting some challenges we typically encounter in practice. In the following, we discuss those challenges in more detail.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Challenges, Pitfalls, and Guidelines</head><p>In the following, we discuss typical challenges and pitfalls in open science from the perspective of researchers engaging in open science. To this end, we draw from our experiences covering both the roles of researchers and the roles of organizers (handling editors and conference and workshop organizers).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">General Issues</head><p>The major challenge that keeps researchers from following all the open science practices described above is probably the difficulty and effort required when making everything openly available. All the practices constitute additional steps that researchers have to do in addition to the non-open research process. They might be motivated to do these additional steps to support the scientific process and higher visibility of open publications. Yet, this motivation has limits. Therefore, the ease of doing open science practices is essential.</p><p>In our experience, the difficulty of being open has reduced dramatically over the years. It is easy and cost-free to handle a research project on GitHub or OSF, to permanently publish data on Zenodo or figshare, and to provide preprints on services like arXiv. Some difficulty lies in the details, such as the LaTeX requirements of arXiv, but nowadays we mostly work with modern web applications that behave as one would expect.</p><p>Another challenge that might keep researchers from employing openness in their research is the area of conflict between anonymity and confidentiality on the one side and openness on the other. In open science, we ideally would like to make everything open that helps others to understand, verify, and build on our work. When we work with companies, however, they have an understandable interest to protect their intellectual property and reputation, often reflected in signed nondisclosure agreements. Therefore, we have to reduce the data that we can make open or anonymise the data that we have. This is, again, additional effort and a risk that we accidentally make something open that should be confidential.</p><p>Similarly, when our studies involve humans, they have an interest in protecting their private data. With the EU GDPR, we now also have a strong legal basis for that. Hence, again, we have the risk to violate corresponding laws. In both cases, companies and individual humans, it is therefore imperative to publish any potentially sensitive data only with the explicit consent of the study participants. Only they themselves can decide what is sensitive and critical for them. In principle, this holds for any kind of publication and, hence, only needs to be extended to ask for consent for publishing the data as well. Anonymising company names is often enough. For anonymising sensitive data of study participants, there are also established techniques (see, e.g., <ref type="bibr" target="#b24">Saunders et al. 2015)</ref>.</p><p>The challenge of anonymity also plays into the third more general issue we would like to mention: Often, openness is merely an afterthought. After we have done all the work, we provide a preprint and make the data available. Ideally, however, the whole process should be open, for example, by using OSF or GitHub for all the documents, data, and analysis scripts. In terms of anonymity, this is difficult, as we cannot make everything open and often need a shadow repository with the original raw data. The raw data needs then to be carefully filtered when stored in an open repository. Yet, keeping everything open has the advantage that there is no way of manipulation during the analysis and publication phases of the research. We cannot make the hypothesis fit the data in hindsight because we documented the hypothesis before we did the analysis.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Sharing Preprints</head><p>For preprints, we need to consider where we want to publish the paper later on. Upon acceptance of our manuscript, we can also post a postprint. This is rarely a problem when we already have a preprint that is simply updated. Otherwise, there might be publisher-specific embargo periods that need to be adhered to.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Self-archiving Options for Software Engineering</head><p>In principle, different publishers have different criteria about what they allow at all and what licences to choose. One helpful overview of the different self-archiving options in tune with the regulations of the major publishers in Software Engineering is, as we believe, provided by van Deursen (2016).</p><p>One challenge we would like to highlight in the context of preprint sharing emerges from the trend in software engineering to push for double-blind reviewing models by also anonymising not only reviewers' identifies but also ones of the authors. While the higher goal to reduce potential biases is laudable, it complicated open science practices considerably. Conferences are increasingly adopting a double-blind model of peer review, which does not easily allow preprints to be made available because it might allow the reviewers to find out who the authors are. It has been our effort to start a trend in conferences to allow self-archiving preprints and instruct peer reviewers to not actively look for the papers under review online, but it remains nevertheless a challenge. The picture would change if open peer review would be implemented in a code review style (as discussed in Sect. 2.6). However, the downside and fear of many researchers is that open peer review will put a lot of pressure on researchers, especially early career researchers: Both as authors-the reviewers will know who made potential mistakes-and as reviewers-the authors will know who proposed the changes or even who recommended rejection of the paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Choosing Appropriate Licences</head><p>A common pitfall while starting to use open science practices is to assign unsuitable licences. arXiv, for example, allows to select an ad hoc non-exclusive licence (to arXiv). Granting this minimal licence is compatible with any relevant venue a researcher might want to submit to. Hence, it keeps all options open even if the paper is rejected at the initially planned venue. Adding a Creative Commons licence could reduce this flexibility considerably. In fact, arXiv itself allows to choose from various Creative Commons licences (CC BY, CC BY-SA, CC BY-NC-SA) as well as the CC0 dedication, i.e., public domain (see also <ref type="bibr" target="#b0">Arxiv 2019a)</ref>.</p><p>Many argue that CC0 is preferable because it frees people from dealing with all attributions. However, in the scientific context, attributing the source and authors of all artifacts that are used is good practice independent of the licence used. Some preprint servers might enforce the CC BY. This licence is also recommendable for postprints, provided postprint sharing is compatible with the publisher copyright agreement, as it ensures that the researchers are given credit while giving others the largest amount of freedom to share and reuse the manuscript.</p><p>In principle, choosing the proper licence is a non-trivial but important task, because certain licences for preprints might cause incompatibility issues further down a publishing chain. Certain licences, including some Creative Commons ones, prevent the work to be used in commercial settings (the -NC part of the CC) or require the redistribution of derivative works using the same licence (the -SA part of the CC). Traditional publishers are, most of the times, commercial entities that require either a full copyright transfer or exclusive rights to distribute the work in a more restricted way, i.e., selling access to papers through paywalls. Noncommercial and share-alike CC licences are, thus, in most of the cases incompatible with traditional publishing models.</p><p>Even the more liberal CC BY licence, which only requires attribution and does not enforce a share-alike clause, might pose issues with traditional publishing as it is non-revocable and allows commercial use by anyone (i.e., non-exclusive to the publisher). The CC0 dedication has also caused issues with traditional publishing in the past, as pointed out by <ref type="bibr">O'Connor (2011)</ref>. The default licence by arXiv is a nonexclusive licence to distribute <ref type="bibr" target="#b1">(Arxiv 2019b)</ref>, and, virtually, does solely allow arXiv to distribute and display a document (meaning that, theoretically, we are not allowed to do anything at all with arXiv submissions but reading them). This licence is perhaps the most restrictive one among the free licences, making it compatible with traditional publishing (if the copyright transfer conditions allow for it, see Sect. 2.1).</p><p>We can provide two recommendations. arXiv default non-exclusive licence to distribute should be used when there is certainty to publish a paper with a traditional publisher. A CC BY licence should be used when there is certainty to publish a paper with a gold open access journal. We do not recommend licensing any preprint, postprint, or data set using a non-commercial clause (-NC). While counter-intuitive at first sight (we wish for our work to stay free, after all), a non-commercial clause prevents the work to be used by commercial entities. The term commercial is, from a legal perspective much broader than it might appear at first; it might affect a large spectrum of people and entities including a simple blog if the website uses an advertisement system. There exist open companies that were born from commercial entities and that are therefore not non-profit (e.g., figshare and PeerJ), and these would not be allowed to make any use of material licensed with the -NC clause. Some of the work might include data mining of papers and data sets and aggregating results, which might still be very useful for the advancement of knowledge. For more information on these legal aspects, we direct the reader to a joint group of copyright experts and Wikimedia (2013).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.4">Sharing Data and Materials</head><p>A common pitfall in publishing open data and open materials, e.g., as part of replication packages, is to use a personal or institutional website for quickly and easily making them available. It gives one a unique ID in the form of a URL. Yet, a challenge is that we cannot ensure that the URL stays valid and that the content stays on the website. As it has been empirically demonstrated, e.g., by <ref type="bibr" target="#b16">Koehler (2002</ref><ref type="bibr" target="#b17">Koehler ( , 2003))</ref>, web pages disappear continuously. Therefore, repositories such as Zenodo or figshare, providing a DOI and ensuring permanent archival, are much preferable.</p><p>There are small differences between the repositories, but both are recommendable. figshare is commercial but free to use, and its usability seems more polished than at Zenodo. Furthermore, figshare participates in data preservation mechanisms, while Zenodo does not. The permanency of Zenodo is ensured, because it is financed by the European Union and run by CERN.</p><p>Similarly as with preprint sharing in the context of double-blind reviewing models, the availability of open data and material would also reveal the authors' identity and, hence, is rendered complicated. While there is no easy solution to the problem of sharing preprints when following a double-blind reviewing model, open data repositories allow researchers now to publish data anonymously for review, thus, being compliant to restrictions imposed by such reviewing model. The authors of the data can then be made public after the paper is accepted. A set of instructions on how to share and archive open data and keep it compatible with double-blind review are presented by <ref type="bibr" target="#b10">Graziotin (2019)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.5">Preparing Qualitative Data</head><p>Achieving replicability and reproducibility of qualitative studies is particularly challenging and many might argue that it is not possible at all (see also the introductory discussion). This renders, however, the disclosure of qualitative data not less important than the disclosure of quantitative data. Even if we cannot support reproducibility of qualitative studies in the nearer sense (if interpreting those terms literally), we can at least achieve transparency of the research and support researchers not involved in the study in understanding how the researchers carrying out the study have drawn their conclusions.</p><p>Qualitative data is usually the most difficult to prepare for disclosure in a replication package, because it is most personal and most difficult to anonymise within legal and ethical constraints. A number is more abstract (and easier to open) than spoken words spoken (and transcribed) by individuals, e.g., during an interview. Ideally, we anonymise also qualitative data<ref type="foot" target="#foot_3">7</ref> and publish it with the explicit consent of the participants. It is important to be open about it upfront to understand whether the participants will agree. Especially for qualitative data, it might often not be the case that we get the consent. Then, it is even more important that at least the analysis material is shared. This is typically easier to share and may include a study protocol as well as the coding schema and coding rules used when coding qualitative data (e.g., as part of a Grounded Theory study). That way, reviewers and other researchers can at least check the trustworthiness of the analysis process and understand how the authors have drawn their conclusions.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Conclusion</head><p>Open science describes the movement to render all artifacts born out of scientific research activities accessible. Openness in our research processes is important to move forward in building reliable and robust theories, thus, turning our discipline into a more scientific one. As outlined in this chapter, we still face, however, various challenges other disciplines do not face. Despite those challenges of adapting open science to the software engineering context, we can still see that our research community is making great progress in that direction. We have ourselves either accompanied or fully implemented efforts to help the community opening up their research artifacts.</p><p>In the course of our endeavour, we have noticed very well that introducing open science into a research community is a difficult and sensitive task, because open science is still often confronted with prejudice, but also because many authors, despite their willingness to conform to such policies, do not often know how exactly to follow such an initiative; that is to say, it is often difficult to see what we should do and what we can do (also considering ethical and legal constraints). This is also the reason why we, as organizers, are often constraint by a general reluctance of implementing mandatory open science principles (e.g., via open data policies), thus, rendering the transition to more openness in our discipline rugged. However, the implementations of open science policies in the recent editions of conferences and journals-even if non-mandatory ones where authors could participate on a voluntary basis with the support of dedicated open science chairs-nevertheless showed high participation ratios with more than 50% of the authors disclosing their data. Such a support by the community and the positive feedback, e.g., in Town Hall meetings, strengthen our confidence in that the research community is showing more and more awareness of the importance of open science and that open science will eventually become the norm.</p><p>One hope we associate with our ongoing efforts in implementing open science initiatives in software engineering venues is to send strong signals into the research community and to gradually increase the awareness of participating researchers to move further in that direction.</p><p>Arguably, we are still confronted with various challenges, such as:</p><p>• How to implement a uniform and transparent guideline to review disclosed artifacts covering all possible variations in the different types of study (e.g., quantitative and qualitative ones)? • How to implement preregistered studies (which we consider especially important to tackle the problems of publication bias or p-hacking) in tune with the reviewing processes of our existing journals and conferences and how to redefine existing roles and responsibilities? • How to properly reward authors with a clear and easy to understand (and to use) badge system which recognises the differences in the various study types and the difficulties in opening up sensitive, e.g., industrial, data? • How to implement open peer reviews? We can nowadays observe a significant turn in the existing single-blinded reviewing regime, which we applaud, but instead of opening up reviews as well, the current trend is towards even more closeness via double-blind reviewing models, thus, rendering other open science activities difficult, too.</p><p>We are still convinced that it is not anymore a question whether open science will become the norm also for the software engineering research community, but we recognise that there is still a long way to go, also because we still need to increase the awareness for what open science is, why it is so important, and how to properly adopt such principles to software engineering.</p><p>The chapter at hands is intended to address these questions and to contribute to the movement. Our hope is to further encourage all members of our research community in joining us in this important endeavour of actively shaping an open science agenda for the software engineering community. Open Access This chapter is licensed under the terms of the Creative Commons Attribution 4.0 International License (http://creativecommons.org/licenses/by/4.0/), which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence and indicate if changes were made.</p><p>The images or other third party material in this chapter are included in the chapter's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the chapter's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Schema of an exemplary simple project</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Listing 1</head><label>1</label><figDesc>Project structure and naming convention for open science m y p r o j e c t / README. md M a k e f i l e d a t a / c l e a n _ d a t a . Rmd c l e a n _ d a t a . docx d a t a _ c l e a n / mydata . c s v mymetadata . j s o n d a t a _ r a w / m e s s y _ d a t a 1 . x l s x m e s s y _ d a t a 2 . c s v a n a l y s i s _ p l a n a n a l y s i s _ p l a n . Rnw a n a l y s i s _ p l a n . pdf a n a l y s i s / a n a l y s i s . R f u n c t i o n s / m y f u n c t i o n . R c o n f e r e n c e _ s l i d e s . Rmd c o n f e r e n c e _ s l i d e s . html m a n _ r e f e r e n c e s . b i b m a n u s c r i p t . Rnw m a n u s c r i p t . p d f Note that the folder structure clearly defines the different steps shown in Fig. 1 and the folder and file names clearly indicate what each of them contains.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Acknowledgements</head><label></label><figDesc>We want to thank all the members of the empirical software engineering research community who are actively supporting the open science movement and its adoption to the software engineering community. Just to name a few: Robert Feldt and Tom Zimmermann, editors in chief of the Empirical Software Engineering Journal, are committed to support the implementation of a new Reproducibility and Open Science initiative 8 -the first one to implement an open data initiative following a holistic process including a badge system. The steering committee of the International Workshop on Cooperative and Human Aspects of Software Engineering (CHASE) supported the implementation of an open science initiative from 2016 on. Markku Oivo, general chair of the International Symposium on Empirical Software Engineering and Measurement (ESEM) 2018, has actively supported the adoption of the CHASE open science initiative with focus on data sharing for the major Empirical Software Engineering conference so that we could pave the road for a long-term change in that community. Sebastian Uchitel, general chair of the International Software Engineering Conference (ICSE) 2017, further supported an initiative to foster sharing of preprints, and Natalia Juristo, general chair of ICSE 2021, further actively supports the adoption of the broader ESEM open science initiative to our major general software engineering conference. Finally, we want to thank Per Runeson, Klaas-Jan Stol, and Breno de França for their elaborate comments on earlier versions on this manuscript.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head></head><label></label><figDesc>Those two facets of software engineering research alone show already that we need to adapt open science principles to the particularities of our discipline, same as it is the case in other disciplines. How can our software engineering community of researchers adopt its own open science movement? We believe that it is a lack of proper understanding about • what open science is (and what it is not) for software engineering, • why we should all do our best to implement it, whether as editor, chair, or as researcher, and finally • how we could and should do it that often leads to a general reluctance towards implementing open science. Sometimes, it even leads to a general dismissal of the potential open science has for individual researchers and the community as a whole. All this renders our own open science movement cumbersome.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head></head><label></label><figDesc>, for example, open access, open data, open source, open government, open notebooks, or open standards (see FOSTER 2019</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>•</head><label></label><figDesc>Would you trust the results? If so, based on what? The simple fact that it has been accepted by the prestigious conference? The way the manuscript is generally written? The name of the author or her or his affiliation? Maybe based on the high number of citations that this publication already has? Maybe it is a combination of all factors? Would the picture change if the author would be unknown to you and if the work would have been published at a lower ranked conference? • Would you be able to really comprehend how the study has been carried out?Would you be able to reproduce the conclusions drawn by the author based on the insights provided in the manuscript? Would you be able to replicate the study in your own research environment? • To what extent does that piece of work provide a good theory for your work? Would this theory be robust and reliable (i.e., scientific)? Would you consider it useful? • How would you use the work if you could only access the abstract of the manuscript because it is hidden behind a paywall and because your institution has no subscription? Would you cite the work based on the information in the abstract? Maybe based on the statements found in other papers citing that work? • How would you cite that work and put it in relation to your own research? Would the picture change in dependency to whether the statements in that manuscript support your own arguments or whether it contradicts them?</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head></head><label></label><figDesc>which are rendered difficult if not impossible without clear open science principles dictating shared values and principle scientific practices. Therefore, there is no doubt anymore whether open science will become the norm also in software engineering research. Ever more public and private funding bodies are implementing open access and open data policies (see, e.g., Childs et al. 2014;</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_0">For a guide on writing registered reports, we refer the reader to https://osf.io/8mpji/.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_1">See https://www.acm.org/publications/policies/artifact-review-badging.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_2">For details, see https://joss.readthedocs.io/en/latest/submitting.html#the-review-process.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_3">By anomymisation of qualitative data we refer to the removal of any information that allows to reveal the individuals' identities and/or otherwise sensitive not directly related to the study.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_4">See also https://github.com/emsejournal/openscience.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>Arxiv</surname></persName>
+		</author>
+		<ptr target="http://web.archive.org/web/20190410151011/https://arxiv.org/help/license" />
+		<imprint>
+			<date type="published" when="2019-04-10">2019a. 10 Apr 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><surname>Arxiv</surname></persName>
+		</author>
+		<ptr target="http://web.archive.org/web/20190410165523/https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html" />
+		<title level="m">arxiv license information</title>
+				<imprint>
+			<date type="published" when="2019-04-10">2019b. 10 Apr 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">DBpedia: a nucleus for a web of open data</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Auer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bizer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Kobilarov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lehmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Cyganiak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ives</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<publisher>Springer</publisher>
+			<biblScope unit="page" from="722" to="735" />
+			<pubPlace>Berlin</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Transparent review at the European journal of neuroscience: experiences one year on</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Boai ; Boisseau</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-F</forename><surname>Omhover</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bouchard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Bolam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Foxe</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/ejn.13762</idno>
+		<ptr target="https://onlinelibrary.wiley.com/doi/abs/10.1111/ejn.13762" />
+	</analytic>
+	<monogr>
+		<title level="m">Budapest open access initiative</title>
+				<imprint>
+			<date type="published" when="2002">2002. 2018. 2017</date>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="2647" to="2647" />
+		</imprint>
+	</monogr>
+	<note>Des Sci</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Opening research data: issues and opportunities</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chacon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Straub</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Rec Manag J</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="142" to="162" />
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The existence of publication bias and risk factors for its occurrence</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Dickersin</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jama.1990.03440100097014</idno>
+		<ptr target="https://doi.org/10.1001/jama.1990.03440100097014" />
+	</analytic>
+	<monogr>
+		<title level="j">J Am Med Assoc</title>
+		<imprint>
+			<biblScope unit="volume">263</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page">1385</biblScope>
+			<date type="published" when="1990">1990</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Go to statement considered harmful</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Dijkstra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Commun ACM</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="147" to="148" />
+			<date type="published" when="1968">1968</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Citation advantage of open access articles</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Eysenbach</surname></persName>
+		</author>
+		<ptr target="https://www.fosteropenscience.eu/taxonomy/term/7" />
+	</analytic>
+	<monogr>
+		<title level="j">PLoS Biol</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+	<note>e157 FOSTER (2019) Open science taxonomy</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">It was twenty years ago today</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ginsparg</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1108.2700</idno>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Preprint.</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Replication types in experimental disciplines</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Gómez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Juristo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Vegas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2010 ACM-IEEE international symposium on empirical software engineering and measurement</title>
+				<meeting>the 2010 ACM-IEEE international symposium on empirical software engineering and measurement</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">How to disclose data for double-blind review and make it archived open data upon acceptance</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Graziotin</surname></persName>
+		</author>
+		<ptr target="https://ineed.coffee/5205/.Archived:https://web.archive.org/web/20190410141340/https://ineed.coffee/5205/" />
+		<imprint>
+			<date type="published" when="2019-04-10">2019. 10 Apr 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">A framework for systematic analysis of open access journals and its application in software engineering and information systems</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Graziotin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Abrahamsson</surname></persName>
+		</author>
+		<ptr target="https://arxiv.org/abs/1308.2597" />
+	</analytic>
+	<monogr>
+		<title level="j">Scientometrics</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1627" to="1656" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The extent and consequences of phacking in science</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Head</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Holman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Lanfear</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">T</forename><surname>Kahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Jennions</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pbio.1002106</idno>
+		<ptr target="https://doi.org/10.1371/journal.pbio.1002106" />
+	</analytic>
+	<monogr>
+		<title level="j">PLOS Biol</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page">e1002106</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">The economic implications of alternative publishing models</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Houghton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Oppenheim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Prometheus</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="41" to="54" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Harking: hypothesizing after the results are known</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">L</forename><surname>Kerr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Personal Soc Psychol Rev</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="196" to="217" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Literate programming</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Knuth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Comput J</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="97" to="111" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Web page change and persistence? A four-year longitudinal study</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Koehler</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/asi.10018</idno>
+		<ptr target="https://doi.org/10.1002/asi.10018" />
+	</analytic>
+	<monogr>
+		<title level="j">J Am Soc Inf Sci Technol</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="162" to="171" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">A longitudinal study of web pages continued: a consideration of document persistence</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Koehler</surname></persName>
+		</author>
+		<ptr target="http://www.informationr.net/ir/9-2/paper174.html" />
+	</analytic>
+	<monogr>
+		<title level="j">Inf Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The marketplace of perceptions</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Lambert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Harv Mag</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">50</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Empirical software engineering: from discipline to interdiscipline</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mendez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J-H</forename><surname>Passoth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Syst Softw</title>
+		<imprint>
+			<biblScope unit="volume">148</biblScope>
+			<biblScope unit="page" from="170" to="179" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">An empirical study of goto in C code from GitHub repositories</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nagappan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Robbes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Kamei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">É</forename><surname>Tanter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mcintosh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mockus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Hassan</surname></persName>
+		</author>
+		<ptr target="http://web.archive.org/web/20190410153103/http://r6.ca/blog/20110930T012533Z.html" />
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2015 10th joint meeting on foundations of software engineering</title>
+				<meeting>the 2015 10th joint meeting on foundations of software engineering<address><addrLine>New York O&apos;Connor R</addrLine></address></meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2011-04-10">2015. 2011. 10 Apr 2019</date>
+		</imprint>
+	</monogr>
+	<note>The ACM and me</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">A community&apos;s perspective on the status and future of peer review in software engineering</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Prechelt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Graziotin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Méndez</forename><surname>Fernández</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Inf Softw Technol</title>
+		<imprint>
+			<biblScope unit="volume">95</biblScope>
+			<biblScope unit="page" from="75" to="85" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<title level="m" type="main">R: A language and environment for statistical computing. R Foundation for Statistical Computing</title>
+		<author>
+			<persName><forename type="first">Team</forename><surname>Core</surname></persName>
+		</author>
+		<idno type="DOI">10.12688/f1000research.11369.2</idno>
+		<ptr target="https://doi.org/10.12688/f1000research.11369.2" />
+		<imprint>
+			<date type="published" when="2017">2018. 2017</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">588</biblScope>
+			<pubPlace>Vienna</pubPlace>
+		</imprint>
+	</monogr>
+	<note>What is open peer review? A systematic review. version 2; peer review: 4 approved</note>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">What incentives increase data sharing in health and medical research? A systematic review</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rowhani-Farid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G</forename><surname>Barnett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Res Integrity Peer Rev</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">4</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Anonymising interview data: challenges and compromise in practice</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Saunders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kitzinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kitzinger</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/1468794114550439</idno>
+		<idno type="PMID">26457066</idno>
+		<ptr target="https://doi.org/10.1177/1468794114550439" />
+	</analytic>
+	<monogr>
+		<title level="j">Qual Res</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="616" to="632" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Disrupting the subscription journals&apos; business model for the necessary large-scale transformation to open access</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Schimmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">K</forename><surname>Geschuhn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vogler</surname></persName>
+		</author>
+		<ptr target="http://pure.mpg.de/pubman/item/escidoc" />
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page">2148961</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<title level="m" type="main">A multi-disciplinary perspective on emergent and future innovations in peer review</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Stallman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mcgrath</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P ;</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Citeseer</forename><surname>Gnu Make</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Tennant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Dugan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Graziotin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Jacques</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Waldner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mietchen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Elkhatib</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">B</forename><surname>Collister</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Pikas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Crick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Masuzzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Caravaggi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">R</forename><surname>Berg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Niemeyer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ross-Hellauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mannheimer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rigling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">G</forename><surname>Tzovaras</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pacheco-Mendoza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fatima</forename><forename type="middle">N</forename><surname>Poblet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Isaakidis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Irawan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Renaut</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Madan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Matthias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kjaer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">N</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O'</forename><surname>Donnell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Neylon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kearns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Selvaraju</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Colomb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename></persName>
+		</author>
+		<idno type="DOI">10.12688/f1000research.12037.3</idno>
+		<ptr target="https://doi.org/10.12688/f1000research.12037.3" />
+		<imprint>
+			<date type="published" when="2001">2001. 2017</date>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">1151</biblScope>
+		</imprint>
+	</monogr>
+	<note>version 3; peer review: 2 approved</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tennant</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Beamer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bosman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Brembs</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Chung</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Clement</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Crick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Dugan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dunning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Eccles</surname></persName>
+		</author>
+		<ptr target="https://osf.io/preprints/metaarxiv/b4v8p" />
+		<title level="m">Foundations for open scholarship strategy development</title>
+				<imprint>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">packrat: a dependency management system for projects and their R package dependencies</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ushey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mcpherson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Atkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Allaire</surname></persName>
+		</author>
+		<ptr target="https://CRAN.R-project.org/package=packrat" />
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note>R package version 0.5.0.</note>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">Managing and sharing data; a best practice guide for researchers</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Van Den Eynden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Corti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Woollard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Bishop</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Horton</surname></persName>
+		</author>
+		<ptr target="http://repository.essex.ac.uk/2156/1/managingsharing.pdf" />
+		<imprint>
+			<date type="published" when="2011-03-31">2011. 31 Mar 2020</date>
+		</imprint>
+		<respStmt>
+			<orgName>University of Essex Data Archive</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">Green open access FAQ</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Van Deursen</surname></persName>
+		</author>
+		<ptr target="https://web.archive.org/web/20190410141222/https://avandeursen.com/2016/11/06/green-open-access-faq/" />
+		<imprint>
+			<date type="published" when="2016-04-10">2016. 10 Apr 2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Consequences, risks and side-effects of the license module &quot;noncommercial use only</title>
+		<author>
+			<persName><surname>Wikimedia</surname></persName>
+		</author>
+		<ptr target="https://openglam.org/2013/01/08/consequences-risks-and-side-effects-of-the-license-module-non-commercial-use-only/" />
+	</analytic>
+	<monogr>
+		<title level="m">OpenGLAM</title>
+				<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Open science is a research accelerator</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Woelfle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Olliaro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">H</forename><surname>Todd</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat Chem</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="page">745</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Dynamic documents with R and knitr</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<ptr target="https://yihui.name/knitr/" />
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<publisher>Chapman and Hall/CRC</publisher>
+			<pubPlace>Boca Raton</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd edn</note>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Markdown: the definitive guide</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Allaire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Grolemund</surname></persName>
+		</author>
+		<ptr target="https://bookdown.org/yihui/rmarkdown" />
+		<imprint>
+			<date type="published" when="2018">2018</date>
+			<publisher>Chapman and Hall/CRC</publisher>
+			<pubPlace>Boca Raton</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

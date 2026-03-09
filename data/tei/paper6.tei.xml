@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">AI Copilots for Reproducibility in Science: A Case Study</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2025-12-15">15 Dec 2025</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Adrien</forename><surname>Bibal</surname></persName>
+							<email>abibal@inferlink.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">InferLink Corporation</orgName>
+								<address>
+									<settlement>Los Angeles</settlement>
+									<region>California</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Steven</forename><forename type="middle">N</forename><surname>Minton</surname></persName>
+							<email>sminton@inferlink.com</email>
+							<affiliation key="aff0">
+								<orgName type="institution">InferLink Corporation</orgName>
+								<address>
+									<settlement>Los Angeles</settlement>
+									<region>California</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Deborah</forename><surname>Khider</surname></persName>
+							<email>khider@usc.edu</email>
+							<affiliation key="aff1">
+								<orgName type="department">Information Sciences Institute (ISI)</orgName>
+								<orgName type="institution">University of Southern California (USC)</orgName>
+								<address>
+									<settlement>Los Angeles</settlement>
+									<region>California</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Yolanda</forename><surname>Gil</surname></persName>
+							<email>gil@isi.edu</email>
+							<affiliation key="aff1">
+								<orgName type="department">Information Sciences Institute (ISI)</orgName>
+								<orgName type="institution">University of Southern California (USC)</orgName>
+								<address>
+									<settlement>Los Angeles</settlement>
+									<region>California</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">AI Copilots for Reproducibility in Science: A Case Study</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2025-12-15">15 Dec 2025</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">B3632C807C32EED51C9CD52F2180203A</idno>
+					<idno type="arXiv">arXiv:2506.20130v4[cs.AI]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Open science initiatives seek to make research outputs more transparent, accessible, and reusable, but ensuring that published findings can be independently reproduced remains a persistent challenge. In this paper we describe an AI-driven "Reproducibility Copilot" that analyzes manuscripts, code, and supplementary materials to generate structured Jupyter Notebooks and recommendations aimed at facilitating computational, or "rote", reproducibility. Our initial results suggest that the copilot has the potential to substantially reduce reproduction time (in one case from over 30 hours to about 1 hour) while achieving high coverage of figures, tables, and results suitable for computational reproduction. The system systematically detects barriers to reproducibility, including missing values for hyperparameters, undocumented preprocessing steps, and incomplete or inaccessible datasets. Although preliminary, these findings suggest that AI tools can meaningfully reduce the burden of reproducibility efforts and contribute to more transparent and verifiable scientific communication.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>Open science has emerged as a transformative movement aimed at improving the transparency, accessibility, and reliability of scientific knowledge <ref type="bibr" target="#b11">(Fecher and Friesike 2014)</ref>. Its importance stems from the recognition that science advances most effectively when findings, methods, and data are openly shared and critically examined. Open science strengthens the scientific enterprise by making it easier for readers to transparently investigate published results and build on prior work, thereby accelerating discovery and enhancing the reliability of scientific claims.</p><p>Among the pillars of open science, reproducibility is particularly central. Reproducibility ensures that scientific results are not isolated artifacts but can be independently verified and built upon by others. Without it, trust in scientific claims is weakened and progress becomes difficult to assess or scale. Although some researchers have long championed open practices <ref type="bibr">(Chan, Leslie et al. 2002;</ref><ref type="bibr" target="#b19">McKiernan et al. 2016;</ref><ref type="bibr" target="#b18">Lowndes et al. 2017)</ref>, the past decade has seen a significant acceleration, driven in part by mandates from funders and publishers <ref type="bibr" target="#b20">(Nugroho et al. 2015</ref>; <ref type="bibr">Van den Eynden et al. 2016;</ref><ref type="bibr" target="#b24">Zuiderwijk and Janssen 2014;</ref><ref type="bibr" target="#b10">Doerr et al. 2019)</ref>, and by investments in open science infrastructure -such as curated data repositories, community standards, and tools such as electronic notebooks and containers -alongside the automation workflows that streamline the use of these tools by scientists.</p><p>As discussed by <ref type="bibr" target="#b13">Gil et al. (2016)</ref>, the practice of open science can require additional time and work by researchers, such as documenting code and data so that analyses can be reproduced. However, artificial intelligence (AI), as well as electronic notebooks and containers, can now help researchers in this endeavor. Indeed, the striking new advances in AI in recent years, including in large language models (LLMs), have created new opportunities to assist researchers and potentially revolutionize current paradigms, including reviewing, curating, publishing, distributing and sharing new technical results (see, for instance, the work of <ref type="bibr" target="#b20">Miao et al. (2025)</ref> and the new Agents4Science conference 1 ). To take advantage of these capabilities, we have been developing an AI-copilot framework called OpenPub to help authors and readers, but also reviewers and publishers, in the open science enterprise.</p><p>In this paper, we present a case study on an AI copilot that 1) helps authors make their research more reproducible and 2) helps readers to reproduce the authors' research. We developed an initial version of this Reproducibility Copilot and demonstrated the feasibility of the approach. For instance, we revisited a study on reproducibility by <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref>, and showed that for a paper that previously took 30 hours to reproduce, our copilot could produce recommendations which, if followed, would reduce the time to reproduce the paper to approximately one hour. signed to operate on typical research artifacts (manuscripts, supplementary material, code, and datasets) and generate customized guidance, such as a Jupyter Notebook for readers or annotated comments in PDFs for authors.</p><p>In considering what problems the Reproducibility Copilot should tackle, we were influenced by the analysis of <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref>, who analyzed the impact of different issues related to making science more open. Their categorization included impactful issues, such as missing hyperparameter values for reproducing experiments, missing or undocumented code components, and incomplete data references. Using <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref> analysis as a guide, we designed a copilot capable of detecting and providing recommendations to fix a spectrum of problems.</p><p>Figure <ref type="figure" target="#fig_0">1</ref> provides a high-level overview of the architecture of the system, which is designed to support both authors and readers. This dual-role design allows the system to anticipate the reader's perspective, identify elements that can be difficult to interpret or reproduce, and generate a targeted output for the reader (e.g., a Jupyter Notebook to guide reproduction) while also producing actionable recommendations for the author (e.g., comments in the manuscript and code annotations). We observed that the iterative process of our system typically converges within one or two iterations. This rapid stabilization occurs because the LLM handles the majority of the interpretative workload upfront, while simultaneously prompting the author to supply the bulk of any missing context during the initial interaction. Consequently, subsequent iterations yield diminishing marginal gains.</p><p>One of the first steps of the Reproducibility Copilot is to generate a reproducibility-focused Jupyter Notebook for the reader. This Notebook is structured around the logical flow of the original study, using placeholders where information is missing from the authors. These placeholders serve not only to guide the reader through incomplete parts of the research, but also to inform the author about where clarifications or additions are needed. Anchoring the LLM analysis on this Notebook helps focus the checks on the most essential elements for reproduction.</p><p>The generated Notebook, shown in Figure <ref type="figure" target="#fig_1">2</ref>, focuses on the reproduction of the figures and tables of the study.<ref type="foot" target="#foot_0">2</ref> By organizing the reader's process and clarifying where input is needed, the Notebook serves as a scaffold rather than a replacement for the author's work. In Figure <ref type="figure" target="#fig_2">3</ref>, we show an example cell that corresponds to a figure from <ref type="bibr" target="#b22">Rodriguez and Laio (2014)</ref>. The system has added a placeholder to indicate that the code to generate the plot is missing (see "# Add code to generate and display the results"), and uses this signal to later generate a recommendation to the author to supply the relevant code.</p><p>Once the Notebook is generated, the system applies a series of dedicated modules to identify and flag missing or ambiguous information. Through successive design iterations, four modules were designed and implemented in our prototype:</p><p>1. Hyperparameter Checker: Analyzes code and documentation to identify critical hyperparameter values that are missing or ambiguous. Recommends clarifications to the authors. 2. Dataset Checker: Scans the manuscript and code for data usage, verifying the presence of direct links to datasets. Flags missing datasets and proposes resolution steps. 3. Code Checker: Examines the code to detect missing snippets essential for experiment replication. 4. Documentation Checker: Assesses inline comments and code structure to evaluate readability and comprehensibility. Generates clarifications for unclear segments.</p><p>Each of these modules was implemented using GPT-4o (OpenAI 2024) and a 2-step prompt strategy. For the first step, a prompt was designed to list candidates in each specific module. For instance, in the case of the Hyperparameter Checker, this first step consisted in listing all the hyperparameters mentioned in the manuscript and code. The second step then uses a specific prompt to reduce the list according to the issue at hand and provides some recommendations to the authors. In the case of the Hyperparameter Checker, this consisted in keeping the hyperparameters for which some values are not clearly provided for some experiments. Given the non-deterministic nature of GPT-4o, these checks were performed five times, and another prompt was used with GPT-4o to consolidate these results by taking the union of the final lists produced.</p><p>Once all module outputs are consolidated, the final list produced by each module is used by the system to annotate the manuscript PDF with targeted highlights and margin comments (see, e.g., Figure <ref type="figure" target="#fig_3">4</ref>), and inserts inline feedback within code files. As the number of comments can be high, depending on the reproducibility issues in the paper, the corresponding feedback comments were deliberately kept minimal to avoid overwhelming the authors.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>A crucial result of our case study is the demonstration of a significant time reduction in reproducing scientific research. To demonstrate the practical impact of the system, we selected a paper by <ref type="bibr" target="#b22">Rodriguez and Laio (2014)</ref>, which had previously been analyzed in detail by <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref>. This paper, which introduced a new machine learning method for clustering, was chosen specifically because it was one of the studies successfully reproduced by Gundersen et al., confirming that replication of the results was possible. Furthermore, the reported reproduction time of 33 hours by Gundersen et al. was below the 40-hour cutoff used in their study. Since this reproduction effort did not reach the cutoff limit, the 33-hour figure reflects the complete time it took to fully reproduce the study, making it a reliable benchmark against which we could measure our system's efficiency.</p><p>Although it took a researcher 33 hours to reproduce the experiments in the Gundersen et al. study, using our copilot system we found that users could complete the task in a relatively short time. Specifically, we asked two individuals  (who were unfamiliar with the reproduced paper, its methodology, and its data) to independently play the role of readers and use our copilot to replicate the study. The first user, a researcher with a Ph.D. in data science, completed the task in about 1 hour. The second, a somewhat less experienced user (a college student in computer science with substantial AI experience), also achieved similar performance (i.e., about 1 hour to reproduce the experiments), suggesting that the system makes reproducibility more accessible, not just more efficient.</p><p>These tests were carried out under the assumption that the author is fully compliant with the recommendations generated by our tool, allowing us to evaluate the effectiveness of the system in an ideal usage scenario. What this means is that the copilot generated suggestions for how to modify the code and documentation, then we (members of our project team) played the role of the authors, modifying and/or adding code, data, and documentation according to the system's suggestions. To emulate the role of the authors, we reused and adapted publicly available code: the supplementary material provided by <ref type="bibr" target="#b22">Rodriguez and Laio (2014)</ref> and the implementation from <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref> <ref type="foot" target="#foot_1">3</ref> . Once the copilot was satisfied, the paper and supplementary material were made available to the user we recruited for our reproducibility task. In practice, for the paper by <ref type="bibr" target="#b22">Rodriguez and Laio (2014)</ref>, working with our system produced the data for each experiment and a Notebook containing functions to load each file in the right format, specific hyperparameter values, and usage explanations. The system facilitated this by highlighting relevant sections of the original code and manuscript, prompting the author to clarify ambiguities and populate the Notebook with the correct context. Because the author was prompted to address these details, the recruited users were spared the manual reverse-engineering that made the reproduction of the paper take more than 30 hours in the study by <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref>.</p><p>As a second feasibility test, we evaluated the coverage of the system's content, which means its ability to identify and scaffold the core experimental content required for reproduction. To operationalize this, we focused on results presented in tables and figures, as these are clearer targets than smaller claims embedded in the manuscript text. This focus allowed us to systematically compare how much reproducible content the system is able to detect and guide users through.</p><p>To evaluate content coverage, we conducted a separate experiment in which we compared the Jupyter Notebook generated by our copilot with one that was manually created. This experiment focused on an Earth Sciences study, in part to test our prototype on another type of subject. Specifically, the study used Jupyter Notebooks that were developed  The goal of these pedagogical Notebooks was not full reproducibility, but rather a guide for early-career scientists to learn to use data science libraries such as scikit-learn to perform a calibration task. While the original study focused on the robustness of the proxy signal in space and among different species of corals, the pedagogical Notebooks illustrate the use of Frequentist and Bayesian approaches in performing this calibration task. In this case, to mimic the original authors following the system's suggestions, we adapted the code of Dr. Deborah Khider<ref type="foot" target="#foot_2">4</ref> .</p><p>When comparing the Notebook produced by our copilot with the pedagogical ones from Dr. Khider, we found that our copilot provided a wide coverage of figures and tables, capturing not only the core figures and tables highlighted in the educational Notebooks, but also additional elements of the paper that are essential for full reproduction. As shown in Table <ref type="table">1</ref>, our copilot covered all key figures and tables included in the educational Notebooks (green rows), as well as several additional visualizations and results that are necessary from a reproducibility point of view, but were excluded in the pedagogical version (white rows). The only omission from the coverage of our copilot was a figure <ref type="bibr">(Figure 8 in DeLong et al. (2011)</ref>), which was also not prioritized in the teaching-oriented Notebooks (orange row). This comprehensive coverage demonstrates that such an AI system does not merely replicate what educators consider useful for instruction: it successfully identifies and scaffolds the full scope of reproducible content in a research paper, showing that this kind of tool can be quite complete when used for scientific validation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>During our research, we identified several future challenges related to the use of AI to enhance reproducibility. </p><formula xml:id="formula_0">√ × Figure 1 √ × Figure 2 √ √ Figure 3 √ × Figure 4 √ × Figure 5 √ √ Figure 6 √ × Figure 7 √ √ Figure 8 × × Figure √ × Table 3 √ √</formula><p>Table <ref type="table">1</ref>: Comparative analysis of reproducibility coverage between the Notebook generated by our copilot and Dr. Khider's educational Notebooks <ref type="bibr" target="#b17">(Khider 2024)</ref> for the DeLong et al. ( <ref type="formula">2011</ref>) study. Green rows indicate figures and tables covered by both systems, orange rows mark a figure not covered by our copilot but also excluded from the educational Notebooks, and white rows highlight additional figures and tables captured by our copilot but omitted from the educational Notebooks.</p><p>Scientific Understanding Reproducibility can take many forms, such as computational reproducibility <ref type="bibr" target="#b12">(Freire, Bonnet, and Shasha 2012;</ref><ref type="bibr" target="#b21">Piccolo and Frampton 2016;</ref><ref type="bibr" target="#b14">Grüning et al. 2018)</ref>, empirical reproducibility <ref type="bibr" target="#b23">(Stodden 2013)</ref>, and outcome, analysis and interpretation reproducibility <ref type="bibr" target="#b16">(Gundersen et al. 2022)</ref>. Throughout the use case in this paper, we focused on what can be called "rote reproducibility", which we define as regenerating figures and tables using the same code and data. This type of reproducibility is only a small part of full "scientific reproducibility", where the reconstruction of the reasoning and conclusions behind the research is sought. However, achieving complete scientific reproducibility is substantially more difficult as it requires access to the logic, rationale, and underlying assumptions that may not be explicitly stated in a paper.</p><p>In this case study, only preliminary steps were taken towards the challenging issues of scientific reproducibility. For example, we inferred analytical workflows from the manuscript and added preliminary instructional steps in the generated Notebook to guide readers in evaluating the plausibility of reproduced results. Developing a copilot with a full understanding of the science behind the paper is a challenge to tackle in future work and would require knowledge beyond analysis.</p><p>User Adaptation A related complication comes from differences in the scientific background of the readers. What may be intuitive to an expert may be opaque to a student or newcomer. The tailoring of the guide based on the reader's expertise is essential to promote scientific understanding. In future work, we plan to automatically construct semantic representations of the author analyses, enabling AI copilots to generate reader-specific guidance. This would not only support reproducibility, but also accelerate comprehension and learning for reviewers and readers alike. Indeed, our observations during our study suggest that simply understanding a paper often requires as much effort as reproducing the study using the Notebook produced by our copilot.</p><p>Data Preparation and Diagnostic Analysis Another prominent challenge is related to data formatting and preprocessing. When input data are not properly structured to work with the authors code, or worse, if essential preprocessing steps are missing, it becomes time-consuming for readers to identify and resolve these issues. At the same time, it remains difficult for an LLM to infer from raw numeric files that something is amiss. For instance, a file might appear valid on the surface, yet fail silently due to missing normalization. There are a number of ways to address this problem. For instance, if a paper explicitly states certain requirements on the input data (e.g., the data should have zero mean and unit variance), the system could test for these conditions and flag discrepancies. The system could also generate diagnostic code to validate whether the data meet the requirements specified by the authors. A related challenge is verifying that the output is reasonable/correct, i.e., analyzing the executed cells in the generated Notebook. While it may not always be feasible to verify whether generated results exactly match those in the original paper, at a minimum the system should at least detect major inconsistencies. For example, if the paper claims that five clusters were found in a dataset, but the system's reproduction produces none, that discrepancy could prompt the system to recommend further investigation.</p><p>Claim Identification A further challenge lies in identifying which claims in a manuscript warrant reproduction. While some are clearly marked in tables and figures -such as reported accuracy scores or performance benchmarksothers are embedded subtly in narrative text. Furthermore, different types of claim can coexist in the paper. Claims can be stated at the end of the paper and made based on the results of the study, or at the beginning to often be contrasted with each other and show where the new study adds knowledge. These latter types of claim often lead to the hypothesis to be tested in the paper. Finally, there are assumptions that are often made in scientific studies that could be presented as claims (e.g., "following the study by X et al., we will use the following method that has been proven valid for our data"). Building the capability to pinpoint all the claims, identify the ones that are reproducible, and verify that the supporting data and code are present is challenging.</p><p>Code Generation Reproducing a study often (but not always) involves executing the code provided by the author. In some cases, there are bugs in that code, and in many cases, some parts of the code are missing, or at least, there is code that the reader needs to write to conveniently reproduce the work. Though in many cases we found that LLMs could do a fairly good job of automatically generating such code, we felt that this would be a distraction in this case study (especially if the generated code contained subtle errors), and we decided to rely on the authors to enter the code in the Notebook (who often actually has the code somewhere). In future work, we plan to reconsider how our copilot can make use of the rapidly improving capabilities of modern LLMs to help with bug-free code generation as part of the reproducibility process.</p><p>Multi-Turn Interactions Similar to coding agents like Codex of OpenAI (Chen et al. 2021) and Claude Code of Anthropic <ref type="bibr" target="#b0">(Anthropic 2025)</ref>, our Reproducibility Copilot could be enhanced with multi-turn interactions. In its current form, the copilot identifies potential improvements, allowing authors to revise their material for re-evaluation. However, challenges may arise if authors misinterpret the copilot's recommendations or require specific guidance on implementation (e.g., how to properly archive data). To address this, the system would benefit from a conversational interface that assists authors in resolving these reproducibility barriers interactively.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Limitations of Evaluation</head><p>This study presents a feasibility study rather than a largescale evaluation. A comprehensive evaluation could involve a controlled study where multiple PhD students reproduce papers in their respective fields, comparing the performance of those using the copilot against a control group working manually. Furthermore, our experiments assumed full compliance by the original authors with the system, which may not always be realistic in practice. Finally, the use of large language models introduces some variability due to nondeterministic outputs. These limitations underscore the preliminary nature of our findings, but also highlight clear directions for future work.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>This use case has demonstrated the feasibility and potential of AI-driven copilot systems to meaningfully improve the openness of scientific research. We demonstrated the impact of such an AI-based approach, as well as its capacity to deliver actionable impact across different user roles, in particular authors and readers. As a concrete example, we focused this initial effort on reproducibility, an area of open science that remains difficult, yet critical to address.</p><p>As shown in the study by <ref type="bibr" target="#b15">Gundersen et al. (2025)</ref>, current barriers to reproducibility often stem from missing or unclear information. In our evaluation, we showed that in a case documented in Gundersen et al., our AI system reduced the reproduction time from more than 30 hours to approximately 1 hour. This efficiency gain illustrates the value of AI-generated proactive guidance tailored to both authors and readers.</p><p>Importantly, the success of the system stems from its ability to surface specific, high-impact shortcomings -missing values for hyperparameters, inaccessible datasets, ambiguous code -and to communicate those deficiencies in ways that are actionable for authors. It also provides reproducibility scaffolds for readers, such as structured Jupyter Notebooks.</p><p>The broader implication of our findings is that reproducibility, often seen as a post-publication burden, can instead be integrated as a dynamic part of the scientific workflow. By helping authors anticipate reader needs and giving readers tools to navigate complex research materials, AI copilot systems can address complex problems by treating authors and readers as two faces of the same coin.</p><p>Although the system we developed for this use case focuses on "rote reproducibility" -the ability to regenerate results from the same datasets used in a study -future work should include pathways to support deeper, scientific reproducibility. These include modeling the logic and assumptions behind claims, adapting feedback to reader expertise, and even suggesting clarifications when results deviate.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure1: System architecture of our AI-driven Reproducibility Copilot, illustrating its dual-role design that simultaneously supports authors and readers. While code and additional docs enhance results, they are optional -the system can function with the manuscript alone, generating PDF highlights to identify missing reproducibility information.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Opening section of the Jupyter Notebook automatically generated by the system to guide readers in reproducing the experiments from Rodriguez and Laio (2014).</figDesc><graphic coords="4,105.33,54.93,401.36,217.44" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3 :</head><label>3</label><figDesc>Figure3: Excerpt from the system-generated Notebook for reproducing Figure4from<ref type="bibr" target="#b22">Rodriguez and Laio (2014)</ref>. Since the original code for this figure was not provided, the system inserts minimal placeholder content to signal the missing implementation.</figDesc><graphic coords="4,105.26,318.47,401.50,103.81" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 :</head><label>4</label><figDesc>Figure 4: Example of a highlight produced by the copilot on the manuscript PDF of Rodriguez and Laio (2014). The associated comment suggests including data to ensure the reproducibility of the authors' results. Figures/Tables from DeLong et al. (2011) Our Copilot's Notebook Educational Notebooks Table 2 √ × Figure 1 √ × Figure 2 √ √</figDesc><graphic coords="5,104.40,54.00,403.21,173.18" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_0">We have observed that most results tend to appear in figures or tables. So, for simplicity, results that are not mentioned in any table or figure are effectively ignored in the current implementation.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_1">available at https://github.com/AIReproducibility2018/ ClusteringByFastSearchAndFindOfDensityPeaks</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_2">available at https://khider.github.io/dry-tortugas-calibrationfun</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgments</head><p>This material is based upon work supported by the Office of Naval Research under Contract No. N68335-25-C-0016. Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the Office of Naval Research.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<author>
+			<persName><surname>Anthropic</surname></persName>
+		</author>
+		<ptr target="https://www.anthropic.com/news/claude-3-7-sonnet" />
+		<title level="m">Claude 3.7 Sonnet and Claude Code</title>
+				<imprint>
+			<date type="published" when="2025-12-08">2025. 2025-12-08</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Leslie</forename><forename type="middle">;</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Darius</forename><forename type="middle">;</forename><surname>Cuplinskas</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Michael</forename><forename type="middle">;</forename><surname>Eisen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Fred</forename><forename type="middle">;</forename><surname>Friend</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Yana</forename><forename type="middle">;</forename><surname>Genova</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Jean-Claude</forename><surname>Guédon</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Melissa</forename><forename type="middle">;</forename><surname>Hagemann</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Harnad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">;</forename><surname>Stevan</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">Rick</forename><forename type="middle">;</forename><surname>Johnson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Rima</forename><forename type="middle">;</forename><surname>Kupryte</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">La</forename><surname>Manna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">István</forename><forename type="middle">;</forename><surname>Manfredi; Rév</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Monika</forename><forename type="middle">;</forename><surname>Segbert</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName><surname>De Souza</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Sidnei</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">Peter</forename><forename type="middle">;</forename><surname>Suber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Velterop ; Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tworek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Jun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Yuan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>De Oliveira Pinto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kaplan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Edwards</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Burda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Joseph</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Brockman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Puri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Krueger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Petrov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Khlaaf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sastry</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Mishkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gray</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ryder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pavlov</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Power</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Kaiser</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bavarian</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Winter</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Tillet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">P</forename><surname>Such</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Cummings</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Plappert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Chantzis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Barnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Herbert-Voss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">H</forename><surname>Guss</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nichol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Tezak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Babuschkin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Balaji</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Saunders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hesse</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Carr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Leike</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Achiam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Misra</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Morikawa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Radford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Knight</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brundage</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Murati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Mayer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Welinder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mc-Grew</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Amodei</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mccandlish</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2107.0337</idno>
+		<ptr target="https://www.budapestopenaccessinitiative.org/read/" />
+		<title level="m">Budapest Open Access Initiative</title>
+				<imprint>
+			<date type="published" when="2002-01">Jan. 2002. 2025-10-27</date>
+		</imprint>
+	</monogr>
+	<note>Sutskever, I.; and Zaremba, W. 2021. Evaluating Large Language Models Trained on Code</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">A coral Sr/Ca calibration and replication study of two massive corals from the Gulf of Mexico</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Delong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Flannery</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">R</forename><surname>Maupin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">Z</forename><surname>Poore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Quinn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Palaeogeography, Palaeoclimatology, Palaeoecology</title>
+		<imprint>
+			<biblScope unit="volume">307</biblScope>
+			<biblScope unit="issue">1-4</biblScope>
+			<biblScope unit="page" from="117" to="128" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Giving software its due</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Doerr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Rusk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Vogt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Methods</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">207</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Open science: One term, five schools of thought</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Fecher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Friesike</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<publisher>Springer International Publishing</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Computational reproducibility: State-of-the-art, challenges, and database research opportunities</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Freire</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bonnet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Shasha</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of ACM SIGMOD International Conference on Management of Data</title>
+				<meeting>ACM SIGMOD International Conference on Management of Data</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="593" to="596" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Toward the Geoscience Paper of the Future: Best practices for documenting and sharing research from data to software to provenance</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">H</forename><surname>David</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Demir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">T</forename><surname>Essawy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Fulweiler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Goodall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Karlstrom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Mills</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J.-H</forename><surname>Oh</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Pierce</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pope</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">W</forename><surname>Tzeng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Villamizar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Yu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Earth and Space Science</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="388" to="415" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Practical computational reproducibility in the life sciences</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Grüning</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Chilton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Köster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Dale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Soranzo</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Van Den</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Beek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Goecks</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Backofen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Nekrutenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Taylor</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cell Systems</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="631" to="635" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">The unreasonable effectiveness of open science in AI: A replication study</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">E</forename><surname>Gundersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Cappelen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mølnå</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">G</forename><surname>Nilsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the AAAI Conference on Artificial Intelligence</title>
+				<meeting>the AAAI Conference on Artificial Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2025">2025</date>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="26211" to="26219" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<monogr>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">E</forename><surname>Gundersen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Coakley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kirkpatrick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gil</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2204.07610</idno>
+		<title level="m">Sources of irreproducibility in machine learning: A review</title>
+				<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<title level="m" type="main">Coral Sr/Ca Calibration -An example from Dry Tortugas</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Khider</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2024">2024</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Our path to better science in less time using open data science tools</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S S</forename><surname>Lowndes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Best</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Scarborough</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Afflerbach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Frazier</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">C</forename><surname>O'hara</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Jiang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">S</forename><surname>Halpern</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature ecology &amp; evolution</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">160</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<monogr>
+		<title level="m" type="main">How open science helps researchers succeed</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">C</forename><surname>Mckiernan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">E</forename><surname>Bourne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Buck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kenall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mcdougall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Nosek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Soderberg</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">e16800</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Miao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">R</forename><surname>Davis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">K</forename><surname>Pritchard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Zou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">P</forename><surname>Nugroho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zuiderwijk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Janssen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jong</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:2509.06917</idno>
+		<title level="m">A comparison of national open data policies: Lessons learned. Transforming government: People, process and policy</title>
+				<imprint>
+			<date type="published" when="2015">2025. 2015</date>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="286" to="308" />
+		</imprint>
+	</monogr>
+	<note>Paper2Agent: Reimagining research papers as interactive and reliable AI agents</note>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Tools and techniques for computational reproducibility</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Piccolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">B</forename><surname>Frampton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gigascience</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="13742" to="13758" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Clustering by fast search and find of density peaks</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rodriguez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Laio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">344</biblScope>
+			<biblScope unit="issue">6191</biblScope>
+			<biblScope unit="page" from="1492" to="1496" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Resolving irreproducibility in empirical and computational research</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Stodden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Knight</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Vlad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Radler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Tenopir</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Leon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Manista</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Whitworth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Corti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IMS Bulletin</title>
+		<imprint>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">14</biblScope>
+			<date type="published" when="2013">2013. 2016</date>
+		</imprint>
+	</monogr>
+	<note>Survey of Wellcome researchers and their attitudes to open research</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Open data policies, their implementation and impact: A framework for comparison</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zuiderwijk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Janssen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Government information quarterly</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="17" to="29" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

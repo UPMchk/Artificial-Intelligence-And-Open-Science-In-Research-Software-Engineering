@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Demystifying reproducibility and transparency practices in linguistic research</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><roleName>Rutgers</roleName><forename type="first">Joseph</forename><forename type="middle">V</forename><surname>Casillas</surname></persName>
+							<email>joseph.casillas@rutgers.edu</email>
+						</author>
+						<author>
+							<persName><forename type="first">Gabriela</forename><surname>Constantin-Dureci</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Iván</forename><forename type="middle">Rascón</forename><surname>Andreu</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Jiawei</forename><surname>Shao</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Stephanie</forename><forename type="middle">A</forename><surname>Rodríguez</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Adrija</forename><surname>Gadamsetty</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Alexandria</forename><surname>Minetti</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Krishita</forename><surname>Laungani</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">John</forename><surname>Thatcher</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Rhode-Taina</forename><surname>Gardere</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Katherine</forename><surname>Taveras</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Isabelle</forename><surname>Chang</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Nicole</forename><surname>Rodríguez</surname></persName>
+						</author>
+						<author>
+							<persName><forename type="first">Kyle</forename><surname>Parrish</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">Rutgers University Goethe University</orgName>
+								<address>
+									<settlement>Frankfurt</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">University -Department of Spanish and Portuguese</orgName>
+								<address>
+									<addrLine>15 Seminary Place</addrLine>
+									<postCode>08904</postCode>
+									<settlement>New Brunswick</settlement>
+									<region>NJ</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Demystifying reproducibility and transparency practices in linguistic research</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">EDEE25BD834C5CCFC6549E6C2A646FB3</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Open science</term>
+					<term>Reproducibility</term>
+					<term>Replicability</term>
+					<term>Transparency</term>
+					<term>Positionality</term>
+					<term>Linguistics</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In recent years, numerous fields of research have seen a push for increased reproducibility and transparency practices. As a result, specific transparency practices have emerged, such as open access publishing, preregistration, sharing data, analyses, and code, performing study replications, and declaring positionality and conflicts of interest. While many agree that open science practices represent a positive step forward in improving scientific rigor, these practices, by and large, have not been adopted in the field of linguistics (Bochynska et al., 2023). Few, if any, researchers have had explicit instruction on the practices of open science as part of their professional training. Nonetheless, today's speech researcher is expected to be up to date on the current protocols of open science in order incorporate the methodological practices aimed at improving reproducibility/replicability. The present work intends to help make open science practices understandable and accessible to researchers in linguistics from all backgrounds and at every stage, from students/ERCs to senior researchers and advisors. We outline eight specific open science practices that linguists can adopt to make their research more open, transparent, inclusive, and accessible to a wider audience.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Opening open science to all: Demystifying reproducibility and transparency practices in linguistic research</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction -What is open science?</head><p>In recent years, numerous fields of research have seen a push for increased reproducibility and transparency practices. These practices, collectively, have been referred to as open science. <ref type="bibr" target="#b27">Parsons et al. (2022)</ref> refer to open science as an umbrella term " <ref type="bibr">[…]</ref> reflecting the idea that scientific knowledge of all kinds, where appropriate, should be openly accessible, transparent, rigorous, reproducible, replicable, accumulative, and inclusive, all which are considered fundamental features of the scientific endeavor" (p. 11). As a result, specific transparency practices have emerged, such as open access publishing, preregistration, sharing data, analyses, and code, performing study replications, and declaring positionality and conflicts of interest.</p><p>Though it may come as a surprise to some, these open, transparent research practices have not been the norm in empirical and quantitative sciences.</p><p>To properly contextualize the need for open science, one must first consider the so-called reproducibility (replication) crisis. In the early 2010's, a team of researchers in Psychology embarked on a large-scale replication project to scrutinize what many considered to be the fields' major findings. Specifically, they attempted to replicate 100 influential studies <ref type="bibr">(Open Science Collaboration, 2015)</ref>. The endeavor produced astounding results-of note, that approximately 53% of the major findings did not replicate-and inspired similar large-scale replication projects in other fields, yielding similar results.<ref type="foot" target="#foot_0">1</ref> This series of events represents what is now referred to as the replication (or reproducibility) crisis (See also <ref type="bibr" target="#b14">FORRT, 2021)</ref>. Unsurprisingly, the results generated an uproar in the psychological sciences. The alarming findings garnered media attention (e.g., <ref type="bibr" target="#b25">Oliver, 2016)</ref> and have led to periods of introspection and self-reflection in many adjacent fields, among them, linguistics.</p><p>Researchers have pointed to questionable research practices (QRPs), such as p-hacking and HARKing, along with small sample sizes, poor theory, lack of transparency, etc. as factors that ultimately led to the replication crisis, though it is likely that many factors are/were simultaneously at play. In the aftermath of the aforementioned crisis, there has been a push for increased transparency and reproducible methodology to help mitigate the effects of QRPs. The resulting methodological framework and associated techniques have reshaped research methods in Psychology, and, slowly but surely, are making their way into related fields. While many agree that open science practices represent a positive step forward in improving scientific rigor, these practices, by and large, have not been adopted in the field of linguistics <ref type="bibr" target="#b2">(Bochynska et al., 2023)</ref>. One reason for the slow adoption in linguistics may be related to the fact that engaging in open science is no trivial feat. To wit, it requires learning new skills, thoughtful planning, as well as an openness and willingness to share materials, code, and data. It necessitates that researchers implement new techniques with limited pedagogical resources and embrace alternative methods of disseminating their research, all of which constitutes a steep learning curve. Given how new open science practices are, it is reasonable to assume that current senior researchers were not trained in these innovative methodologies. As a consequence, many early career researchers (ERC) find themselves at a crossroads in which they are forced to learn open science on their own, often without institutional support. Ironically, there is also a growing expectation that ECRs implement these novel tools in order to be successful in their programs/careers.  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Positionality statements</head><p>A positionality statement is a reflective piece of writing that acknowledges a researcher's stance/position, toward a research topic, framework, and even participants. Similar to a statement of conflict of interest, a positionality statement can influence how results are interpreted <ref type="bibr" target="#b33">(Rowe, 2014</ref>). One's positionality differs from a statement of conflict of interest in that it can also influence how research is undertaken and can encompass the researcher's social, cultural, and personal identity, as well as their biases and assumptions <ref type="bibr" target="#b18">(Holmes, 2020)</ref>. Among others, relevant personal characteristics that may be included in a positionality statement are gender and racial identity, age, sexual orientation, immigration status, and ideological stances <ref type="bibr" target="#b0">(Berger, 2015)</ref>. These traits may indirectly impact research endeavors, since participants may be more willing to engage in a study if they perceive the researcher as sympathetic <ref type="bibr" target="#b11">(De Tona et al., 2006)</ref>,</p><p>or may even offer different responses based on the researcher's perceived identity <ref type="bibr" target="#b0">(Berger, 2015)</ref>.</p><p>While positionality statements have been adopted in some disciplines of the humanities and social sciences as a way of recognizing the various ways in which researchers' backgrounds and identities may intersect with their research endeavors, they are a relatively new incorporation in the field of linguistics, appearing primarily in subfields such as applied linguistics, linguistic anthropology, and linguistic ethnography <ref type="bibr" target="#b3">(Bucholtz et al., 2023)</ref>. Positionality statements are increasingly considered crucial components of the research process, as they increase transparency into research practices <ref type="bibr" target="#b37">(Steltenpohl, Hudson, &amp; Klement, 2022</ref>) and contextualize the environment in which studies take place, or, in other words, they "[define] the boundaries within which research was produced" <ref type="bibr">(Jafar, 2018, p. 1)</ref>. Traditionally, positionality statements have been more prevalent in qualitative research. We believe they should be considered equally important in quantitative research, since, aside from contributing to ongoing efforts to promote transparency and openness in research practices, recognizing and addressing a researcher's positionality can increase the validity of their findings <ref type="bibr" target="#b19">(Jafar, 2018)</ref>. Moreover, Bucholtz et al.</p><p>(2023) note that considering a researcher's positionality may be especially important in linguistics, "[…] which relies on racially minoritized communities as sources of data yet lack adequate (if any) representation of those communities among faculty researchers" (p. 2).</p><p>Many researchers support and advocate for the inclusion of positionality statements in their research publications (e.g., <ref type="bibr" target="#b3">Bucholtz et al., 2023;</ref><ref type="bibr" target="#b19">Jafar, 2018;</ref><ref type="bibr" target="#b37">Steltenpohl et al., 2022)</ref>.</p><p>Nonetheless, others contest this practice, pointing to the universalism of research, that is, the belief that scholarly endeavors should be assessed on their inherent merits, regardless of the status or personal identity of the person making the contribution <ref type="bibr" target="#b34">(Savolainen, Casey, McBrayer, &amp; Schwerdtle, 2023)</ref>. <ref type="bibr" target="#b34">Savolainen et al. (2023)</ref> draw connections between positionality statements and conflict of interest statements, arguing that, while researchers are required to disclose any and all financial gains associated with a research project, "positionality statements grant authors the freedom to decide which parts of their biography they choose to share and how they choose to frame it." (p. 1334). Importantly, statements of conflict of interest are underused in linguistic research. <ref type="bibr" target="#b2">Bochynska et al. (2023)</ref> surveyed open and transparent practices in linguistics and found that only 10% of the articles sampled included statements of conflict of interest, and, among those 10%, none declared any conflicts (See also <ref type="bibr" target="#b8">Cristea &amp; Ioannidis, 2018;</ref><ref type="bibr" target="#b16">Hardwicke et al., 2022</ref><ref type="bibr" target="#b17">Hardwicke et al., , 2020))</ref>. Positionality statements are likely even less common.</p><p>While positionality statements, due to their reflexive nature, may encompass larger pieces of writing, they can also take the form of short paragraphs that illustrate a few personal characteristics deemed relevant for the particular research endeavor. For instance, "Gabriela is a white immigrant cis-gender woman from Romania whose research focuses on how non-native speakers are ideologically framed as linguistically deficient in comparison to native speakers who are characterized by their linguistic authority and expertise." Lastly, in showing their commitment to Diversity, Equity, Inclusivity, and Belonging (DEIB) initiatives, journals have started to encourage authors to include positionality statements with their submissions (e.g., the Journal of Social and Personal Relationships). It is our stance that researchers should reflect on their positionality before starting a project and consider including a positionality statement.</p><p>When submitting a study for publication, the positionality statement can be included in additional materials if the word limit is a concern. For examples of positionality statements in linguistic research, the interested reader is directed to <ref type="bibr" target="#b2">Bochynska et al. (2023)</ref> and <ref type="bibr" target="#b39">Weissler et al. (2023)</ref>.</p><p>In sum, we believe positionality statements are essential in linguistic research as they promote critical self-reflection, increase transparency, and help address diversity and inclusion concerns. Furthermore, including positionality statements in quantitative research can increase the validity of findings. By reflecting on who it is that does the research, linguistics can become a more diverse, inclusive, and transparent field.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Open data</head><p>The term open data refers to data collected for research that is freely and easily available to anybody interested in accessing it for any purpose (Open <ref type="bibr" target="#b26">Knowledge, 2023)</ref>. In academic research, statements such as "data available upon request" are commonplace. In spite of such assurances, we now know they do not typically result in adequate sharing of research materials <ref type="bibr" target="#b36">(Spellman, Gilbert, &amp; Corker, 2017;</ref><ref type="bibr" target="#b40">Wicherts, Borsboom, Kats, &amp; Molenaar, 2006)</ref>. Recent efforts have attempted to encourage researchers to make linguistic data open and accessible via servers (e.g., the IRIS database). Some journals offer open science badges (e.g., Language</p><p>Learning, Language and Speech), and, in some cases, have made data sharing a requirement for publication (e.g., Applied Psycholinguistics). Nonetheless, open data is still the exception rather than the norm in linguistics <ref type="bibr" target="#b2">(Bochynska et al., 2023)</ref>. In this section, we provide more detail Open data are particularly important for the field of linguistics, for all of the aforementioned reasons, and also because linguistics is Western, Educated, Industrialized, Rich, and Democratic (WEIRD, <ref type="bibr" target="#b2">Bochynska et al., 2023)</ref>. That is to say, the majority of linguistic research is concentrated on specific language, mainly Indo-Germanic, in overrepresented communities, by privileged scholars. Making linguistic data accessible to all researchers promotes participation in and with underrepresented communities. Furthermore, it can increase the study of diverse and underreported languages, which fosters a more inclusive and comprehensive understanding of the global linguistic landscape.</p><p>Having stated all the above, it is necessary to recognize that the field of linguistics faces unique challenges with regard to open data. At the heart of these challenges are ethical concerns that must be considered with care. The privacy and consent of participants must be safeguarded.</p><p>Linguistic data often include personal information, which can be especially difficult to anonymize. Though written and behavioral data do not typically pose many issues, audio and video recordings constitute a large portion of linguistic research materials. In such cases, anonymizing participant information can be troublesome, particularly when working with minority languages or smaller communities. Sociolinguistic interviews, for instance, represent a substantial and valuable contribution to linguistics and often contain sensitive information.</p><p>Moreover, the advent of generative artificial intelligence technologies, such as Large Language Models, may pose unknown challenges in the near future that necessitate additional steps to secure the protection of sensitive data against misuse. While these challenges are substantial, we believe acceptable solutions exist in many, if not all, cases. When primary data, such as audio or video files, cannot be shared, derived data in the form of tabular files can take its place. For instance, if institutional policies prohibit the sharing of audio files, a comma-separated or tabseparated file (csv, tsv) containing the variables of interest (e.g., formant values, response times, etc.) can be made public instead. Tabular data files can be anonymized easily using arbitrary identification codes. Online data collection platforms, such as Prolific, typically remove identifying information by default and provide participant-specific identification numbers. In more uncommon cases in which institutional policies do not permit the sharing of derived data sets, synthetic data containing the same statistical properties can be generated and shared freely (See <ref type="bibr" target="#b29">Quintana, 2020)</ref>.</p><p>A substantial hurdle that cannot be overlooked revolves around the fact that researchers </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Reproducible code/projects and literate programming</head><p>As we have seen, reproducibility is now a crucial aspect of any scientific study. Researchers must be able to provide a clear and transparent account of their findings, including the methods used to obtain them. Reproducibility can help to ensure that research results are valid, reliable, and can be used by others to build on existing knowledge. In this section, we explore the importance of reproducibility, what we know about it in the field of linguistics, and how researchers can make their code and projects more reproducible.</p><p>In general, reproducibility helps to increase the credibility of research findings and allows other researchers to verify and build on existing work. At worst, a lack of reproducibility can lead to irreproducible results and wasted resources. This can have serious implications for public health and policy decisions based on research findings. In order to ensure reproducibility, it is necessary to be transparent about the methods used in research. This includes not only the data collection and analysis methods but also the code used to conduct the analysis.</p><p>In linguistics there is increasing awareness of the importance of reproducibility, and many researchers are beginning to take steps to improve the reproducibility of their research. There are several steps that researchers can take to make their code and projects more reproducible. One approach is to create reports that document the research process by including descriptions of the data, the methods used to analyze the data, and the results.</p><p>This documentation can then be made publicly available and used by third parties to retrace the steps to reproduce the research findings. While better than nothing at all, a more complete approach includes the analysis code in the same document in which the very manuscript is written. This integration of analysis code and prose into a single, dynamic document is known as literate programming <ref type="bibr" target="#b20">(Knuth, 1984</ref><ref type="bibr" target="#b21">(Knuth, , 1992))</ref>. Under the hood, a series of macros and functions are used to tangle the code and prose of the document into a separate file, usually a word document or a pdf, which can then be submitted for publication. Literate programming reduces the likelihood of copy and paste errors that often occur when passing the results of a statistical analysis from the analysis software to the word processing program. If the analysis changes in any way, e.g., more data is included, a different analytic strategy is applied, etc., the document is retangled to update the output file. Currently there are several implementations of literate programming for research purposes, the most common of which are R markdown files (Rmd)</p><p>and Quarto markdown files (qmd). These formats use the R package knitr <ref type="bibr" target="#b41">(Xie, 2014</ref><ref type="bibr" target="#b43">(Xie, , 2015</ref><ref type="bibr" target="#b45">(Xie, , 2023) )</ref> to tangle (also "knit" or "render") the output file. In fact, the present manuscript was generated using literate programming and is available for download here: https://osf.io/bsu2q/.</p><p>While the implementation of literate programming into a research workflow is ideal, the gold standard is to use literate, dynamic documents in conjunction with reproducible projects.</p><p>These projects include all of the data, code, and documentation necessary to reproduce the research findings, not only in a single report, but rather in many reports and/or presentations, simultaneously. This approach makes it easier for others to reproduce research findings and build  <ref type="bibr" target="#b22">(Landau, 2021</ref>) can be helpful in future-proofing projects and ensuring reproducibility. These tools help to manage the dependencies that are necessary to run code by providing specific versions of the software used originally by the researchers.</p><p>Computational reproducibility platforms like Binder and Code Ocean can also be used to create virtual environments in which projects can be reproduced online. Thus, these platforms allow researchers to share their code and data in ways that can be easily replicated by anybody with an internet connection.</p><p>At this juncture it is important to note that there is no way to completely future-proof code or projects. Researchers must continually strive to maintain the reproducibility of their work.</p><p>This includes updating code and documentation as needed and testing projects on different operating systems to ensure that it can be run in different environments.</p><p>Summarizing, reproducibility is a crucial aspect of scientific research. It helps to ensure that research findings are valid, reliable, and can be used by others to build on existing knowledge. In linguistics there is increasing awareness of the importance of reproducibility, and many researchers are taking steps to improve the transparency of their research. By creating dynamic reports using literate programming and integrating them into reproducible projects in conjunction with dependency management tools, linguists can make their projects more reproducible and accessible.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preregistration and registered reports</head><p>In this section, we will briefly consider two open science innovations that are making a profound impact on how academic research is conducted, evaluated, and, ultimately, disseminated to the public. These innovations, preregistrations and registered reports, were designed with the goal of reducing QRPs and publication bias.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Preregistration</head><p>A preregistration is a time-stamped document that provides comprehensive detail about a study, including, but not limited to, research questions, hypotheses, methodologies, and analytic strategies. Preregistrations are written prior to data collection and do not undergo peer review.</p><p>The depth of content detail within a preregistration spans a spectrum: in the simplest case, a preregistration can comprise merely a hypothesis or perhaps a brief description of the methods;</p><p>on the other extreme, a detailed preregistration can include code, power analyses, participant exclusion criteria and beyond. In this section, we provide information regarding the various components of a preregistration, centering on their advantageous impact on linguistic research.</p><p>Specifically, we focus on who might want to consider preregistrations, why they might want to do so, what content they can include, and how they can complete a preregistration for a linguistics research project.</p><p>Linguistic research is multifaceted and spans diverse areas such as corpus analysis, conversation/discourse analysis, experimental research, and more. However, as highlighted by <ref type="bibr" target="#b31">Roettger (2021a)</ref>, researchers are human and humans have evolved to filter the world in irrational ways, which can lead to QRPs and other problems that may affect the replicability of published research. Preregistration emerged as a powerful instrument empowering linguists to bolster the trustworthiness and credibility of their inquiries by establishing a systematic and predefined methodology. We believe the practice of preregistration extends its benefits to researchers at all levels, including students and ECRs, senior academics, and professionals alike.</p><p>Researchers face vital decisions while engaging in research, with inherent flexibility involved in the process of designing and conducting experiments, as well as analyzing the results <ref type="bibr" target="#b35">(Simmons, Nelson, &amp; Simonsohn, 2011)</ref>. This type of flexibility, termed "researcher degrees of freedom", can have serious down-stream consequences in quantitative research, particularly in linguistics (e.g., <ref type="bibr" target="#b7">Coretta et al., 2023)</ref>. For instance, a researcher studying lexical stress could concentrate on distinct acoustic cues typically associated with stress, i.e., pitch, duration, and intensity. Beyond selecting acoustic cues to measure, she must also select a domain for these measurements, such as the mid-point of stressed/unstressed syllables or an average value over the entirety of the syllable. These choices wield significant influence on subsequent outcomes.</p><p>Preregistration serves the purpose of meticulously documenting these choices a priori, thus acting as a deterrent against QRPs, like HARKing or p-hacking. This is because the researcher establishes what decisions will be made, such as measurement choices and analytic strategies, before data collection commences. A benefit of including a high level of specificity in the preregistration is that is forces researchers to consider facets of their study that might usually be deferred to a later stage, e.g., specific statistical tests.</p><p>This proactive approach demands more initial time investment from the researcher, but also increases the likelihood of uncovering crucial flaws in the study design.</p><p>The scope of preregistration extends to any facet of research deemed worthy of temporal documentation preceding the initiation of the study. The essential components often include research questions/hypotheses, methodological framework, and analytic approaches. The specific elements that will comprise a preregistration can be considerably diverse, as they will depend on the specific domain within linguistics and the nuanced nature of the study in question. Consider, for instance, a psycholinguist conducting a self-paced reading study. In this context, the focus of the preregistration might include the formulation of hypotheses, as well as a complete description of the experimental paradigm. Additionally, the researcher may include a characterization of participant demographics, recruitment strategies, sample size considerations, independent variable manipulations, data transformations, and analytic strategies to test hypotheses.</p><p>Importantly, not all of the aforementioned components are equally prioritized in all preregistrations.</p><p>It is important to acknowledge that incorporating the entirety of these components into a preregistration represents a formidable challenge, as it front loads large portions of work that often take place after a study has begun, e.g., determining sample size, statistical models, etc. In such instances, researchers are encouraged to commence with elements they perceive as most valuable to their study. Many concerns about preregistration revolve around the potential burden of 'extra work'. Conversely, preregistration is intended to streamline the workflow, fostering efficiency both in the short term and the long run, as it provides the researcher with complete control over the level of detail she chooses to include. The depth of preregistration directly correlates with the effort invested; the more comprehensive the preregistration, the greater the initial workload, leading to reduced effort in subsequent stages. We provide examples of preregistrations at the following links: https://osf.io/nprgz and https://osf.io/qvjzy.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Registered reports</head><p>The reproducibility crisis has drawn attention to the shortcomings of the traditional model of publishing scientific research. In the current model, researchers generate hypotheses, design studies, collect data, analyze data, interpret results, and submit their findings for publication.</p><p>However, this model has been criticized for lending itself to QRPs, such as p-hacking and harking, which can result in publication bias.</p><p>To address these issues, researchers have attempted various reforms, such as meta-analysis and preregistration. Meta-analysis is a statistical technique that combines the results of multiple studies to increase the power of analysis. Preregistration, as we have seen, involves publicly  RRs were first introduced in 2013 by the Center for Open Science (COS), and have since been adopted by many journals across various fields, including psychology, neuroscience, and medicine. Preregistration is often confused with RR, but they differ in that preregistration is a separate step that occurs before the traditional publishing pipeline, whereas RR is integrated into the publishing process.</p><p>RRs cannot solve all the problems with the current model, but they can help reduce QRPs and increase transparency in scientific research. RRs are gaining popularity, but some fields, such as linguistics, have been slow to adopt them. RRs may particularly benefit ECRs, who can use them to increase their chances of publication and build a reputation for rigor. However, more senior researchers may be resistant to change and may need to be convinced of the benefits of RRs for the field as a whole.</p><p>In sum, registered reports represent a promising new model for publishing scientific research that can help reduce QRPs and increase transparency. As more journals adopt RRs, the scientific community can move towards a more rigorous and trustworthy publishing model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Pre-prints</head><p>A pre-print is a version of a research article, open and accessible, that has not yet undergone peer review but is publicly available online, through a pre-print server. The general process consists of an initial screening process, followed by a posting of the manuscript on the preprint server within a few days of submission, bypassing peer review, and making the research findings freely accessible online <ref type="bibr" target="#b28">(Puebla, Polka, &amp; Rieger, 2021)</ref>. Pre-prints allow researchers to share their findings with the scientific community and get feedback before their work is published in a traditional academic journal. This process can speed up the dissemination of knowledge and facilitate collaboration between researchers. While pre-prints accelerate the dissemination of research, it is vital to remember that this process does not always lead to journal publication.</p><p>This can occur for several reasons, such as authors may choose not to pursue this route, or the research may be intended for different dissemination avenues <ref type="bibr" target="#b13">(Ettinger et al., 2022)</ref>. Pre-prints have become increasingly popular in recent years, particularly in fields such as biology, physics, and computer science. The adoption of pre-prints has been slower in some fields, such as the social sciences and humanities, but this is changing as more researchers become aware of the benefits of open science, and new national and regional platforms by open science advocates continue to emerge.</p><p>One of the primary benefits of pre-prints is that they allow researchers to share their findings quickly and easily. This can be especially important in fields where research moves quickly, such as biology or computer science. Pre-prints also allow researchers to receive feedback on their work from their peers, which can help to improve the quality of their research. The provision of commentary and reviews of pre-prints yields benefits not only to the authors but also extends support to the authors, but this process also supports reviewers, journals and publishers, and the reader audience. This inclusive process allows more researchers and reviewers to participate in discussing the research findings and reduces the need for repeated rounds of re-review or extensive revisions.</p><p>One of the most significant benefits of pre-prints is their "early view" and "open access" effect, which leads to more attention from readers, increasing visibility and development of the overall research (Das Biswas &amp; Biswas, 2023). Pre-prints are not just quick dissemination; they also promote transparency and reproducibility in scientific research. Recognizing these benefits, more major publishers have either launched pre-print platforms or entered partnerships over the past 5-7 years, allowing pre-prints to be incorporated into the workflow <ref type="bibr" target="#b28">(Puebla et al., 2021)</ref>. By making research findings available to the public before peer-review, pre-prints not only improve the accuracy and reliability of research findings but also encourage collaborative efforts to identify potential errors, refine methodologies, and accelerate knowledge dissemination.</p><p>Another benefit of pre-prints is that they can help to reduce publication bias, a widespread challenge in traditional publishing. Publication bias occurs when positive results are more likely to be published than negative results. This can skew the scientific literature and lead to a </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Concluding remarks</head><p>The early 2010's saw the reproducibility crisis take hold of the psychological sciences. As a consequence, there has been a push for increased transparency and reproducible methodology to While open science provides novel techniques and integrates state-of-the-art innovations, it also comes with challenges, particularly with regard to the steep learning curve researchers face when learning these new methods. We advocate for the "buffet" approach, in which select open science practices are integrated into the researcher's workflow slowly over time (e.g., <ref type="bibr" target="#b1">Bergmann, 2018)</ref>. We have provided descriptions and relevant examples of these practices to accompany the many guides already available for learning open science (e.g., <ref type="bibr" target="#b9">Crüwell et al., 2018;</ref><ref type="bibr" target="#b23">Lewis, 2020)</ref>.</p><p>Crucially, the purpose of this article is to help foster open science in linguistics (FOSIL). We </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>The present work intends to help make open science practices understandable and accessible to researchers in linguistics from all backgrounds and at every stage, from students/ERCs to senior researchers and advisors. To this end, we identify three areas, stance, workflow, and dissemination, in which linguists can engage in open science. The first area, stance, refers to practices that focus on the researchers position or attitude towards openness and transparency. The second area, workflow, deals with methods and techniques researchers can implement to make their research projects more open and transparent. Finally, dissemination refers to novel ways in which researchers can help ensure that their research products are accessible and free from QRPs. In total, we describe eight open science practices, illustrated in Figure 1, within these areas: positionality statements and declarations of conflict of interest, open data, reproducible code/projects and literate programming, preregistration, registered reports, and preprints. We provide practical examples and detailed descriptions of the aforementioned practices with the goal of helping the interested linguist commence their journey of engaging in open science practices in their own research.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Eight open science practices amenable to research in lingusitics.</figDesc><graphic coords="5,72.00,403.17,467.92,173.80" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>regarding the benefits of open data and consider the specific challenges researchers face in the field of linguistics.The underlying motivation for open data is relatively straightforward, particularly in the wake of the reproducibility crisis. Though researchers may understandably hesitate to share their data, we believe understanding the benefits of open data can help alleviate any concerns. Making linguistic data freely available improves credibility in our findings, to other researchers and the general public. Prohibiting or impeding access to data collected for publicly funded research is unethical and a detriment to inclusivity. Open data is fundamental for cumulative science in numerous ways. It affords third parties the opportunity to scrutinize original findings, which promotes reproducibility and reduces errors, such as those related to statistical analyses and reporting of outcomes (e.g.,<ref type="bibr" target="#b32">Roettger, 2021b)</ref>. Furthermore, it allows for published data to be reanalyzed in novel ways and utilized in meta-analyses. Revisiting old data sets using innovative techniques can support or contradict past narrative conclusions (e.g.,<ref type="bibr" target="#b6">Casillas, 2021)</ref>. In short, open data is a cornerstone of scientific research in the 21st century that enables wider access to research information, which, in turn, facilitates validation, motivates replication, promotes reproducibility, and makes possible future scientific progress.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head></head><label></label><figDesc>registering a study's design and methods before collecting data, to mitigate QRPs. Registered reports (RRs) represent a new publication model that conceptually combines preregistration with peer review. In this model, researchers submit a detailed proposal of their study, including their hypotheses, methods, and analyses, for review before data collection. If the proposal is accepted, the study is guaranteed publication, regardless of the results. This incentivizes rigorous methodology and reduces QRPs, as researchers cannot manipulate their analyses to obtain significant results. Figure2provides a side-by-side comparison of the standard publishing model and RRs.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Flow chart of the standard publication model and registered reports.</figDesc><graphic coords="18,72.00,292.78,467.94,240.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>Researchers interested in making a pre-print publicly available can follow these simple steps. First, select a pre-print server that aligns with the course of research. Next, all pre-prints undergo a short screening, confirming author background, basic research content, and compliance with the ethical standards of the pre-print platform. Once the pre-print passes the screening process, the content is made available online in open access format, encouraging others to comment and share.The growing visibility of pre-prints, and their acceptance as valid research outputs by diverse stakeholders, including researchers, funders, and national institutions, has fueled collaborative research efforts and strengthened support for their presence in a variety of research disciplines. Pre-prints play an important role in advancing the tenets of open science by promoting transparency, reproducibility, and collaboration. While some researchers may still be hesitant to use this dissemination paradigm, the benefits of open science are becoming increasingly clear. By embracing pre-prints, linguists can accelerate the dissemination of knowledge, improve the quality of research, and ensure that their findings are available to the widest possible audience.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head></head><label></label><figDesc>help mitigate the effects of questionable research practices. The resulting methodological framework and associated techniques, now referred to as open science, have reshaped research methods in psychology and have slowly but surely made their way into adjacent fields, such as linguistics. In the present work we have outlined eight specific open science practices, classified into three areas, that researchers in linguistics can adopt to make their research more open, transparent, inclusive, and accessible to a wider audience. Important considerations often overlooked in the wake of the open science movement deal with (1) how linguists actually learn open science practices and (2) how senior researchers can train the next generation of linguists. Few, if any, researchers have had explicit instruction on the practices of open science as part of their professional training. Nonetheless, today's speech researcher is expected to be up to date on the current protocols of open science in order incorporate the methodological practices aimed at improving reproducibility/replicability. What does it mean for the field? We believe that researchers-linguists specifically-have to adapt and learn the new methods of open science. Additionally, we must, as a field, concentrate our efforts to train current students/ECRs in open, transparent research practices. This necessarily implies providing a framework for senior researchers to learn open science, if we intend for them to train the next generation of linguists. Furthermore, linguistic journals must to adapt to new models of publishing.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head></head><label></label><figDesc>leave the interested reader with a series of tutorials designed for linguists: https://FOSILproject.github.io. The FOSIL project details many of the open, transparent practices described here with crowd sourced translations into various languages other than English with the goal of making open science practices clear and accessible to all individuals conducting research in the field of linguistics.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head></head><label></label><figDesc>must learn to use new technologies to participate in open, transparent research. Making data openand accessible is not as simple as merely uploading a data file. Researchers should include a codebook or README file explaining the metadata of the file(s), as well as an explanation of the variables it contains and the context in which it was obtained. Once the data has been prepared for sharing, the researcher must decide where to share it. Platforms such as google drive, dropbox, etc. are not recommended because they are linked to personal accounts that may change or become unavailable over time. Free repositories designed for the purpose of sharing</figDesc><table><row><cell>To summarize, open data is important because it facilitates transparency, rigor,</cell></row><row><cell>reproducibility, replication, accumulation of knowledge, and, importantly, it makes participating</cell></row><row><cell>in the scientific endeavor more inclusive. Linguistics, in general, does not engage in open</cell></row><row><cell>science practices (Bochynska et al., 2023), including sharing data. While linguistics does face</cell></row><row><cell>legitimate, field-specific challenges, ultimately the benefits of open data outnumber these</cell></row></table><note>research materials, such as the Open Science Framework<ref type="bibr" target="#b15">(Foster &amp; Deardorff, 2017)</ref>, github, etc., are preferable and can be accessed simply by sharing a link. These repositories represent stable, long-term solutions with ample storage capacity. The data sets (and other materials) can be downloaded directly, free of any kind of payment or exchange of personal information (such as an email address) by the user. For relevant examples, we direct the interested reader to https://osf.io/zx9ky/, https://osf.io/3bmcp/, or https://github.com/RAPgroup/empathy_intonation_perc. challenges, and researchers should take the stance to share what is ethically reasonable.</note></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">For Economics, see<ref type="bibr" target="#b4">Camerer et al. (2016)</ref>; for the Social Sciences, see<ref type="bibr" target="#b5">Camerer et al. (2018)</ref>; and, for cancer research, see<ref type="bibr" target="#b12">Errington et al. (2021)</ref>.</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>misunderstanding of the state of the research. Pre-prints address this obstacle by openly sharing all research findings, regardless of outcome, creating a fairer and more accurate representation of the current scientific landscape of that field. Despite these benefits, some researchers remain hesitant to use pre-prints. One concern is that publishing a pre-print may harm their chances of being published in a traditional academic journal. However, this concern is becoming less relevant as more journals are accepting preprints as a legitimate form of publication. According to <ref type="bibr" target="#b24">Liu &amp; De Cat (2021)</ref>, who conducted a survey asking as to the barriers in sharing preprints and discovered that the following were raised as additional barriers: peer review, journal policy, lack of knowledge of the process, confidentiality issues, data types, utility of sharing preprints, time constraints, and issues in preprint management.</p><p>Additional concerns about pre-prints include their ability to secure the steady resources (technologies, expertise, policies, visions, standards, and so on) required to maintain and enhance the value of a service based on a user community's needs <ref type="bibr" target="#b30">(Rieger, 2012)</ref>. Preprints emerged as a 'public good' and pre-print platforms provide a free service to both authors and readers; at the same time, many of the existing pre-print services lack a scalable and transparent business model. Moreover, data show that more senior researchers had more experience sharing through the format of pre-print than PhD students and ECRs in the 0-4 years group <ref type="bibr" target="#b24">(Liu &amp; De Cat, 2021)</ref>.</p><p>Nonetheless, the data collected from these surveys showed positive attitudes and willingness to contribute to open science through the submission of pre-prints. These findings encourage ECRs to submit their research for pre-prints to receive valuable feedback from established scholars in their field of study and to increase visibility of their research, particularly in rapidly evolving fields.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Now I see it, now I don&apos;t: Researcher&apos;s position and reflexivity in qualitative research</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Berger</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/1468794112468</idno>
+		<ptr target="https://doi.org/10.1177/1468794112468" />
+	</analytic>
+	<monogr>
+		<title level="j">Qualitative Research</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="219" to="234" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">How to integrate open science into language acquisition research?</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Bergmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The 43rd Annual Boston University Conference on Language Development (BUCLD 43)</title>
+				<meeting><address><addrLine>Boston, USA</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Reproducible research practices and transparency across linguistics</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bochynska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Keeble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Halfacre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Casillas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I.-A</forename><surname>Champagne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Roettger</surname></persName>
+		</author>
+		<idno type="DOI">10.5070/G6011239</idno>
+		<ptr target="https://doi.org/10.5070/G6011239" />
+	</analytic>
+	<monogr>
+		<title level="j">Glossa Psycholinguistics</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="36" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Researcher positionality in linguistics: Lessons from undergraduate experiences in community-centered collaborative research</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Bucholtz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">W</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Cevallos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Cruz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Z</forename><surname>Fawcett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Guerrero</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Reyes Basurto</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/lnc3.12495</idno>
+		<ptr target="https://doi.org/10.1111/lnc3.12495" />
+	</analytic>
+	<monogr>
+		<title level="j">Language and Linguistics Compass</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="15" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Evaluating replicability of laboratory experiments in economics</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Camerer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dreber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Forsell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-H</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johannesson</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.aaf091</idno>
+		<ptr target="https://doi.org/10.1126/science.aaf091" />
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="issue">6280</biblScope>
+			<biblScope unit="page" from="1433" to="1436" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Evaluating the replicability of social science experiments in nature and science between 2010 and 2015</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">F</forename><surname>Camerer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Dreber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Holzmeister</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T.-H</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Huber</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Johannesson</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41562-018-0399-z</idno>
+		<ptr target="https://doi.org/10.1038/s41562-018-0399-z" />
+	</analytic>
+	<monogr>
+		<title level="j">Nature Human Behaviour</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="637" to="644" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Interlingual interactions elicit performance mismatches not &quot;compromise&quot; categories in early bilinguals: Evidence from meta-analysis and coronal stops</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Casillas</surname></persName>
+		</author>
+		<idno type="DOI">10.3390/languages6010009</idno>
+		<ptr target="https://doi.org/10.3390/languages6010009" />
+	</analytic>
+	<monogr>
+		<title level="j">Languages</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">9</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Multidimensional signals and analytic flexibility: Estimating degrees of freedom in human-speech analyses</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Coretta</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Casillas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Roessig</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Franke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ahn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Al-Hoorie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Roettger</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/25152459231162567</idno>
+		<ptr target="https://doi.org/10.1177/25152459231162567" />
+	</analytic>
+	<monogr>
+		<title level="j">Advances in Methods and Practices in Psychological Science</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1" to="29" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Improving disclosure of financial conflicts of interest for research on psychosocial interventions</title>
+		<author>
+			<persName><forename type="first">I.-A</forename><surname>Cristea</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P A</forename><surname>Ioannidis</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/jamapsychiatry.2018.0382</idno>
+		<ptr target="https://doi.org/10.1001/jamapsychiatry.2018.0382" />
+	</analytic>
+	<monogr>
+		<title level="j">JAMA Psychiatry</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="541" to="542" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">7 easy steps to open science: An annotated reading list</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Crüwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Doorn</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Van</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Etz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Makel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Moshontz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Niebaum</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schulte-Mecklenbeck</surname></persName>
+		</author>
+		<idno type="DOI">10.1027/2151-2604/a000387</idno>
+		<ptr target="https://doi.org/10.1027/2151-2604/a000387" />
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Open access to scholarly communication through preprints: Accelerating sustainable development in education</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Das Biswas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Biswas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Digital libraries: Sustainable development in education</title>
+				<editor>
+			<persName><forename type="first">D</forename><surname>Coghlan</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Brydon-Miller</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2023">2023</date>
+			<biblScope unit="page" from="525" to="545" />
+		</imprint>
+		<respStmt>
+			<orgName>National Digital Library of India, IIT Kharagpur</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">But what is interesting is the story of why and how migration happened</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>De Tona</surname></persName>
+		</author>
+		<idno type="DOI">10.17169/fqs-7.3.143</idno>
+		<ptr target="https://doi.org/10.17169/fqs-7.3.143" />
+	</analytic>
+	<monogr>
+		<title level="j">Forum: Qualitative Social Research</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Investigating the replicability of preclinical cancer biology</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">M</forename><surname>Errington</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mathur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">K</forename><surname>Soderberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Denis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Perfito</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Iorns</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Nosek</surname></persName>
+		</author>
+		<idno type="DOI">10.7554/eLife.71601</idno>
+		<ptr target="https://doi.org/10.7554/eLife.71601" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<publisher>Elife</publisher>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page">e71601</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">A guide to preprinting for early-career researchers</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">L</forename><surname>Ettinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">K</forename><surname>Sadanandappa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Görgülü</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">L</forename><surname>Coghlan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">K</forename><surname>Hallenbeck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Puebla</surname></persName>
+		</author>
+		<idno type="DOI">10.1242/bio.059310</idno>
+		<ptr target="https://doi.org/10.1242/bio.059310" />
+	</analytic>
+	<monogr>
+		<title level="j">Biology Open</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1" to="8" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Reproducibility crisis (a.k.a. Replicability or replication crisis</title>
+		<author>
+			<persName><surname>Forrt</surname></persName>
+		</author>
+		<ptr target="https://forrt.org/glossary/reproducibility-crisis-aka-replicab/" />
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Open Science Framework (OSF)</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">D</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Deardorff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Medical Library Association</title>
+		<imprint>
+			<biblScope unit="volume">105</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">203</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note>JMLA</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Hardwicke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Thibault</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Kosie</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Wallach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Kidwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P A</forename><surname>Ioannidis</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/1745691620979806</idno>
+		<ptr target="https://doi.org/10.1177/1745691620979806" />
+	</analytic>
+	<monogr>
+		<title level="m">Estimating the prevalence of transparency and reproducibility-related research practices in psychology</title>
+				<imprint>
+			<date type="published" when="2014">2022. 2014-2017</date>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="239" to="251" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Hardwicke</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Wallach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">C</forename><surname>Kidwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bendixen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Crüwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P A</forename><surname>Ioannidis</surname></persName>
+		</author>
+		<idno type="DOI">10.1098/rsos.190806</idno>
+		<ptr target="https://doi.org/10.1098/rsos.190806" />
+	</analytic>
+	<monogr>
+		<title level="m">An empirical assessment of transparency and reproducibility-related research practices in the social sciences</title>
+				<imprint>
+			<date type="published" when="2014">2020. 2014-2017</date>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Researcher positionality-a consideration of its influence and place in qualitative research-a new researcher guide</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">G D</forename><surname>Holmes</surname></persName>
+		</author>
+		<idno type="DOI">10.34293/education.v8i4.3232</idno>
+		<ptr target="https://doi.org/10.34293/education.v8i4.3232" />
+	</analytic>
+	<monogr>
+		<title level="j">Shanlax International Journal of Education</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">What is positionality and should it be expressed in quantitative studies?</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J N</forename><surname>Jafar</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/emermed-2017-207158</idno>
+		<ptr target="https://doi.org/10.1136/emermed-2017-207158" />
+	</analytic>
+	<monogr>
+		<title level="j">Emergency Medicine Journal</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="323" to="324" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Literate programming</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Knuth</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/comjnl/27.2.97</idno>
+		<ptr target="https://doi.org/10.1093/comjnl/27.2.97" />
+	</analytic>
+	<monogr>
+		<title level="j">The Computer Journal</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="97" to="111" />
+			<date type="published" when="1984">1984</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Literate programming. Center for the Study of Language; Information</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">E</forename><surname>Knuth</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992">1992</date>
+			<publisher>Distributed by Univiversity of Chicago Press</publisher>
+			<pubPlace>Stanford University, CA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">The targets R package: A dynamic make-like function-oriented pipeline toolkit for reproducibility and high-performance computing</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">M</forename><surname>Landau</surname></persName>
+		</author>
+		<idno type="DOI">10.21105/joss.02959</idno>
+		<ptr target="https://doi.org/10.21105/joss.02959" />
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Open Source Software</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">57</biblScope>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Open communication science: A primer on why and some recommendations for how</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">A</forename><surname>Lewis</surname></persName>
+		</author>
+		<idno type="DOI">10.1080/19312458.2019.1685660</idno>
+		<ptr target="https://doi.org/10.1080/19312458.2019.1685660" />
+	</analytic>
+	<monogr>
+		<title level="j">Communication Methods and Measures</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="71" to="82" />
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Open science in applied linguistics: A preliminary survey</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>De Cat</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Open science in applied linguistics</title>
+				<editor>
+			<persName><forename type="first">L</forename><surname>Plonsky</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+			<biblScope unit="page" from="1" to="28" />
+		</imprint>
+	</monogr>
+	<note>John Benjamins</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<monogr>
+		<title level="m" type="main">Scientific studies: Last Week Tonight with John Oliver</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Oliver</surname></persName>
+		</author>
+		<ptr target="https://youtu.be/0Rnq1NpHdmw?si=6tIMWkEbOY47rhaE" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Estimating the reproducibility of psychological science</title>
+		<author>
+			<persName><forename type="first">Open</forename><surname>Knowledge</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">Open Science Collaboration.</orgName>
+			</affiliation>
+		</author>
+		<idno type="DOI">10.1126/science.aac4716</idno>
+		<ptr target="https://doi.org/10.1126/science.aac4716" />
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">349</biblScope>
+			<biblScope unit="issue">6251</biblScope>
+			<date type="published" when="2015">2023. 2015</date>
+		</imprint>
+	</monogr>
+	<note>The Open Definition</note>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">A community-sourced glossary of open scholarship terms</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Parsons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Azevedo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Elsherif</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Guay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">N</forename><surname>Shahim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">H</forename><surname>Govaart</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/s41562-021-01269-4</idno>
+		<ptr target="https://doi.org/10.1038/s41562-021-01269-4" />
+	</analytic>
+	<monogr>
+		<title level="j">Nature Human Behaviour</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="312" to="318" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Preprints: Their evolving role in science communication</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Puebla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Polka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">Y</forename><surname>Rieger</surname></persName>
+		</author>
+		<idno type="DOI">10.31222/osf.io/ezfsk</idno>
+		<ptr target="https://doi.org/10.31222/osf.io/ezfsk" />
+	</analytic>
+	<monogr>
+		<title level="j">MetaArXiv</title>
+		<imprint>
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<title level="m" type="main">A synthetic dataset primer for the biobehavioural sciences to promote reproducibility and hypothesis generation. eLife</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Quintana</surname></persName>
+		</author>
+		<idno type="DOI">10.7554/eLife.53275</idno>
+		<ptr target="https://doi.org/10.7554/eLife.53275" />
+		<imprint>
+			<date type="published" when="2020">2020</date>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="1" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Sustainability: Scholarly repository as an enterprise</title>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">Y</forename><surname>Rieger</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/bult.2012.1720390110</idno>
+		<ptr target="https://doi.org/10.1002/bult.2012.1720390110" />
+	</analytic>
+	<monogr>
+		<title level="j">Bulletin of the American Society for Information Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="27" to="31" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Preregistration in experimental linguistics: Applications, challenges, and limitations</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Roettger</surname></persName>
+		</author>
+		<idno type="DOI">10.1515/ling-2019-0048</idno>
+		<ptr target="https://doi.org/10.1515/ling-2019-0048" />
+	</analytic>
+	<monogr>
+		<title level="j">Linguistics</title>
+		<imprint>
+			<biblScope unit="volume">59</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="1227" to="1249" />
+			<date type="published" when="2021">2021a</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Toward transparent and reproducible speech sciences</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">B</forename><surname>Roettger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Séminaires de Recherches En Phonétique Et Phonologie</title>
+		<imprint>
+			<date type="published" when="2021">2021b</date>
+			<publisher>CNRS</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">E</forename><surname>Rowe</surname></persName>
+		</author>
+		<title level="m">The SAGE encyclopedia of action research</title>
+				<editor>
+			<persName><forename type="first">In</forename><forename type="middle">D</forename><surname>Positionality</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Coghlan</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Brydon-Miller</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Sage</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="627" to="628" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Positionality and its problems: Questioning the value of reflexivity statements in research</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Savolainen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Casey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Mcbrayer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">N</forename><surname>Schwerdtle</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/17456916221144988</idno>
+		<ptr target="https://doi.org/10.1177/17456916221144988" />
+	</analytic>
+	<monogr>
+		<title level="j">Perspectives on Psychological Science</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="1331" to="1338" />
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Simmons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Nelson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Simonsohn</surname></persName>
+		</author>
+		<idno type="DOI">10.1177/0956797611417632</idno>
+		<ptr target="https://doi.org/10.1177/0956797611417632" />
+	</analytic>
+	<monogr>
+		<title level="j">Psychological Science</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="1359" to="1366" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<author>
+			<persName><forename type="first">B</forename><surname>Spellman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gilbert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">S</forename><surname>Corker</surname></persName>
+		</author>
+		<idno type="DOI">10.31234/osf.io/ak6jr</idno>
+		<ptr target="https://doi.org/10.31234/osf.io/ak6jr" />
+		<title level="m">Open science: What, why, and how</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">How to begin writing a positionality statement</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Steltenpohl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hudson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Klement</surname></persName>
+		</author>
+		<ptr target="https://vimeo.com/675236573/741e24aab7" />
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<title level="m" type="main">Renv: Project Environments</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ushey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Wickham</surname></persName>
+		</author>
+		<ptr target="https://CRAN.R-project.org/package=renv" />
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">Speech perception and production lab: Positionality statements</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Weissler</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Drake</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Kampf</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Diantoro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kirkpatrick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">M</forename><surname>Baese-Berk</surname></persName>
+		</author>
+		<ptr target="https://www.speechperceptionproductionlab.com/positionalitystatments" />
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">The poor availability of psychological research data for reanalysis</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Wicherts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Borsboom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kats</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Molenaar</surname></persName>
+		</author>
+		<idno type="DOI">10.1037/0003-066X.61.7.726</idno>
+		<ptr target="https://doi.org/10.1037/0003-066X.61.7.726" />
+	</analytic>
+	<monogr>
+		<title level="j">American Psychologist</title>
+		<imprint>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page">726</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Knitr: A comprehensive tool for reproducible research in R</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Implementing reproducible computational research</title>
+				<editor>
+			<persName><forename type="first">V</forename><surname>Stodden</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">F</forename><surname>Leisch</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Peng</surname></persName>
+		</editor>
+		<imprint>
+			<publisher>Chapman</publisher>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">/</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Crc</surname></persName>
+		</author>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<title level="m">Dynamic documents with R and knitr</title>
+				<meeting><address><addrLine>Boca Raton, Florida</addrLine></address></meeting>
+		<imprint>
+			<publisher>Chapman</publisher>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+	<note>2nd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">/</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Crc</surname></persName>
+		</author>
+		<ptr target="https://yihui.org/knitr/" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<monogr>
+		<title level="m" type="main">Knitr: A general-purpose package for dynamic report generation in r</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Xie</surname></persName>
+		</author>
+		<ptr target="https://yihui.org/knitr/" />
+		<imprint>
+			<date type="published" when="2023">2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

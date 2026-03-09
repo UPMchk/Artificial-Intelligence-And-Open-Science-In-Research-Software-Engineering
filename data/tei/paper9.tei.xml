@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Research Software Engineering in 2030</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2023-08-15">15 Aug 2023</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Daniel</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="institution">NCSA &amp; CS &amp; ECE &amp; iSchool University of Illinois Urbana Champaign Urbana</orgName>
+								<address>
+									<region>IL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Simon</forename><surname>Hettrick</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="institution">Software Sustainability Institute University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Research Software Engineering in 2030</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date type="published" when="2023-08-15">15 Aug 2023</date>
+						</imprint>
+					</monogr>
+					<idno type="MD5">7D22948C7500E044E720186E04D8C410</idno>
+					<idno type="arXiv">arXiv:2308.07796v1[cs.SE]</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>research software</term>
+					<term>research software engineer</term>
+					<term>research software engineering</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>This position paper for an invited talk on the "Future of eScience" discusses the Research Software Engineering Movement and where it might be in 2030. Because of the authors' experiences, it is aimed globally but with examples that focus on the United States and United Kingdom.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>that represents a little over half of the current age of the RSE community.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>II. HOW RESEARCH SOFTWARE ENGINEERING MIGHT BE IN 2030</head><p>In this section, we predict some qualitative changes to research software engineering that we might expect by 2030. Where it seems reasonable to us, we also make quantitative predictions that we consider plausible, and perhaps even probable.</p><p>Software development:</p><p>• Research software developers (including but not limited to RSEs) will be generally aware of research software engineering as a concept and its best practices, at about the same level that software developers today are aware of source control packages like git. This will be due to a greater awareness of the role of software in research and changes to community, training, and policy.</p><p>• This greater awareness of research software, and the existence and availability of RSEs, will lead to research software being more reliable, maintainable, and better tested. This change to one of the most important underpinning tools of research will make research results more reliable and reproducible.</p><p>• More research software will be sustained because funders will better understand that funding the maintenance of research software will improve the return on their initial investment into it. This switch to recognising and supporting successful research software will increase awareness of successful research software and reduce reinvention of existing functionality.</p><p>• Research software developers will begin to receive recognition, not just for their contribution to research, but also for their contribution to software within academia. This will allow the design of an incentive system that aligns career progression for research software developers with the practices needed to develop reliable and reproducible research software. Community:</p><p>• At least 50 countries globally will have RSE associations.</p><p>• While RSEs will generally be members of their own local RSE organization, there will also be communication channels they use to talk to and collaborate with RSEs in other national organizations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Invited paper for 2023 IEEE International Conference on eScience</head><p>• There will be a global flagship RSE conference that that moves to a different country each year and that also supports virtual participation.</p><p>• There will be at least one research software engineering journal.</p><p>• There will be at least 50 professors whose focus is on research software engineering.</p><p>• Most professional scholarly societies will have research software tracks or themes in their conferences, and will offer prizes to research software developers.</p><p>• Awareness of the RSE career will be significantly more widespread, which will lead to around a quarter of new recruits being recruited after their undergraduate degree. Training:</p><p>• At least one university Masters of Research Software Engineering (MRSE) program will exist, and many universities will offer RSE certificates or minors at the undergraduate level.</p><p>• Some secondary students will be aware of research software, and will consider an RSE career when entering university.</p><p>• Both Software Carpentry and an merged program beyond it, similar to programs today such as INTERSECT [5] and CodeRefinery [6], will offer frequent synchronous and asynchronous research software engineering training.</p><p>• As a part of more standardized RSE career paths, skills required at various levels will be specified and training for RSEs new to these levels will be available both synchronously and asynchronously.</p><p>• Training for the initial RSE level will be offered in internship programs.</p><p>• Courses in software engineering techniques will be either mandatory or strongly encouraged for all new doctoral students. Policy:</p><p>• The value of software, and its vital role in the production of research results, will be accepted across all levels in research-performing organizations and by policymakers across government and funders.</p><p>• In the US, 75% of R1 universities will have RSE organizations. In the UK, all research-led universities will host an RSE Group.</p><p>• Funding organizations will have specific programs to fund 1) the development of new sustainable research software, 2) the maintenance and sustaining of existing research software, and 3) the transition of software developed in research activities into sustainable research software.</p><p>• Most US universities will have RSE career paths that contain multiple levels, allow for both technical and management career progression over 30+ years, and allow RSEs to be PIs.</p><p>• RSE career paths will be mostly standardized, and it will be as easy to move from one organization to another at a given RSE level as it as today at a given faculty level. • Institutions with RSE groups will also have Open Source</p><p>Program Offices and vice-versa, and they will work together to promote and strengthen research software at their institutions directly and via policy changes.</p><p>• Research-performing organizations (e.g., universities, national laboratories) will recognize and reward research software work in all research-performing positions, as will national research assessment activities.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>III. THE VALUE OF PREDICTIONS</head><p>While the predictions we make in this position paper may not come to pass, as we've said, we think they are plausible. In some cases, they simply extend current trends, while in others, they require new collaborative work to accomplish. We urge community members to consider how they might make these predictions more like to be fulfilled, working within existing RSE communities and with organizations such as the Software Sustainability Institute <ref type="bibr" target="#b4">[7]</ref>, the US Research Software Sustainability Insitute <ref type="bibr" target="#b5">[8]</ref>, and the Research Software Alliance <ref type="bibr" target="#b6">[9]</ref>.</p></div>		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGMENT</head><p>The authors thank all members of the international RSE community for their collective work in getting us to where we are now, defining a vision for the future, and moving us all towards it.</p></div>
+			</div>
+
+
+			<div type="funding">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>DSK was partially supported by Alfred P. Sloan Foundation award 10073. SH is supported by grant EP/S021779/1.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Croucher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Haines</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hettrick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hetherington</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Stillwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Wyatt</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/zenodo.495360</idno>
+		<ptr target="https://doi.org/10.5281/zenodo.495360" />
+		<imprint>
+			<date type="published" when="2017-04">2017. Apr. 2017</date>
+		</imprint>
+	</monogr>
+	<note>Research Software Engineers: State of the Nation Report</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">It&apos;s impossible to conduct research without software, say 7 out of 10 UK researchers</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hettrick</surname></persName>
+		</author>
+		<ptr target="https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-sof" />
+		<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">International council of RSE associations</title>
+		<ptr target="https://researchsoftware.org/council.html" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">The four pillars of research software engineering</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cohen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Haines</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Jay</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MS.2020.2973362</idno>
+		<ptr target="https://doi.org/10.1109/MS.2020.2973362" />
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Software</title>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="97" to="105" />
+			<date type="published" when="2021">2021</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">The Software Sustainability Institute: Changing research software attitudes and practices</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Crouch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">C</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hettrick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pawlik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sufi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Carr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>De Roure</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Goble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Parsons</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MCSE.2013.133</idno>
+		<ptr target="https://doi.org/10.1109/MCSE.2013.133" />
+	</analytic>
+	<monogr>
+		<title level="j">Computing in Science &amp; Engineering</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="74" to="80" />
+			<date type="published" when="2013-11">Nov. 2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Conceptualization of a US research software sustainability institute (URSSI)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">C</forename><surname>Carver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gesing</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Ram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Weber</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MCSE.2018.03221924</idno>
+		<ptr target="https://doi.org/10.1109/MCSE.2018.03221924" />
+	</analytic>
+	<monogr>
+		<title level="j">Computing in Science &amp; Engineering</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="4" to="9" />
+			<date type="published" when="2018-05">May 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">The Research Software Alliance (ReSA)</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Barker</surname></persName>
+		</author>
+		<idno type="DOI">10.54900/zwm7q-vet94</idno>
+		<ptr target="https://doi.org/10.54900/zwm7q-vet94" />
+		<imprint>
+			<date type="published" when="2023-04">Apr. 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

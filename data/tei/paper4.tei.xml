@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Laura</forename><surname>Soito</surname></persName>
+							<email>lsoito@unm.edu</email>
+						</author>
+						<author>
+							<persName><forename type="first">Lorraine</forename><forename type="middle">J</forename><surname>Hwang</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="institution">University of New Mexico</orgName>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="institution">University of California</orgName>
+								<address>
+									<settlement>Davis</settlement>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff2">
+								<orgName type="department">Laura Soito</orgName>
+								<orgName type="institution">University Libraries</orgName>
+								<address>
+									<postCode>MSC05 3020</postCode>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff3">
+								<orgName type="institution">University of New Mexico</orgName>
+								<address>
+									<postCode>87131</postCode>
+									<settlement>Albuquerque</settlement>
+									<region>NM</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="institution">University of Edinburgh on behalf of the Digital Curation Centre</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software</title>
+					</analytic>
+					<monogr>
+						<idno type="ISSN">1746-8256</idno>
+					</monogr>
+					<idno type="MD5">F3725F126C6BE647309253C6D90421B1</idno>
+					<idno type="DOI">10.2218/ijdc.v11i2.390</idno>
+					<note type="submission">Received 11 February 2016 ~ Revision received 15 September 2016 ~ Accepted 8 November 2016</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Software plays a significant role in modern academic research, yet lacks a similarly significant presence in the scholarly record. With increasing interest in promoting reproducible research, curating software as a scholarly resource not only promotes access to these tools, but also provides recognition for the intellectual efforts that go into their development. This work reviews existing standards for identifying, promoting discovery of, and providing credit for software development work. In addition, it shows how these guidelines have been integrated into existing tools and community cultures, and provides recommendations for future software curation efforts.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Introduction</head><p>From simple data processing scripts to complex databases and modelling packages, software and related digital products permeate scholarly research. In surveys, researchers indicate that using and developing scientific software is important to their work <ref type="bibr" target="#b17">(Hannay et al., 2009)</ref> and that it would be difficult or impossible to conduct research without these tools <ref type="bibr" target="#b18">(Hettrick et al., 2014)</ref>. While software is used for many purposes, research software can be identified as the tools that uniquely assist compilation, transformation, analysis or modelling, rather than those tools that simply facilitate communication and presentation of information. Research software includes commercially available resources as well as free or open software, and may be installed locally or used on remote systems. There has been research interest in software produced in academic environments and the mechanisms to promote discoverability, reuse, and research reproducibility, as well as standards of academic rigor and credit for these works <ref type="bibr" target="#b29">(Morin et al., 2013;</ref><ref type="bibr">National Science Foundation, 2012;</ref><ref type="bibr" target="#b32">Peng, 2011;</ref><ref type="bibr" target="#b39">Stodden, Guo and Ma, 2013)</ref>.</p><p>Curation of research software aids in its discoverability and accessibility, which reduces duplication of effort when developing or using similar research methods. These practices work hand in hand with scholarly citation to ascribe value to, and provide recognition for research software. While sharing code creates efficiencies and robustness, researchers are often hesitant and resist sharing their code due to perceived issues of code quality, intellectual property rights, and fears of providing user support or creating undue competition <ref type="bibr" target="#b6">(Barnes, 2010;</ref><ref type="bibr" target="#b9">Cannam, Figueira and Plumbley, 2012;</ref><ref type="bibr" target="#b28">Millman and Pérez, 2014)</ref>. Funder, publisher, and institutional policies can help to set expectations for more open software and analogous data sharing practices, but there is also recognition that current mechanisms to provide academic credit typically do not incentivize software development, documentation, or sharing <ref type="bibr" target="#b30">(Morin et al., 2012)</ref>.</p><p>Traditionally, software has been viewed as a technical work or invention, rather than a scholarly or creative work. Many organizations maintain intellectual property rights to software, rather than allowing ownership to its creators, as would be the case for journal articles or books. However, software has many functions in the research process. It can be developed as a tool that provides utility in a workflow, such as an instrument. It can also be developed to study a specific research problem. Either way it is an intellectual contribution to the creative process of research. This contrast between technical and creative work is also reflected in cases where software support staff, such as developers and engineers, are often considered technical support rather than researchers. They are sometimes recognized for authorship of articles or technical reports documenting the creation of new software, but the significance of their role amongst a long list of authors is murky. A lack of citation culture and standards for software make it difficult for individuals and software development groups to receive credit for their contributions.</p><p>As a digital resource, software also poses challenges for being cited in a bibliocentric, or publication-based, citation system. Software may be developed over decades, with hundreds of people contributing directly or indirectly to its creation. The potential for determining software provenance is growing as the use of version control and collaborative software development systems become more prevalent, but in many cases software development contributions and revision histories have been poorly documented. Modern software commonly has dependencies and thus relies upon code doi:10.2218/ijdc.v11i2.390 libraries written by others. When not included in a distribution package these dependencies lead to unclear software boundaries and questions about what exactly should be cited. In addition, research software may not be formally published, but rather made available on websites or only by request. This leads to challenges in finding code as researchers change institutions, code is abandoned, or collections fall into disarray.</p><p>In academic research, software makes significant contributions towards the development of new knowledge; however, its sometimes complex creation process and ephemeral nature pose challenges for curation and appropriately crediting software development efforts. In an effort to better understand and improve practices that support open sharing of research software, this work seeks to identify existing approaches for identification, access, and recognition of these resources. More specifically, the aim is to provide software users, developers, and curators with answers to the following questions:</p><p>1. What are recommended practices or standards for citing or acknowledging software?</p><p>2. What tools have been developed to help software users more easily and accurately track and indicate how software is used in their work?</p><p>3. How have research communities encouraged recognition of software development and adoption of documentation practices?</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Roles for Citations</head><p>Citations are used to serve many intertwined roles in the scholarly landscape <ref type="bibr" target="#b4">(Ayers, 2016;</ref><ref type="bibr" target="#b8">Bonazzi et al., 2015;</ref><ref type="bibr" target="#b15">Goble, Allen, Sands and Cruse, 2016;</ref><ref type="bibr" target="#b24">Jones, Matthews, Gent, Griffin and Tedds, 2016;</ref><ref type="bibr">Smith, Katz, Niemeyer and FORCE11 Software Citation Working Group, 2016)</ref>. The following list summarizes ways that citation roles connect to software and provides a framework for analysing the effectiveness of approaches identified in the remainder of this paper:</p><p> Identification -Uniquely distinguish a work from others. For software this may include identifying an algorithm, and the environment in which it is implemented, compiled and executed.</p><p> Discovery -Guide readers to related works and help identify resources that fulfil specific needs. While discovery can be facilitated by references to other works, descriptive metadata located elsewhere can also play a significant role selecting new tools.  Access -Provide the necessary information to obtain and use a work. Beyond providing a place to download or purchase software, this may entail providing information about licensing, platform requirements, configuration, and execution.  Credit -Recognition for the creators, contributors, and originators of a work.</p><p>Beyond a code's developers, recognition may be necessary for entities that funded or provided leadership for software development, as well as those who help to maintain and preserve its continued availability. Software often draws upon other works in its creation and use.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Standards for the Citation of Software</head><p>Approaches for the description and acknowledgement of software come from different information sectors, such as libraries, publishers, professional societies, and software developers. Metadata schemas for software applications<ref type="foot" target="#foot_0">1</ref> and source codes<ref type="foot" target="#foot_1">2</ref> have been established by Schema.org. The Software Ontology<ref type="foot" target="#foot_2">3</ref> was developed for describing software used in biomedical research <ref type="bibr" target="#b27">(Malone et al., 2014)</ref> and the EarthCube Initiative's OntoSoft<ref type="foot" target="#foot_3">4</ref> project has emphasized guiding geoscience researchers through creating metadata for discovery and reuse <ref type="bibr" target="#b14">(Gil, Ratnakar and Garijo, 2015)</ref>. Software is accounted for in more general standards, for example as the software resource type in the DataCite Metadata Schema (DataCite Metadata Working Group, 2015) and computer program content type in the Resource Description and Access (RDA) cataloguing standard <ref type="bibr">(Joint Steering Committee, 2013)</ref>. The reuse of software is also supported by metadata that capture and allow easy sharing of software licensing terms, such as those found in the Software Package Data Exchange Specification <ref type="bibr" target="#b37">(SPDX, 2016)</ref>.</p><p>Across disciplines and contexts, there is a lack of consistency in software citation practices. <ref type="bibr" target="#b21">Howison and Bullard (2016)</ref> found a wide range of citation forms including references to publications, user manuals, project websites, and informal mentions of the tools in their study of the biological literature. Inconsistency is also reflected in recommendations that may include referencing articles that discuss the software, direct citation of the software itself, or simply providing a link to where it can be downloaded (Figure <ref type="figure" target="#fig_0">1</ref>). For example, the Publication Manual of the American Psychological Association (APA, 2010) suggests book or website-like entries in the reference list for specialized software and in-text descriptions of the software for standard tools. The IEEE Editorial Style Manual (2014) bases its approach to software on APA and ISO guidelines, but provides examples of citing software manuals rather than software as its own entity. Not all software will have a publication or even an associated manual, thus guides may recognize and accommodate variations in available information. The ACS Style Guide provides five different forms for citation for software that can be used on a case-by-case basis. For example, software that has been published might be cited more like a book or technical report, while software with minimal information available could be cited by providing an author or program name <ref type="bibr" target="#b10">(Coghill and Garson, 2006)</ref>. The doi:10.2218/ijdc.v11i2.390 American Astronomical Society software policy <ref type="foot" target="#foot_4">5</ref>suggests two approaches: one based on the paper describing the software and one using an associated Digital Object Identifier (DOI). Citations can include both forms of citation along with links to any appropriate repositories. In addition to the style guidelines provided by many sources, there are also formalized standards for creating references like ANSI/NISO Z39.29-2005 (R2010) and ISO 690:2010. eagle-I,<ref type="foot" target="#foot_7">8</ref> RRID (Resource Identification Portal).<ref type="foot" target="#foot_8">9</ref> </p><p>One feature of software citation that is increasingly recommended is the use of unique and persistent identifiers, such as DOI. This recommendation is consistent with the best practices recommended in the Guidelines for Transparency and Openness Promotion (TOP) in Journal Policies and Practices (TOP Guidelines Committee, 2015) and Joint Declaration on Data Citation Principles (Data Citation Synthesis Group, 2014). Force11's Software Citation Principles also emphasis the use of identification that is "machine actionable, globally unique, interoperable, and recognized by … researchers" <ref type="bibr" target="#b35">(Smith et al., 2016)</ref>. As an alternative to DOI, software associated with disciplinary databases may be associated with more specific community handles, such as ASCL used by the Astrophysics Source Code Library <ref type="bibr" target="#b1">(Allen and Schmidt, 2015)</ref> or RRID proposed by Force11's Resource Identification Initiative <ref type="bibr" target="#b5">(Bandrowski et al., 2015)</ref>. <ref type="bibr">doi:10.2218/ijdc.v11i2.390</ref> Soito and Hwang | 53 While there may not be full agreement on how to implement citation standards, there is reason to exhibit caution and avoid creating new standards for specific projects or yet another 'unifying' standard. Given the existing diversity in software description standards, projects to connect different standards or extend existing standards to be more compatible with software are most helpful. CodeMeta, <ref type="foot" target="#foot_9">10</ref>an extension of the Mozilla Science Lab's Code as Research Object project, is working to create a minimal metadata set for software that can be used to connect popular software repositories, such as Zenodo and figshare. Similarly, the Research Data Alliance's Persistent Identifier Information Types Working Group has created a framework to identify and support harmonization among different types of persistent identifiers <ref type="bibr" target="#b41">(Weigel, DiLauro and Zastrow, 2014)</ref>.</p><p>Another issue with using standard citation practices is that acknowledging software, especially open source tools developed by many people over long periods of time, may bring into question who should receive credit. The use of version control systems (such as Git, Subversion, or Mercurial) in software development allows for the tracking of individual contributions but not necessarily their intrinsic value. Recognition for software development introduces a discontinuity in that what is a valued product in the software community (i.e. open, readable, well-documented code) is not equivalent to a valued product in the academic community (i.e. peer-reviewed publication) <ref type="bibr" target="#b28">(Millman and Pérez, 2014)</ref>. Authorship of software development articles poses another challenge in whether all contributors, no matter how minor their role, should be authors or even acknowledged or if there should be a threshold <ref type="bibr" target="#b11">(Crusoe et al., 2015)</ref>. One emerging approach is to allow article authors to better identify their roles, for example the Paper Badger<ref type="foot" target="#foot_10">11</ref> </p><p>project builds upon the Contributor Roles Taxonomy (CRediT) <ref type="foot" target="#foot_11">12</ref>and allow authors of papers to identify research contributions, including those related to software using digital badges.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tools to Support Software Citation</head><p>Given the complex and conflicting standards for citing software, there has been an emergence of what might be called metasoftware, that is, software to support software use. These tools are slowly beginning to help researchers capture information that can be used to cite or otherwise document how software was used in their work, and to more thoroughly document the processes used to develop new functionality in software. They also provide new opportunities for measuring the impact of software in others' work in contexts like tenure and promotion review. Wider adoption of these tools will support many goals of software citation in the academic environment.</p><p>At a fundamental level, software developers can take steps to suggest preferred citations for their code in readme files, license agreements, landing pages, user manuals or other documentation. To streamline this, some software tools and programming languages allow users and developers to run code that outputs citation information. For example, the PETSc numerical libraries embeds code that can identify which portions of the library are used and outputs appropriate citation information <ref type="bibr" target="#b25">(Knepley, Brown, McInnes and Smith, 2013)</ref>. The statistical programming language R supports functions to assist in compiling citations, as well as information about contributors and their roles doi:10.2218/ijdc.v11i2.390 <ref type="bibr" target="#b19">(Hornik, Murdoch and Zeileis, 2012)</ref>. These practices are particularly helpful for recognizing modular pieces of code or libraries with many contributors and acknowledging software that was built upon to create a new product.</p><p>To incorporate these suggestions into required style guidelines, researchers may use templates or reference management software. The use of flexible citation templates accommodates the existing variation in mechanisms to cite software, but does not necessarily guide users to provide all the necessary information to ensure that others can consistently locate and use cited materials. In alignment with style manuals, many reference management programs <ref type="foot" target="#foot_12">13</ref>(e.g. EndNote, Zotero) allow users to create references to software. Templates for software mirror those for more traditional book and article sources, but may rename or add fields to account for different roles or practices, such as using 'programmer' rather than 'author' or adding fields for system and version information. Reference management packages like BibTeX and BibLaTeX do not include an explicit software style, but rather more generic 'misc' style format can be used to cite software <ref type="bibr" target="#b26">(Lehman, Kime, Boruvka and Wright, 2015)</ref>.</p><p>Some bibliographic management tools are capable of automatically capturing citation related information from source files and resource databases. General repositories, like Zenodo and figshare, provide suggested citations for software and other resources. While these approaches allow users to download some information about these resources to their citation management programs, structured metadata are not consistently available within software or from the sources where it is obtained. Repositories may also incorporate tools to help researchers find and export citations for software, such as AppCiter which is embedded in the SBGrid Consortium's collection of supported applications <ref type="bibr" target="#b36">(Socias, Morin, Timony and Sliz, 2015)</ref>. Given the variation in guidelines, these tools may provide citations that point to related works like journal articles and manuals rather than, or in addition to, the software as a discrete research object.</p><p>Indexing of computer software began in the mid-1960s and was taken online in the early 1980s <ref type="bibr" target="#b34">(Rorvig, 1988)</ref>. Over the years there have been numerous attempts to capture and index software products ranging from early efforts, like the Computer Physics Communications Program Library, <ref type="foot" target="#foot_13">14</ref>to the recently established Software Heritage <ref type="foot" target="#foot_14">15</ref>project. There has also been recent interest in incorporating code and software into generalized data repositories. For example, GitHub users are encouraged to make their code citable by obtaining a DOI and archiving their code in Zenodo, <ref type="foot" target="#foot_15">16</ref>whilst Dryad Digital Repository <ref type="foot" target="#foot_16">17</ref>facilitates software archiving during the journal submission process. Increasingly, these tools facilitate workflows which allow researchers to capture and preserve discrete versions of their software alongside their data and publications.</p><p>Going beyond citation, metasoftware can provide both greater documentation of context for computational research and new opportunities to express scholarship. The ICERM Workshop on Reproducibility in Computational and Experimental Mathematics identified tools to help integrate code into documents and e-notebooks, track code provenance, track versions and collaboration, and capture the computational environment <ref type="bibr" target="#b38">(Stodden, Bailey et al., 2013)</ref>. For example, embedding executable code and data into research papers not only helps make these resources more accessible to readers, but also to lower barriers for reviewers to evaluate software as an aspect of the research. <ref type="foot" target="#foot_17">18</ref>Similarly, the use of interactive notebooks, like the Jupyter Notebook,<ref type="foot" target="#foot_18">19</ref> allow computational researchers to capture code and contextual resources like input data or output visualizations. Provenance tracking tools, like Sumatra, <ref type="foot" target="#foot_19">20</ref>provide automation in recording details about the software environment. Going further, virtual machines and cloud computing can be used to capture and give others access to the same computational environment <ref type="bibr" target="#b20">(Howe, 2012)</ref>. Docker, a tool for creating software containers, can be used to not only capture dependent files, but also to capture how the software was installed and configured <ref type="bibr" target="#b7">(Boettiger, 2015)</ref>.</p><p>While not perfect, there are metrics that can serve as proxies for quantity and quality of software development, and tools can be used to collect these values for appraisal purposes. Examples of these metrics include: number of lines of code, number of downloads, project forks, and ratings (like other scholarly metrics these too can be gamed). Metrics can be collected via a variety of tools that interact with software, including GitHub or other software repositories that include rating systems like the MathWorks File Exchange. <ref type="foot" target="#foot_20">21</ref>In addition these data can be incorporated into tools such as ImpactStory, <ref type="foot" target="#foot_21">22</ref>which collect metrics beyond traditional citation, otherwise known as altmetrics. Depsy<ref type="foot" target="#foot_22">23</ref> has also emerged as a prototype for collecting data on software use and prevalence in social media. These tools help to bring software to a similar visibility as other more traditional research outputs.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Community Approaches and Practices</head><p>Many research communities, such as those centred around a discipline, funding source, research technique or programing language, have created mechanisms to help promote software development efforts. Many of these communities have established repositories or indexes to bring code developed or used in the community to one place. Some host conferences, workshops, and online forums or mailing lists to promote networking and exchange of ideas. They may also provide training and work to set standards or guidelines for work produced by community members. While helpful in bringing people together to tackle the challenges of software development, these efforts can be inhibited for reasons like those identified in the astrophysics community: lack of awareness, unwillingness to contribute, loss of project funding, and need for ongoing updates and curation <ref type="bibr" target="#b1">(Allen and Schmidt, 2015)</ref>.</p><p>Some communities have developed software collections or registries to promote more open sharing of code. To build awareness of these collections and encourage contributions, some repositories are closely tied to journals in the discipline. Journals may require or encourage that code be deposited as a condition of publication, for example, agent-based models associated with articles published in Ecology and Society must be archived in OpenABM, <ref type="foot" target="#foot_23">24</ref>the computational model library for The Network for Computational Modeling for SocioEcological Science (CoMSES Net) <ref type="bibr">(Rollins, Barton, doi:10.2218/ijdc.v11i2.390</ref> Bergin, Janssen and Lee, 2014). Another practice to build awareness involves mining the scholarly literature for software used or developed in the community and adding these to the software collection, rather than relying solely on voluntary contributions, as is done with the Astrophysics Source Code Library <ref type="bibr" target="#b1">(Allen and Schmidt, 2015)</ref>. This form of active curation is a promising model for tying together an otherwise disjointed archival system.</p><p>Another way to make software easier to cite is to share the software through a familiar article-like format, often called a software article. Rather than describe a research problem that was studied using the software, software articles are short reports containing structured metadata and description connected to code or executable programs. These articles can be used by researchers to more directly point to the tool or algorithms used, especially in cases where software would otherwise be treated as an unpublished work that is not citable. Structured metadata may include details similar to those found in citations, such as code title, developer names, software license, programming language used, and system requirements. Narrative sections may contain context as to why the code was developed, what functionalities it provides, and how the code has been tested. Source code and executable files are archived by the article publisher or connected via a persistent identifier link to a software repository. The Software Sustainability Institute provides examples of both general and disciplinespecific journals for publishing software, <ref type="foot" target="#foot_24">25</ref>such as Journal of Open Research Software, <ref type="foot" target="#foot_25">26</ref> SoftwareX <ref type="foot" target="#foot_26">27</ref>and BMC Source Code for Biology and Medicine. <ref type="foot" target="#foot_27">28</ref>In addition to providing venues for sharing software, this approach allows software to be indexed in the same tools that promote discoverability of other academic works.</p><p>There are also efforts to establish standards of academic rigor and procedures for evaluating code. For example, the Advanced Research Consortium has created guidelines and identifies qualified reviewers to be called upon to evaluate digital projects in terms of scholarly content and technical standards <ref type="bibr" target="#b16">(Grumbach and Mandell, 2014)</ref>. CoMSES Net incentivizes creation of high quality metadata and documentation through a peer-review process leading to certification in the OpenABM library as an alternative to formal publishing. In this process the code and documentation are reviewed for adherence to documentation guidelines and it is verified that the model can be run given provided instructions <ref type="bibr" target="#b33">(Rollins et al., 2014)</ref>. These efforts pave the way for researchers working on digital projects to obtain scholarly credit for their work.</p><p>While there are many projects and groups considering issues related to software, there are also efforts to bring people and initiatives together. Force11's Software Citation Working Group <ref type="foot" target="#foot_28">29</ref>and events like the Workshops on Sustainable Software for Science: Practice and Experiences (WSSSPE) <ref type="foot" target="#foot_29">30</ref>or the Software Sustainability Institute's Collaborations Workshops <ref type="foot" target="#foot_30">31</ref>involve people from many domains and disciplines. The US National Institutes of Health hosted a workshop to explore the creation of a Software Discovery Index to help researchers find, cite, and reuse software <ref type="bibr" target="#b8">(Bonazzi et al., 2015)</ref>. The US National Science and Sloan Foundations have brought together researchers working on software projects through workshops to actively engage and design pilots or <ref type="bibr">doi:10.2218/ijdc.v11i2.390</ref> Soito and Hwang | 57 experiments to address software issues like discoverability and attribution <ref type="bibr" target="#b0">(Ahalt et al., 2015;</ref><ref type="bibr" target="#b40">Timmes et al., 2015)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Analysis and Recommendations for Achieving Citation Goals</head><p>As illustrated in the previous sections there are many mechanisms that can be utilized to provide recognition and support curation of research software. However, these mechanisms do not universally or equally address citation goals. Moving forward in the support of curated software collections there are a variety of issues stakeholders should be aware of and many techniques that could be deployed to improve support for software as an essential research tool.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Identification</head><p>The use of unique, persistent, actionable identifiers is essential for capturing and distinguishing software products. While identifiers are increasingly required by style guides, these guidelines do not consistently recommend how to address different versions or instances of software and associated code. References that provide more specific information, such as version or platform details benefit research reproducibility, but using identifiers that more generally direct users to a software project provide greater context, improved flexibility for users, and the ability to capture collective metrics. Requiring that metadata capture relationships between software entities, such as [Software B] is a [new Version] of [Software A], is one approach to improving clarity <ref type="bibr" target="#b24">(Jones et al., 2016)</ref>. Designating software entities through the use of identifier suffixes that allow users to select a more specific or broader access point (e.g. softwareID:1234/v3) provides more flexibility, but may not fully accommodate the needs of code with many variants or an otherwise complex development history. The creation of a system that allows users to verify whether they are using the newest version of software and to alert users to known issues, similar to the information the service CrossMark<ref type="foot" target="#foot_31">32</ref> provides for articles, could be indispensable to those seeking citation metadata and code updates, especially as code is reused further from its original context.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Access and Discovery</head><p>Identifiers are not necessarily sufficient to provide consistent access to software. There are diverse options in identifiers and standards for citing software, which leads to a lack of consistency in describing and finding these resources. This can be exacerbated when software is used across disciplinary boundaries (e.g. the image analysis tool ImageJ noted in Figure <ref type="figure" target="#fig_0">1</ref>) and tools acquire different identifiers and conflicting metadata from different access points. Community and publisher efforts to mandate the use of standardized repositories, as is the case for other research products (e.g. the Protein Data Bank <ref type="foot" target="#foot_32">33</ref>for macromolecular structural data) would be a starting point for greater and more consistent access. As software evolves, providing stable points of access through archives, registries, or (less desirably) software article approaches allows software to be doi:10.2218/ijdc.v11i2.390 connected to something less ephemeral and more readily accessed. These systems support discovery and metadata consistency, and improve understanding and usability via the capture of software context.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Credit and Appraisal</head><p>Credit for software relies not only on standards and technology for supporting software citation, but also acceptance from multiple communities of stakeholders. Enacting citation practices is hindered by academic publishers, research review committees, and other components of the academic landscape that do not yet have systems to recognize research formats, including software, that fall outside what can be traditionally published. Creating systems that facilitate the critical evaluation and review of code, both as technical and intellectual research products, bring greater acceptance of these works as scholarship. Organizations such as universities and professional societies should consider investment in software infrastructure that parallels what these organizations once provided in terms of scholarly presses for publications. Publishers have already begun this process in the creation of quasi-new formats, such as the software article. However, by taking advantage of altmetrics or other methods to measuring software diffusion it becomes possible to bypass the use of journal article proxies for software. This will require a cultural shift, one that reimagines software as scholarship, rather than a mere tool to facilitate scholarship.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Provenance and Connection</head><p>Capturing provenance and connection can be assisted by metasoftware that incorporates citation activities into researcher workflows. Learning to do research in new ways can have a learning curve, and especially with competing demands upon researchers there may not be significant motivation to change practices that have worked in the past. Incorporating software citation into existing workflows, such as providing full templates for citation in reference managers and styles, helps researchers to begin to adapt practices that are already familiar. The machine executable nature of software and the ability for it to draw from external libraries, also uniquely positions these resources to be incorporated into automated workflows. Systems are already being used to capture the history of a code's development and can also be used to connect code to metadata for contributors, their associated institutions and roles, as well as funders, and support the collection of usage metrics. Future versions of programing languages and software development tools should better incorporate functions that assist automatic extraction of citations from software that is used. It might also be possible to create systems that facilitate the logging of software use, rather than simply registering its existence. This approach would help stakeholders better understand how software is being used, even if the results of its use are never formally published.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>It should not be surprising that there have been challenges in capturing software within a bibliographic model, especially given the fundamental differences in publishing, use of citation, and indexing of scholarly works across disciplinary communities. One of the greatest barriers to software citation is not a lack of standards that could be used, but <ref type="bibr">doi:10.2218/ijdc.v11i2.390</ref> Soito and Hwang | 59 rather a lack of knowledge of these standards and agreement on how to use them. Improvements to software citation systems will be facilitated by developing metasoftware that lowers thresholds to using software in a research ready state, without complex installation and configuration processes, to the community as a whole. As these tools become more incorporated into researcher workflows, they will also help to facilitate greater access, more comprehensive peer evaluation, and indirectly, understanding of software development as a scholarly process. Software development for research is inherently interdisciplinary, and communities that are willing to recognize and accept diversity of approach in the generation of new knowledge will be more successful in fostering collaborative development of new software to support their work. These communities will also recognize software as a legitimate contribution to research, and support opportunities for career advancement for researchers who chose to pursue this path.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure 1. Conflicting citation guidelines are illustrated in examples of citations for the image processing software ImageJ as recommended by the software documentation, 6 the following publishing style guides: APA (American Psychological Association, 2010), IEEE (IEEE Periodicals, 2014), PhysRev (American Physical Society, 1993) and software collection guidelines: ASCL (Astrophysics Source Code Library), 7eagle-I, 8 RRID (Resource Identification Portal). 9</figDesc><graphic coords="5,98.60,187.00,398.20,234.10" type="bitmap" /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">Software Application Schema: https://schema.org/SoftwareApplication</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1">Software Source Code Schema: https://schema.org/SoftwareSourceCode</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2">The Software Ontology: http://theswo.sourceforge.net/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3">OntoSoft: http://www.ontosoft.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4">American Astronomical Society Policy Statement on Software: http://journals.aas.org/policy/software.html</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="6" xml:id="foot_5">ImageJ, Citing: http://imagej.net/Citing</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="7" xml:id="foot_6">Astrophysics Source Code Library, Citing ASCL code entries: http://ascl.net/wordpress/?page_id=351</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="8" xml:id="foot_7">Citing an eagle-i resource: https://www.eagle-i.net/get-involved/for-researchers/citing-an-eagle-iresource/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_8">  9  Resource Identification Portal: https://scicrunch.org/resources</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_9">CodeMeta: https://github.com/codemeta/codemeta</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="11" xml:id="foot_10">Mozilla Science Lab, Contributorship Badges: https://www.mozillascience.org/projects/contributorship-badges</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="12" xml:id="foot_11">CRediT: http://casrai.org/CRediT</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="13" xml:id="foot_12">Wikipedia, Comparison of Reference Management Software: https://en.wikipedia.org/wiki/Comparison_of_reference_management_software</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="14" xml:id="foot_13">Computer Physics Communications Program Library: http://cpc.cs.qub.ac.uk/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="15" xml:id="foot_14">Software Heritage: https://www.softwareheritage.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="16" xml:id="foot_15">GitHub Guides, Making Your Code Citable: https://guides.github.com/activities/citable-code/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="17" xml:id="foot_16">Dryad Repository, Submission Integration: http://datadryad.org/pages/submissionIntegration</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="18" xml:id="foot_17">Executable Paper Grand Challenge: http://www.executablepapers.com/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="19" xml:id="foot_18">Project Jupyter: http://jupyter.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="20" xml:id="foot_19">Sumatra: http://neuralensemble.org/sumatra/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="21" xml:id="foot_20">MathWorks File Exchange: https://www.mathworks.com/matlabcentral/fileexchange/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="22" xml:id="foot_21">ImpactStory: https://impactstory.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="23" xml:id="foot_22">Depsy: http://depsy.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="24" xml:id="foot_23">OpenABM: https://www.openabm.org</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="25" xml:id="foot_24">Software Sustainability Institute, In which journals should I publish my software? http://www.software.ac.uk/resources/guides/which-journals-should-i-publish-my-software</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="26" xml:id="foot_25">Journal of Open Research Software: http://openresearchsoftware.metajnl.com/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="27" xml:id="foot_26">SoftwareX: http://www.journals.elsevier.com/softwarex</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="28" xml:id="foot_27">Source Code for Biology and Medicine: http://www.scfbm.org/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="29" xml:id="foot_28">Force11 Software Citation Working Group: https://www.force11.org/group/software-citation-workinggroup</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="30" xml:id="foot_29">30 WSSSPE: http://wssspe.researchcomputing.org.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="31" xml:id="foot_30">uk/ 31 Software Sustainability Institute Workshops: http://www.software.ac.uk/community/workshops</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="32" xml:id="foot_31">CrossMark: http://www.crossref.org/crossmark/</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="33" xml:id="foot_32">Worldwide Protein Data Bank: http://www.wwpdb.org/</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>This material is based upon work supported in part by the National Science Foundation under Grant No. SMA-1448633. The authors would like to thank additional members of the Software Attribution for Geoscience Applications (SAGA) project team: Louise Kellogg, Joe Dumit, MacKenzie Smith, Allison Fish, and Eric Heien, as well as Phoebe Ayers, Karl Benedict, Sever Bordeianu, Brian Kolb, and Plato Smith for helpful suggestions.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">NSF workshop on supporting scientific discovery through norms and practices for software and data citation and attribution</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ahalt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Carsey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Couch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Hooper</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ibanez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Idaszak</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Robinson</surname></persName>
+		</author>
+		<ptr target="http://dl.acm.org/citation.cfm?id=2795624" />
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Looking before leaping: Creating a software registry</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schmidt</surname></persName>
+		</author>
+		<idno type="DOI">10.5334/jors.bv</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Open Research Software</title>
+		<imprint>
+			<biblScope unit="volume">3</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Physical review style notation and guide</title>
+		<ptr target="https://journals.aps.org/files/styleguide-pr.pdf" />
+		<editor>Waldron, A., Judd, P., &amp; Miller, V.</editor>
+		<imprint>
+			<date type="published" when="1993-06">1993. June 2011</date>
+			<publisher>American Physical Society</publisher>
+			<pubPlace>Ridge, NY</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m">Publication manual of the American Psychological Association</title>
+				<meeting><address><addrLine>Washington, DC</addrLine></address></meeting>
+		<imprint>
+			<publisher>American Psychological Association</publisher>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+	<note>6th ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">What&apos;s a citation good for</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Ayers</surname></persName>
+		</author>
+		<idno type="DOI">10.2218/ijdc.v11i2.390</idno>
+		<ptr target="https://medium.com/@phoebeayers/whats-a-citation-good-for-anyway-e7585bb003d#.z1t6k6sx6doi:10.2218/ijdc.v11i2.390" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bandrowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Brush</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">S</forename><surname>Grethe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Haendel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">N</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Vasilevsky</surname></persName>
+		</author>
+		<idno type="DOI">10.12688/f1000research.6555.2</idno>
+		<title level="m">The resource identification initiative: A cultural shift in publishing. F1000Research, 4</title>
+				<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page">134</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Publish your computer code: It is good enough</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Barnes</surname></persName>
+		</author>
+		<idno type="DOI">10.1038/467753a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">467</biblScope>
+			<biblScope unit="page">753</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">An introduction to Docker for reproducible research</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Boettiger</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2723872.2723882</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Operating Systems Review</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="71" to="79" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">V</forename><surname>Bonazzi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bourne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Brenner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Chandramouliswaran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Couch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>White</surname></persName>
+		</author>
+		<ptr target="https://nciphub.org/resources/885" />
+		<title level="m">Software Discovery Index workshop report</title>
+				<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Sound software: Towards software reuse in audio and music research</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cannam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Figueira</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Plumbley</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/ICASSP.2012.6288485%20</idno>
+	</analytic>
+	<monogr>
+		<title level="m">2012 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</title>
+				<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="2745" to="2748" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<monogr>
+		<title level="m" type="main">The ACS style guide: Effective communication of scientific information</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Coghill</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Garson</surname></persName>
+		</author>
+		<editor>L.R.</editor>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<publisher>Oxford University Press</publisher>
+			<pubPlace>Washington, DC; New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>3rd ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">The khmer software package: Enabling efficient nucleotide sequence analysis</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">R</forename><surname>Crusoe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">F</forename><surname>Alameldin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Awad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Boucher</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Caldwell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Cartwright</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">T</forename><surname>Brown</surname></persName>
+		</author>
+		<idno type="DOI">10.12688/f1000research.6924.1</idno>
+		<imprint>
+			<date type="published" when="1000">2015. F1000Research, 4</date>
+			<biblScope unit="page">900</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">Joint declaration of Data Citation Principles</title>
+		<ptr target="https://www.force11.org/datacitation" />
+		<editor>M. Martone</editor>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page">E11</biblScope>
+			<pubPlace>San Diego, CA</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">DataCite metadata schema for the publication and citation of research data</title>
+		<author>
+			<persName><surname>Datacite</surname></persName>
+		</author>
+		<idno type="DOI">10.5438/0010</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Metadata Working Group</title>
+				<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">OntoSoft: Capturing scientific software metadata</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gil</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><surname>Ratnakar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Garijo</surname></persName>
+		</author>
+		<idno type="DOI">10.1145/2815833.2816955</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Eighth ACM International Conference on Knowledge Capture</title>
+				<meeting>the Eighth ACM International Conference on Knowledge Capture</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="volume">32</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<title level="m" type="main">CodeMeta software use cases working document</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Goble</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Allen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sands</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Cruse</surname></persName>
+		</author>
+		<ptr target="https://github.com/codemeta/codemeta" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Meeting scholars where they are: The Advanced Research Consortium (ARC) and a social humanities infrastructure</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Grumbach</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Mandell</surname></persName>
+		</author>
+		<idno type="DOI">10.2218/ijdc.v11i2.390SoitoandHwang|61</idno>
+		<ptr target="http://www.src-online.ca/index.php/src/article/view/189doi:10.2218/ijdc.v11i2.390SoitoandHwang|61" />
+	</analytic>
+	<monogr>
+		<title level="j">Scholarly and Research Communication</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">How do scientists develop and use scientific software?</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">E</forename><surname>Hannay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Macleod</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Singer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>Langtangen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Pfahl</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Wilson</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/SECSE.2009.5069155</idno>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2009 ICSE Workshop on Software Engineering for Computational Science and Engineering</title>
+				<meeting>the 2009 ICSE Workshop on Software Engineering for Computational Science and Engineering</meeting>
+		<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="1" to="8" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">UK Research Software Survey</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Hettrick</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Antonioletti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Carr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Crouch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>De Roure</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sufi</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/zenodo.14809</idno>
+		<imprint>
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Who did what? The roles of R package authors and how to refer to them</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hornik</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Murdoch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Zeileis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The R Journal</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="64" to="69" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Virtual appliances, cloud computing, and reproducible research</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Howe</surname></persName>
+		</author>
+		<idno type="DOI">10.1109/MCSE.2012.62</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Computing in Science Engineering</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="36" to="41" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Software in the scientific literature: Problems with seeing, finding, and using software mentioned in the biology literature</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Howison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bullard</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/asi.23538</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Association for Information Science and Technology</title>
+		<imprint>
+			<biblScope unit="volume">67</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="2137" to="2155" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<monogr>
+		<ptr target="https://www.ieee.org/documents/style_manual.pdf" />
+		<title level="m">IEEE Editorial Style Manual</title>
+				<meeting><address><addrLine>Piscataway, NJ</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">RDA: Resource Description and Access: 2013 revision</title>
+	</analytic>
+	<monogr>
+		<title level="j">Joint Steering Committee</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>American Library Association</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Persistent identification and citation of software</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">M</forename><surname>Matthews</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Gent</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Tedds</surname></persName>
+		</author>
+		<ptr target="http://purl.org/net/epubs/work/24496942" />
+	</analytic>
+	<monogr>
+		<title level="m">16th International Digital Curation Conference (IDCC16)</title>
+				<meeting><address><addrLine>Amsterdam, The Netherlands</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Accurately citing software and algorithms used in publications (ANL/MCS-P5010-0913)</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">G</forename><surname>Knepley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">C</forename><surname>Mcinnes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Smith</surname></persName>
+		</author>
+		<ptr target="http://www.mcs.anl.gov/papers/P5010-0913_1.pdf" />
+	</analytic>
+	<monogr>
+		<title level="m">Presented at the Workshop on Sustainable Software for Science: Practice and Experiences</title>
+				<meeting><address><addrLine>Denver, CO</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<author>
+			<persName><forename type="first">P</forename><surname>Lehman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Kime</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Boruvka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wright</surname></persName>
+		</author>
+		<ptr target="http://mirror.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf" />
+		<title level="m">The Biblatex package: Programmable bibliographies and citations</title>
+				<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">The Software Ontology (SWO): A resource for reproducibility in biomedical data analysis, curation and digital preservation</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Malone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Lister</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ison</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Hull</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Parkinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Stevens</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/2041-1480-5-25</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Biomedical Semantics</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">25</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Developing open-source scientific practice</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">J</forename><surname>Millman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Pérez</surname></persName>
+		</author>
+		<idno type="DOI">10.1201/b16868-9</idno>
+		<ptr target="http://www.crcnetbase.com/doi/abs/10.1201/b16868-9doi:10.2218/ijdc.v11i2.390" />
+	</analytic>
+	<monogr>
+		<title level="m">Implementing Reproducible Research</title>
+				<editor>
+			<persName><forename type="first">V</forename><surname>Stodden</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">F</forename><surname>Leisch</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Peng</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Boca Raton</addrLine></address></meeting>
+		<imprint>
+			<publisher>CRC Press</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="149" to="184" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<author>
+			<persName><forename type="first">A</forename><surname>Morin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Eisenbraun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Key</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">C</forename><surname>Sanschagrin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Timony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ottaviano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sliz</surname></persName>
+		</author>
+		<idno type="DOI">10.7554/eLife.01456</idno>
+		<title level="m">Collaboration gets the most out of software. eLife</title>
+				<imprint>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="volume">2</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Shining light into black boxes</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Morin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Urban</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">D</forename><surname>Adams</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Foster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Sali</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Baker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sliz</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.1218263</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">336</biblScope>
+			<biblScope unit="issue">6078</biblScope>
+			<biblScope unit="page" from="159" to="160" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">A vision and strategy for software for science, engineering, and education: Cyberinfrastructure framework for the 21st century (No. nsf12113</title>
+		<ptr target="http://www.nsf.gov/pubs/2012/nsf12113/nsf12113.pdf" />
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+		<respStmt>
+			<orgName>National Science Foundation</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Reproducible research in computational science</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Peng</surname></persName>
+		</author>
+		<idno type="DOI">10.1126/science.1213847</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">334</biblScope>
+			<biblScope unit="page" from="1226" to="1227" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">A computational model library for publishing model documentation and code. Environmental Modelling &amp; Software</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Rollins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">M</forename><surname>Barton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bergin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Janssen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lee</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.envsoft.2014.06.022</idno>
+		<imprint>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="volume">61</biblScope>
+			<biblScope unit="page" from="59" to="64" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Bibliographic control of microcomputer software</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Rorvig</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Encyclopedia of Library and Information Science</title>
+		<title level="s">Supplement</title>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Kent</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Marcel Dekker</publisher>
+			<date type="published" when="1988">1988</date>
+			<biblScope unit="volume">43</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">&amp; FORCE11 Software Citation Working Group</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">M</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">S</forename><surname>Katz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Niemeyer</surname></persName>
+		</author>
+		<idno type="DOI">10.7717/peerj-cs.86</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PeerJ Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">e86</biblScope>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note>Software citation principles</note>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">AppCiter: A web application for increasing rates and accuracy of scientific software citation</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Socias</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Morin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Timony</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sliz</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.str.2015.04.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Structure</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="807" to="808" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Software Package Data Exchange (SPDX®) Specification (No. v. 2.1)</title>
+		<author>
+			<persName><surname>Spdx</surname></persName>
+		</author>
+		<ptr target="https://spdx.org/spdx-specification-21-web-version" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note>Linux Foundation</note>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><forename type="first">V</forename><surname>Stodden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Borwein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Leveque</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Rider</surname></persName>
+		</author>
+		<ptr target="https://icerm.brown.edu/tw12-5-rcem/" />
+		<title level="m">Setting the default to reproducible: Reproducibility in computational and experimental mathematics. Report of the ICERM Workshop on Reproducibility in Computational and Experimental Mathematics</title>
+				<editor>
+			<persName><forename type="first">W</forename><surname>Stein</surname></persName>
+		</editor>
+		<imprint>
+			<date type="published" when="2012">2013. December 10-14, 2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Toward reproducible computational research: An empirical analysis of data and code policy adoption by journals</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Stodden</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Guo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ma</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0067111</idno>
+		<idno>doi:10.2218/ijdc.v11i2.390 Soito and Hwang | 63</idno>
+	</analytic>
+	<monogr>
+		<title level="j">PLoS ONE</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">e67111</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Guidelines for transparency and openness promotion (TOP) in journal policies and practices version 1.0.1. Center for Open Science</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Timmes</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ahalt</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Turk</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Idaszak</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Schildhauer</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Brower</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Gustafson</surname></persName>
+			<affiliation>
+				<orgName type="collaboration">TOP Guidelines Committee.</orgName>
+			</affiliation>
+		</author>
+		<ptr target="https://osf.io/ud578/" />
+	</analytic>
+	<monogr>
+		<title level="m">Workshop report 2015 Software Infrastructure for Sustained Innovation (SI 2) principal investigators workshop</title>
+				<imprint>
+			<date type="published" when="2015">2015. 2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<author>
+			<persName><forename type="first">T</forename><surname>Weigel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Dilauro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Zastrow</surname></persName>
+		</author>
+		<ptr target="https://rd-alliance.org/system/files/PIT%20final%20report.pdf" />
+		<title level="m">PID information types: Final report</title>
+				<imprint>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

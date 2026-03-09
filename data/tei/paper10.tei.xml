@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Software engineering, research software and requirements engineering</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Stephan</forename><surname>Druskat</surname></persName>
+							<email>stephan.druskat@dlr.de</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">German Aerospace Center (DLR)</orgName>
+								<orgName type="department" key="dep2">Institute for Software Technology</orgName>
+								<address>
+									<postCode>{12489, 51147</postCode>
+									<settlement>Berlin, Cologne}</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Michael</forename><surname>Felderer</surname></persName>
+							<email>michael.felderer@dlr.de</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">German Aerospace Center (DLR)</orgName>
+								<orgName type="department" key="dep2">Institute for Software Technology</orgName>
+								<address>
+									<postCode>{12489, 51147</postCode>
+									<settlement>Berlin, Cologne}</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Mathematics and Computer Science</orgName>
+								<orgName type="institution">University of Cologne</orgName>
+								<address>
+									<postCode>50923</postCode>
+									<settlement>Cologne</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Carina</forename><surname>Haupt</surname></persName>
+							<email>carina.haupt@dlr.de</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">German Aerospace Center (DLR)</orgName>
+								<orgName type="department" key="dep2">Institute for Software Technology</orgName>
+								<address>
+									<postCode>{12489, 51147</postCode>
+									<settlement>Berlin, Cologne}</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Software engineering, research software and requirements engineering</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">6B0231BEF96158EA0992420B67B3491C</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.2" ident="GROBID" when="2026-03-09T17:26+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Research software is developed with aims and in contexts that differ from other software, by individuals who are often not trained software engineers. Furthermore, research software projects often suffer from resource scarcity, but produce artifacts that are crucial for research and require software engineering. These circumstances have an impact on how software engineering activities are performed in research contexts. This holds in particular for requirements engineering, which plays a crucial role for the success of traditional software engineering projects. In this paper, we discuss the relationship between research software and requirements engineering. For that purpose, we also reflect on research software engineering and its relationship to software engineering research. Closer collaboration between software engineering research and research software engineering creates opportunities for knowledge exchange and better research software engineering practice, and interesting new research questions for software engineering research. This is true also for requirements engineering, where lightweight methods are required, depending on the type of research software developed.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>Research in academia and industry to a great extent relies on software that enables or supports the research process. In many cases, this software is research software: software that is either created during the research process itself, or developed specifically for a research purpose <ref type="bibr" target="#b5">[6]</ref>. The main aim of research software is creating and validating knowledge, which sets it apart from other types of software such as business software. As such, software today is a ubiquitous and essential element of academic and industrial research.</p><p>Originally, however, research software was not considered a relevant object of software engineering. The NATO Software Engineering Conference in Garmisch in 1968 focused on software engineering of missioncritical business and embedded software. Significantly, the conference report excludes "researchers in fields other than software engineering and computer science" from the report's primary audience as a group that "need <ref type="bibr">[s]</ref> an understanding of the nature of software engineering, although they are not themselves working in the field." <ref type="bibr">[9, p. 9]</ref>.</p><p>Despite this initial exclusion of scientific data processing applications in computational science as a principal object of software engineering, a new discipline of Research Software Engineering has emerged.</p><p>This paper is structured as follows. Section 2 defines and discusss the area of research software engineering. Section 3 reflects on the relationship between research software engineering and software engineering research. Section 4 discusses the role of requirements engineering for research software. Finally, Section 5 concludes this paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Research Software Engineering</head><p>Broadly speaking, research software engineering<ref type="foot" target="#foot_0">1</ref> is the use of software engineering practices in research applications. It is performed by Research Software Engineers (RSEs) in many academic research disciplines, and to a lesser extent in industrial (research) settings.</p><p>The RSE role is diverse across a number of dimensions. While it generally covers traditional software engineering as defined in the Guide to the Software Engineering Body of Knowledge (SWEBOK), RSEs apply the relevant practices in research-specific fields such as modeling and simulation, data science, Dev-Ops and ResearchOps, porting and optimisation, but also traditional application development. They do this across the whole spectrum of research disciplines and often in inter-disciplinary contexts. In terms of their working environment, RSEs can be part of a central RSE team at a research institution, embedded in a specific research group or project, or somewhere in between.</p><p>One of the main challenges in research software engineering is a lack of formal training in software engineering. According to the 2022 International RSE Survey <ref type="bibr" target="#b6">[7]</ref>, the majority ( 74%) of just over 1,000 selfidentifying RSEs worldwide do not have a background in computer science. And they spend their time on a number of other tasks beside software development, see Figure <ref type="figure" target="#fig_1">2</ref>. Approximately 42% of RSEs do not see themselves as professional developers. Additionally, many RSEs develop software for themselves rather than for others, with only 26% developing software "mostly for other people". Around half of the surveyed population of RSEs also work outside of a dedicated RSE group, with a project bus factor of 1, indicating that their knowledge will be lost once they leave the project or institution.</p><p>There are, however, exceptions to this rule, notably at our own institution, the German Aerospace Center (DLR)<ref type="foot" target="#foot_1">2</ref> . At DLR, we have established a long-standing community for RSEs through the Software Engineering Network, with representatives at all 61 institutes and facilities. In addition, we provide guidelines for software development <ref type="bibr" target="#b9">[10]</ref>, tooling infrastructure, and trainings and consulting to research projects. Another issue in research software engineering, generally, is the unique context in which research software is developed. Research is often highly experimental, which means that functional requirements will often be unknown, or may change rapidly alongside an experimental research process. As research software aims to create knowledge in the first place, verification and validation are difficult as long as this knowledge is either non-existent or merely hypothetical, that is, until the end of a research cycle. Adopting structured software engineering processes to the development of research software may furthermore restrict the required agility of the research process.</p><p>The research environment, especially in academic research, also defines unique non-functional requirements. Research results must be reproducible, that is, it must be possible for other to validate the knowledge gained through computational research. This has a strong impact on how research software must be documented, but also how artifacts are treated. The FAIR Principles for Research Software <ref type="bibr" target="#b2">[3]</ref> require that research software must be: Findable by humans and machines; Accessible through standardised protocols; Interoperable by way of data exchange or APIs; Reusable, i.e., it can be understood, modified, built upon or incorporated into other software. On top of this, research software may be long-lived, but is mainly developed by individuals with fixed-term contracts: PhD students, post-docs, etc.</p><p>Taken together, all of these factors introduce additional weights to the well-known trade-off between time, resources, functionality and quality in software engineering (Figure <ref type="figure" target="#fig_3">3</ref>).   The RSE and software engineering research (SER) communities have a lot to gain from working together closely. On the one hand, research software is a critical artifact that requires software engineering. SER can provide state-of-the-art software engineering knowledge to the RSE community. Examples for this are automated metamorphic testing of software that has no clearly defined test oracles <ref type="bibr" target="#b7">[8]</ref>, or agile and continuous software development processes.</p><p>On the other hand, RSE can provide interesting new research questions to SER that reflect unique properties of research software, e.g., around the organization of software-centric research processes, required skills and educational formats for RSEs, quality assurance for and maturity levels of research software, suitable business models for open source research software, etc.</p><p>It is therefore important to note promising new initiatives forming at the intersection between both fields. One of these is the Gesellschaft für Informatik's SIG "Research Software Engineering"<ref type="foot" target="#foot_2">3</ref> as part of the section Software Engineering. This group has spawned several working groups for, e.g., making research software accessible for different activities through categorization, developing research programmes for "RSE Research" (see also <ref type="bibr" target="#b4">[5]</ref>), or the creation of a guideline to implement research software engineering guidelines for research institutions.</p><p>Another effort is the Dagstuhl Seminar "Research Software Engineering: Bridging Knowledge Gaps"<ref type="foot" target="#foot_3">4</ref> , that takes place from 14-19 April 2024 and brings together experts from RSE and SER to work on improving the knowledge exchange between the two fields and foster further collaboration. One of the main topics of this seminar will be the effective specification of the requirements of research software in different application and research disciplines.</p><p>And indeed, against the background established in this article so far -where functional requirements for research software may be unidentifiable, and nonfunctional requirements are imposed by the research context -it is interesting to look at the challenges and possibilities of requirements engineering for research software in more detail.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Research software and requirements engineering</head><p>In research software engineering, reproducibility of research results is key. This is relevant especially where decisions that affect many people are made based on the results of computational research. One recent example of this is the modeling and simulation of pandemic development during the COVID-19 pandemic. As a tool for risk management, requirements engineering can help identify and mitigate risks, and reduce the likelihood of failures. Therefore it seems natural that in situations where research software is developed to create and validate the knowledge that underpins important decisions, requirements engineering plays an important role in the development of research software. While this is certainly true for traditionally safety-relevant research software projects, e.g., in applied aeronautics and space research and other engineering disciplines, or in medical research, stateof-the-art requirements engineering processes from software engineering research are not applied across the board in research software engineering. Anecdotal evidence informally elicited by software developers from mostly university-based research software projects points partially to a lack of knowledge about requirements engineering as a process, partially to a low priority of requirements engineering in the development process due to conflicting incentives, and partially to the ad-hoc implementation of "issue-based requirements tracking".</p><p>In other cases, requirements engineering is practiced informally or only in part. The research software project HERMES<ref type="foot" target="#foot_4">5</ref> develops a demonstrator for continuous integration software that enables the automatic publication of FAIR research software with rich metadata in long-term repository archives. The project organized several workshops over the project runtime. These included a kick-off meeting with key stakeholders, as well as interactive workshops with users where requirements elicitation and feedback loops were closely paired with development sprints. Some high-level requirements were also documented in a concept paper early on in the development process <ref type="bibr" target="#b3">[4]</ref>. While requirements were frequently discussed in project meetings, they were not formally managed, analysed or traced.</p><p>There are multiple reasons why requirements engineering is not applied everywhere in research software engineering, of which some have already been touched upon above: research projects often lack the resources for professional research software engineering, and many RSEs are not trained software engineers, much less trained requirements engineers. Additionally, due to missing knowledge transfer between software engineering research and research software engineering, requirements engineering is often still understood as a documentation-heavy process that requires waterfall development processes. And on top of this, requirements engineering may generally not be considered an option, based on the assumption that especially functional requirements cannot be known due to the experimental nature of the research in which software is developed.</p><p>These latter assumptions disregard the fact that not all research software is the same. Previous and current classification efforts seem to suggest that, indeed, some types of research software may not lend themselves easily to some highly formalized requirements engineering processes. These may include the implementation of novel methods and models, or early prototypes that are used only by individual researchers. Others, however, are not dissimilar to software applications developed in business contexts. These may include proof-of-concept implementations, and accepted methods and models that are used by whole research communities or are adapted to new research needs. And certainly, instrument or other embedded software, as well as research platforms and infrastructure can be submitted to even the more formal established requirements engineering processes.</p><p>The above-mentioned assumptions also ignore the fact that software engineering research has developed and continues to develop more modern and lightweight requirements engineering processes that support agile paradigms much better than traditional processes. RSEs already often use collaborative development and DevOps platforms such as GitHub and GitLab, and would be well-placed to adopt requirements engineering paradigms that leverage such tooling. And vice versa, requirements engineering research will also be inherently interested in trying to tackle the specific challenges of research software engineering, and pursue solutions that also take into account the non-functional requirements of research and open science contexts.</p><p>Finally, there may be an opportunity to create synergies from combining the documentation requirements for software from requirements engineering, and the documentation requirements for research in general. In the end, research software projects -and research projects more generally -always work with stakeholders, first and foremost the researchers themselves, but also research funders, politics and the general public. They already document requirements in project proposals and track them in research publications. There are also potentials for synergies with respect to the type of software developed. The nature of research software (in particular with respect to research software that focuses on modeling, simulation and data analytics) has similarities and synergies with the development of machine-learning-based software components -and in the future maybe also with quantum-based software components -in industry <ref type="bibr" target="#b0">[1]</ref>: requirements are typically not-known upfront and therefore testing heavily relies on randomization, exploration, runtime monitoring, and specific approaches like metamorphic testing <ref type="bibr" target="#b7">[8]</ref>. Such approaches are also essential for research software, which therefore provides suitable evaluation contexts for requirements engineering and testing of (industrial) machine-learning-based software components. Therefore, requirements engineering and testing for research software has synergies with the respective activities for industrial machine-learning-based software systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Conclusion</head><p>Software is a critical artifact of research that requires research software engineering. Research software engineering and the RSE role, however, are highly di-verse, and we currently do not know enough about either. This makes RSE research necessary and presents opportunities for new questions in software engineering research. Requirements engineering research in particular can offer knowledge transfer to fill existing gaps, and can develop solutions to the particular challenges of research software engineering. These could build on the tools already available to RSEs, and harness existing documentation processes in research.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 :</head><label>1</label><figDesc>Figure 1: Dimensions of diversity in the Research Software Engineer (RSE) role (adapted from [2]).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2 :</head><label>2</label><figDesc>Figure 2: Time spent by RSEs across the world on different tasks (Likert scale from 0 (None) to 10 (All the time)), from [7].</figDesc><graphic coords="2,54.99,445.30,231.74,126.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 3 :</head><label>3</label><figDesc>Figure 3: The additional weights in research software engineering in the trade-off between time, resources, functionality and quality in software engineering.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>3</head><label></label><figDesc>Research software engineering and software engineering research With the rise of the RSE role in the UK, where the first International Conference of Research Software Engineers took place in 2016, Research Software Engineering is becoming increasingly organized. National or multinational RSE associations have been founded in the UK, the Netherlands, Germany, Belgium, the Nordics, Australia and New Zealand, the US, and in Denmark. Of these, the UK, German, Australian and New Zealand, and US associations run annual national RSE conferences. The associations play a pivotal role in establishing the RSE role in their respective contexts, building communities, organizing knowledge exchange and training, and building bridges to other communities, including the software engineering research community.</figDesc></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">See also GI Radar 351: Research Software.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1">https://rse.dlr.de</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2">https://fg-rse.gi.de</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_3">https://dagstuhl.de/24161</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="5" xml:id="foot_4">https://software-metadata.pub</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgments</head><p>SD acknowledges funding for HERMES (ZT-I-PF-3-006) by the Helmholtz Initiative and Networking Fund through the Helmholtz Metadata Collaboration.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Collaborative Artificial Intelligence Needs Stronger Assurances Driven by Risks</title>
+		<author>
+			<persName><forename type="first">Jubril</forename><surname>Gbolahan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Adigun</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computer</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="52" to="63" />
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Is Research Software Engineering Coming of Age? Presentation</title>
+		<author>
+			<persName><forename type="first">Neil</forename><surname>Chue</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Hong</forename></persName>
+		</author>
+		<idno type="DOI">10.6084/m9.figshare.24078054.v5</idno>
+		<imprint>
+			<date type="published" when="2023-09">Sept. 2023</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">FAIR Principles for Research Software (FAIR4RS Principles)</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">Chue</forename><surname>Neil</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Hong</surname></persName>
+		</author>
+		<idno type="DOI">10.15497/RDA00068</idno>
+		<imprint>
+			<date type="published" when="2022-05">May 2022</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Tech. rep</note>
+	<note>Research Data Alliance (RDA)</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<monogr>
+		<title level="m" type="main">Software Publications with Rich Metadata: State of the Art, Automated Workflows and HERMES Concept</title>
+		<author>
+			<persName><forename type="first">Stephan</forename><surname>Druskat</surname></persName>
+		</author>
+		<idno type="DOI">10.48550/arXiv.2201.09015</idno>
+		<imprint>
+			<date type="published" when="2022">2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Toward Research Software Engineering Research</title>
+		<author>
+			<persName><forename type="first">Michael</forename><surname>Felderer</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/zenodo.8020525</idno>
+		<imprint>
+			<date type="published" when="2023-06">June 2023</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Tech. rep. Zenodo</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">Defining Research Software: A Controversial Discussion</title>
+		<author>
+			<persName><forename type="first">Morane</forename><surname>Gruenpeter</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/zenodo.5504016</idno>
+		<imprint>
+			<date type="published" when="2021-09">Sept. 2021</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Tech. rep. Zenodo</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">International RSE Survey 2022</title>
+		<author>
+			<persName><forename type="first">Simon</forename><surname>Hettrick</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/zenodo.7015772</idno>
+		<imprint>
+			<date type="published" when="2022-08">Aug. 2022</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Automated Metamorphic Testing of Scientific Software</title>
+		<author>
+			<persName><forename type="first">Upulee</forename><surname>Kanewala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Anders</forename><surname>Lundgren</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">James</forename><forename type="middle">M</forename><surname>Bieman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Software Engineering for Science</title>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<publisher>Chapman and Hall/CRC</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">Peter</forename><surname>Naur</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Brian</forename><surname>Randell</surname></persName>
+		</author>
+		<title level="m">Software Engineering: Report of a Conference Sponsored by the NATO Science Committee, Garmisch, Germany</title>
+				<meeting><address><addrLine>Brussels</addrLine></address></meeting>
+		<imprint>
+			<publisher>NATO</publisher>
+			<date type="published" when="1968-10-11">7-11 Oct. 1968. 1969</date>
+		</imprint>
+	</monogr>
+	<note>Scientific Affairs Division</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">DLR Software Engineering Guidelines</title>
+		<author>
+			<persName><forename type="first">Tobias</forename><surname>Schlauch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Michael</forename><surname>Meinel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Carina</forename><surname>Haupt</surname></persName>
+		</author>
+		<idno type="DOI">10.5281/ZENODO.1344612</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Tech. rep. Zenodo</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
