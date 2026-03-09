@@ -23,5 +23,5 @@ jobs:
           pip install pytest matplotlib wordcloud
 
       - name: Run tests
-        run: |
-          pytest
+      run: |
+        pytest tests -v
