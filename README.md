@@ -1,5 +1,3 @@
-# Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering
-
 # Assignment 1 - Grobid analysis of open-access papers
 
 ## Overview
