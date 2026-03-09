@@ -19,3 +19,27 @@ The dataset consists of 10 open-access PDF papers related to open science, repro
 - `src/`: source code
 - `results/`: generated outputs
 - `tests/`: tests
+
+## Outputs
+The project generates the following files:
+- `results/abstracts.csv`
+- `results/figures_per_paper.csv`
+- `results/figures_per_paper.png`
+- `results/links_per_paper.csv`
+- `results/keyword_cloud.png`
+
+## Current status
+The PDF to TEI/XML extraction pipeline has been completed using Grobid.
+The XML files were parsed to extract abstracts, figure counts and links.
+A figure-count visualization and a keyword cloud have already been generated.
+
+## How to run
+1. Place the input PDF files in `data/pdfs/`
+2. Extract TEI/XML files with Grobid into `data/tei/`
+3. Run:
+   - `py src/parse_tei.py`
+   - `py src/make_figures_plot.py`
+   - `py src/make_wordcloud.py`
+
+## Notes
+Some papers may have incomplete metadata extraction depending on the PDF structure and Grobid parsing quality.
