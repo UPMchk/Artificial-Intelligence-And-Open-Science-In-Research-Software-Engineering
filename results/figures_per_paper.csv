@@ -1,0 +1,11 @@
+paper_id,filename,title,num_figures
+paper1,paper1.tei.xml,,1
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",4
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,2
+paper3,paper3.tei.xml,Open Science in Software Engineering,3
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",1
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,8
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,4
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,3
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,7
+paper9,paper9.tei.xml,Research Software Engineering in 2030,0

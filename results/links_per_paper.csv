@@ -1,0 +1,207 @@
+paper_id,filename,title,link
+paper1,paper1.tei.xml,,https://github.com/kermitt2/grobid
+paper1,paper1.tei.xml,,https://zenodo.org/record/5504016
+paper1,paper1.tei.xml,,https://osf.io/k8znb
+paper1,paper1.tei.xml,,https://fair-software.nl/home
+paper1,paper1.tei.xml,,https://hal.inria.fr/hal-02979514v1
+paper1,paper1.tei.xml,,https://hal.archives-ouvertes.fr/
+paper1,paper1.tei.xml,,https://archive.softwareheritage.org/
+paper1,paper1.tei.xml,,https://archive.softwareheritage.org/swh:1:cnt:eff9a3c75042d7b994734f1471331d79556cba8d;origin=htt
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",https://github.com/kermitt2/grobid
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",https://rse.dlr.de
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",https://fg-rse.gi.de
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",https://dagstuhl.de/24161
+paper10,paper10.tei.xml,"Software engineering, research software and requirements engineering",https://software-metadata.pub
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://github.com/kermitt2/grobid
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1007/s10664-011-9181-9
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1109/MSR.2010.5463348
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1016/j.infsof.2014.04.004
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://www.sciencedirect.com/science/article/pii/S0950584917304305
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://www.acm.org/publications/policies/artifact-review-and-badging-current
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://www.acm.org/publications/policies/artifact-review-and-badging
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://www.iso.org/sites/JCGM/VIM-JCGM200.htm
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1145/3477535
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://doi.org/10.5281/zenodo.8022040
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1109/TSE.2021.3113558
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1007/978-1-84800-044-5_11
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1109/MC.2009.256
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.1109/MSR.2013.6624048
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,http://dx.doi.org/10.48550/arXiv.2010.03525
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://hal.archives-ouvertes.fr/hal-01590958
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://acmsigsoft.github.io/
+paper2,paper2.tei.xml,Revisiting the reproducibility of empirical software engineering studies based on data retrieved from development repositories,https://www.go-fair.org/fair-principles
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://github.com/kermitt2/grobid
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://web.archive.org/web/20190410151011/https://arxiv.org/help/license
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://web.archive.org/web/20190410165523/https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://onlinelibrary.wiley.com/doi/abs/10.1111/ejn.13762
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.1001/jama.1990.03440100097014
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://www.fosteropenscience.eu/taxonomy/term/7
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://ineed.coffee/5205/.Archived:https://web.archive.org/web/20190410141340/https://ineed.coffee/5205/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://arxiv.org/abs/1308.2597
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.1371/journal.pbio.1002106
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.1002/asi.10018
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://www.informationr.net/ir/9-2/paper174.html
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://web.archive.org/web/20190410153103/http://r6.ca/blog/20110930T012533Z.html
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.12688/f1000research.11369.2
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.1177/1468794114550439
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://pure.mpg.de/pubman/item/escidoc
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://doi.org/10.12688/f1000research.12037.3
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io/preprints/metaarxiv/b4v8p
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://CRAN.R-project.org/package=packrat
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://repository.essex.ac.uk/2156/1/managingsharing.pdf
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://web.archive.org/web/20190410141222/https://avandeursen.com/2016/11/06/green-open-access-faq/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://openglam.org/2013/01/08/consequences-risks-and-side-effects-of-the-license-module-non-commercial-use-only/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://yihui.name/knitr/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://bookdown.org/yihui/rmarkdown
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://arXiv.org
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://www.sherpa.ac.uk/romeo-a
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io/prereg/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://cos.io
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://gitlab.com
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io/prereg
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://sherpa.mimas.ac.uk/romeo
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://zenodo.org
+paper3,paper3.tei.xml,Open Science in Software Engineering,http://creativecommons.org/licenses/by/4.0/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://osf.io/8mpji/
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://www.acm.org/publications/policies/artifact-review-badging
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://joss.readthedocs.io/en/latest/submitting.html#the-review-process
+paper3,paper3.tei.xml,Open Science in Software Engineering,https://github.com/emsejournal/openscience
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://github.com/kermitt2/grobid
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://dl.acm.org/citation.cfm?id=2795624
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://journals.aps.org/files/styleguide-pr.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://medium.com/@phoebeayers/whats-a-citation-good-for-anyway-e7585bb003d#.z1t6k6sx6doi:10.2218/ijdc.v11i2.390
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://nciphub.org/resources/885
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.force11.org/datacitation
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://github.com/codemeta/codemeta
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.src-online.ca/index.php/src/article/view/189doi:10.2218/ijdc.v11i2.390SoitoandHwang|61
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.ieee.org/documents/style_manual.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://purl.org/net/epubs/work/24496942
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.mcs.anl.gov/papers/P5010-0913_1.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://mirror.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.crcnetbase.com/doi/abs/10.1201/b16868-9doi:10.2218/ijdc.v11i2.390
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.nsf.gov/pubs/2012/nsf12113/nsf12113.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://spdx.org/spdx-specification-21-web-version
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://icerm.brown.edu/tw12-5-rcem/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://osf.io/ud578/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://rd-alliance.org/system/files/PIT%20final%20report.pdf
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://schema.org/SoftwareApplication
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://schema.org/SoftwareSourceCode
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://theswo.sourceforge.net/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.ontosoft.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://journals.aas.org/policy/software.html
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://imagej.net/Citing
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://ascl.net/wordpress/?page_id=351
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.eagle-i.net/get-involved/for-researchers/citing-an-eagle-iresource/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://scicrunch.org/resources
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.mozillascience.org/projects/contributorship-badges
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://casrai.org/CRediT
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://en.wikipedia.org/wiki/Comparison_of_reference_management_software
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://cpc.cs.qub.ac.uk/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.softwareheritage.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://guides.github.com/activities/citable-code/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://datadryad.org/pages/submissionIntegration
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.executablepapers.com/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://jupyter.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://neuralensemble.org/sumatra/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.mathworks.com/matlabcentral/fileexchange/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://impactstory.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://depsy.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.openabm.org
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.software.ac.uk/resources/guides/which-journals-should-i-publish-my-software
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://openresearchsoftware.metajnl.com/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.journals.elsevier.com/softwarex
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.scfbm.org/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",https://www.force11.org/group/software-citation-workinggroup
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://wssspe.researchcomputing.org
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.software.ac.uk/community/workshops
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.crossref.org/crossmark/
+paper4,paper4.tei.xml,"IJDC | Peer-Reviewed Paper Citations for Software: Providing Identification, Access and Recognition for Research Software",http://www.wwpdb.org/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://github.com/kermitt2/grobid
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1177/1468794112468
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.5070/G6011239
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1111/lnc3.12495
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1126/science.aaf091
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1038/s41562-018-0399-z
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.3390/languages6010009
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1177/25152459231162567
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1001/jamapsychiatry.2018.0382
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1027/2151-2604/a000387
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.17169/fqs-7.3.143
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.7554/eLife.71601
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1242/bio.059310
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://forrt.org/glossary/reproducibility-crisis-aka-replicab/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1177/1745691620979806
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1098/rsos.190806
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.34293/education.v8i4.3232
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1136/emermed-2017-207158
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1093/comjnl/27.2.97
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.21105/joss.02959
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1080/19312458.2019.1685660
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://youtu.be/0Rnq1NpHdmw?si=6tIMWkEbOY47rhaE
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1126/science.aac4716
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1038/s41562-021-01269-4
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.31222/osf.io/ezfsk
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.7554/eLife.53275
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1002/bult.2012.1720390110
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1515/ling-2019-0048
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1177/17456916221144988
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1177/0956797611417632
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.31234/osf.io/ak6jr
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://vimeo.com/675236573/741e24aab7
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://CRAN.R-project.org/package=renv
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://www.speechperceptionproductionlab.com/positionalitystatments
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://doi.org/10.1037/0003-066X.61.7.726
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://yihui.org/knitr/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://osf.io/bsu2q/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://osf.io/nprgz
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://osf.io/qvjzy
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://FOSILproject.github.io
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://osf.io/zx9ky/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://osf.io/3bmcp/
+paper5,paper5.tei.xml,Demystifying reproducibility and transparency practices in linguistic research,https://github.com/RAPgroup/empathy_intonation_perc
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,https://github.com/kermitt2/grobid
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,https://www.anthropic.com/news/claude-3-7-sonnet
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,https://www.budapestopenaccessinitiative.org/read/
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,https://github.com/AIReproducibility2018/
+paper6,paper6.tei.xml,AI Copilots for Reproducibility in Science: A Case Study,https://khider.github.io/dry-tortugas-calibrationfun
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://github.com/kermitt2/grobid
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://doi.org/10.2172/1846008
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://beta.nsf.gov/funding/opportunities/cyberinfrastructure-sustained-scientific
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://bssw.io/blog
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://www.software.ac.uk/blog/2014-12-04-its-impossible-conduct-research-without-software-say-7-out-10-uk-researchers
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://collegeville.github.io/CW3S19/
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://collegeville.github.io/Workshops/
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://molssi.org
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://exascaleproject.org/
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://www.scidac.gov/
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://society-rse.org
+paper7,paper7.tei.xml,Research Software Science: Expanding the Impact of Research Software Engineering,https://us-rse.org
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://github.com/kermitt2/grobid
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.nytimes.com/2018/11/19/science/science-research-fraud-reproducibility.html
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.bbc.com/news/science-environment-39054778
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.nature.com/articles/d42473-019-00004-y
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.semanticscholar.org/paper/c2321c16a12b0a71ab99214a054a60bd2655a505
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://data.europa.eu/doi/10.2777/186782
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://data.europa.eu/doi/10.2777/341654
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.R-project.org/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.oecd-ilibrary.org/science-and-technology/frascati-manual-2015_9789264239012-en
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.the100.ci/2020/06/29/red-team-part-1/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://osf.io/7ef5h/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.connectedpapers.com/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.zotero.org/groups/4983756/osirisconsortium/collections/5Q3IJKZ2
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://royalsocietypublishing.org/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,http://dedupendnote.nl/
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://translate.google.com
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://www.deepl.com/en/translator
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://osf.io/7kmxz
+paper8,paper8.tei.xml,Open science interventions to improve reproducibility and replicability of research: a scoping review,https://osf.io/pg3ny
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://github.com/kermitt2/grobid
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://doi.org/10.5281/zenodo.495360
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://www.software.ac.uk/blog/2016-09-12-its-impossible-conduct-research-without-sof
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://researchsoftware.org/council.html
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://doi.org/10.1109/MS.2020.2973362
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://doi.org/10.1109/MCSE.2013.133
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://doi.org/10.1109/MCSE.2018.03221924
+paper9,paper9.tei.xml,Research Software Engineering in 2030,https://doi.org/10.54900/zwm7q-vet94
