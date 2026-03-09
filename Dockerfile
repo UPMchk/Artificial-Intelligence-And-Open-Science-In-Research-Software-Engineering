@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["python", "src/parse_tei.py"]
+CMD ["python", "src/make_parse_tei.py"]
