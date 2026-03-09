@@ -28,11 +28,6 @@ The project generates the following files:
 - `results/links_per_paper.csv`
 - `results/keyword_cloud.png`
 
-## Current status
-The PDF to TEI/XML extraction pipeline has been completed using Grobid.
-The XML files were parsed to extract abstracts, figure counts and links.
-A figure-count visualization and a keyword cloud have already been generated.
-
 ## Installation
 Install the required Python packages with:
    py -m pip install -r requirements.txt
@@ -44,6 +39,11 @@ Install the required Python packages with:
    - Run the parser:`py src/parse_tei.py`
    - Generate the figure-count plot:`py src/make_figures_plot.py`
    - Generate the keyword cloud:`py src/make_wordcloud.py`
+
+## Docker
+Build the image with: docker build -t grobid-analysis .
+
+Run the container with: docker run --rm grobid-analysis
 
 ## Validation
    ### Abstract extraction and keyword cloud
@@ -68,5 +68,12 @@ Figure counts depend on the figure elements detected in the TEI/XML output.
 Link extraction may miss some links or include links found in references and notes.
 The dataset is limited to 10 papers, so the results are only illustrative.
 
+## Current status
+The PDF to TEI/XML extraction pipeline has been completed using Grobid.
+The XML files were parsed to extract abstracts, figure counts and links.
+A figure-count visualization and a keyword cloud have already been generated.
+
+## License
+This project is distributed under the MIT License.
 ## Notes
 Some papers may have incomplete metadata extraction depending on the PDF structure and Grobid parsing quality.
