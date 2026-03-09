@@ -1,0 +1,17 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Assignment 1 - Grobid analysis of open-access papers",
+  "description": "A reproducible Python project that uses Grobid to analyze 10 open-access papers and generates a keyword cloud, a figure-count visualization, and a list of extracted links.",
+  "license": "https://opensource.org/licenses/MIT",
+  "codeRepository": "https://github.com/UPMchk/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering",
+  "version": "1.0.0",
+  "programmingLanguage": "Python",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Huangkai",
+      "familyName": "Chen"
+    }
+  ]
+}
