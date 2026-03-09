@@ -1,7 +1,9 @@
 cff-version: 1.2.0
 title: "Assignment 1 - Grobid analysis of open-access papers"
 type: software
-authors: HuangKai, Chen
+authors: 
+  - family-names: Chen
+    given-names: Huangkai
 repository-code: "https://github.com/UPMchk/Artificial-Intelligence-And-Open-Science-In-Research-Software-Engineering"
 license: MIT
 version: 1.0.0
